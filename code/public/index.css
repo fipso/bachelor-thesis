@@ -8,7 +8,7 @@ body {
   padding: 0;
 }
 
-main {
+#login {
   padding: 2em;
   padding-top: 8rem;
   display: flex;
@@ -30,4 +30,12 @@ input {
 
 h1 {
   margin: 0;
+}
+
+.two-fa-container {
+  text-align: center;
+}
+
+#profile {
+  padding: 4rem;
 }

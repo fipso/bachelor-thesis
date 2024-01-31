@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title>My App</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <main id="profile">
+    <h1>Profile Page</h1>
+    <h3>Welcome <span id="name"></span></h3>
+    <p>Here is your profile information:</p>
+    <ul>
+      <li>Username: <span id="username"></span></li>
+      <li>Credit Card Number: <span id="ccn"></span></li>
+    </ul>
+
+    <form method="post" action="/api/logout">
+      <input type="submit" value="Logout" />
+    </form>
+  </main>
+
+  <script>
+    async function getData() {
+      try {
+        const res = await fetch("/api/profile");
+        // Check 401
+        if (!res.ok) throw new Error(res.status);
+
+        // Parse and display profile data
+        const data = await res.json();
+        document.getElementById("name").innerHTML = data.name;
+        document.getElementById("username").innerHTML = data.username;
+        document.getElementById("ccn").innerHTML = data.ccn;
+      } catch (err) {
+        console.log(err);
+
+        // Redirect to login page
+        window.location.href = "/";
+      }
+    }
+
+    getData();
+  </script>
+</body>
+
+</html>

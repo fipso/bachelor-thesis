@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <main>
+  <div id="login">
     <div>
       <h1>XU Insecure Bank</h1>
       <img src="logo.png" />
@@ -15,10 +15,24 @@
     <form method="post" action="/api/login">
       <input type="text" name="username" placeholder="Username" />
       <input type="password" name="password" placeholder="Password" />
-      <input type="text" name="2fa" placeholder="2FA-Code" />
+      <input type="text" name="twoFaCode" placeholder="2FA-Code" />
       <input type="submit" value="Login" />
     </form>
-  </main>
+  </div>
+
+  <div class="two-fa-container">
+    <p>
+      2FA Code Generator: <br /><b><span id="2fa"></span></b>
+    </p>
+  </div>
+
+  <!-- Demo 2FA-Code Generator -->
+  <script>
+    var code = Math.floor(Math.random() * 1000000)
+      .toString()
+      .padStart(6, "0");
+    document.getElementById("2fa").innerHTML = code;
+  </script>
 </body>
 
 </html>

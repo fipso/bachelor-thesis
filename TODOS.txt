@@ -1,0 +1,13 @@
+Blacklist JA3 hashes of golang?, evilginx2, modlishka, murena etc
+
+Collect JA3 hashes from users
+If User-Agent confidence is high enough reject requests if JA3 hash is not in the list of known hashes
+
+Implement JA3N, N means normalized. It ignores the order of the ciphers and extensions.
+Needed for chrome.
+
+Dont to timing analysis because you need a AI model to do that
+
+Implement classical client side js challenge
+
+Block requests from known cloud providers
