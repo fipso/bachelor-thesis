@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.9)  28 JAN 2024 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.9)  3 FEB 2024 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,7 +293,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./images/logo.png, id=36, 353.32pt x 152.57pt>
+<./images/logo.png, id=120, 353.32pt x 152.57pt>
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
 Package pdftex.def Info: ./images/logo.png  used on input line 26.
@@ -301,12 +301,15 @@ Package pdftex.def Info: ./images/logo.png  used on input line 26.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png>] (./exp
-ose.toc)
+ose.toc
+LaTeX Font Info:    External font `cmex7' loaded for size
+(Font)              <7> on input line 7.
+
+[2])
 \tf@toc=\write4
 \openout4 = `expose.toc'.
 
-
-[2] [3{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+ [3] [4{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Overfull \hbox (1.49033pt too wide) in paragraph at lines 47--47
 []\OT1/cmr/bx/n/20.74 Theoretical foun-da-tions & cur-rent state
  []
@@ -326,10 +329,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
-[4] [5] [6] [7] [8] [9]
-LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7> on input line 107.
-
+[5] [6] [7] [8] [9] [10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 []\OT1/cmr/m/n/14.4 Cybercrime Dam-ages \TS1/cmr/m/n/14.4 $\OT1/cmr/m/n/14.4 6 
 Tril-lion By
@@ -369,27 +369,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--114
  breakdev . org /
  []
 
-[10] (./expose.aux)
+[12] (./expose.aux)
 Package rerunfilecheck Info: File `expose.out' has not changed.
-(rerunfilecheck)             Checksum: 8FE0E21F2949AD30F49A667F369A9DCF;1183.
+(rerunfilecheck)             Checksum: 69DD6E1733C91ADA517A5F51642A3808;4758.
  ) 
 Here is how much of TeX's memory you used:
- 9799 strings out of 477985
- 161361 string characters out of 5840059
+ 9827 strings out of 477985
+ 161889 string characters out of 5840059
  1858388 words of memory out of 5000000
- 29857 multiletter control sequences out of 15000+600000
- 517648 words of font info for 51 fonts, out of 8000000 for 9000
+ 29879 multiletter control sequences out of 15000+600000
+ 517955 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,6n,76p,707b,634s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,76p,707b,461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1
 440.pfb>
-Output written on expose.pdf (10 pages, 96101 bytes).
+Output written on expose.pdf (12 pages, 104751 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 

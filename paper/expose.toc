@@ -1,8 +1,29 @@
-\contentsline {section}{\numberline {1}Problem statement}{3}{section.1}%
-\contentsline {section}{\numberline {2}Research question}{3}{section.2}%
-\contentsline {section}{\numberline {3}Objective}{4}{section.3}%
-\contentsline {section}{\numberline {4}Theoretical foundations \& current state of research}{4}{section.4}%
-\contentsline {section}{\numberline {5}Research design}{6}{section.5}%
-\contentsline {section}{\numberline {6}Preliminary outline}{7}{section.6}%
-\contentsline {section}{\numberline {7}Preliminary time table}{8}{section.7}%
-\contentsline {section}{\numberline {8}References}{10}{section.8}%
+\contentsline {section}{\numberline {1}Problem statement}{4}{section.1}%
+\contentsline {section}{\numberline {2}Research question}{4}{section.2}%
+\contentsline {section}{\numberline {3}Objective}{5}{section.3}%
+\contentsline {section}{\numberline {4}Theoretical foundations \& current state of research}{5}{section.4}%
+\contentsline {section}{\numberline {5}Research design}{7}{section.5}%
+\contentsline {section}{\numberline {6}Introduction}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Background}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Problem Statement}{8}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Research Objectives}{8}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Literature Review}{8}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Overview of Multi-Factor Authentication}{8}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Phishing Attacks: Evolution and Impact}{8}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Existing Countermeasures}{9}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Methodology}{9}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Research Design}{9}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Data Collection}{9}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Analysis Techniques}{9}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Experimentation}{9}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Simulation of Reverse Proxy Phishing Attacks}{9}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Evaluation of MFA Vulnerabilities}{10}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Testing of Countermeasures}{10}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Results}{10}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Findings from Simulations}{10}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Effectiveness of Current Defenses}{10}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Proposed Solutions}{10}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Discussion}{11}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Implications of Findings}{11}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Limitations and Future Research}{11}{subsection.11.2}%
+\contentsline {section}{\numberline {12}References}{12}{section.12}%

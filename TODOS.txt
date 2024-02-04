@@ -6,7 +6,7 @@ If User-Agent confidence is high enough reject requests if JA3 hash is not in th
 Implement JA3N, N means normalized. It ignores the order of the ciphers and extensions.
 Needed for chrome.
 
-Dont to timing analysis because you need a AI model to do that
+Dont do timing analysis because you need a AI model to do that
 
 Implement classical client side js challenge
 

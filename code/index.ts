@@ -2,7 +2,7 @@ import fs from "fs";
 import https from "https";
 import express, { type Request, type Response } from "express";
 import cookieParser from "cookie-parser";
-import { trackClientHellos } from "read-tls-client-hello";
+import { trackClientHellosJA3N } from "./fingerprint";
 
 // Types
 type User = {
@@ -29,10 +29,23 @@ const sessions: { [id: string]: User } = {};
 const app = express();
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
 
 // Check ja3 fingerprint aligns with user-agent
+/*
+app.use((req, res, next) => {
+  //@ts-ignore
+  const ja3 = req.socket.tlsClientHello?.ja3;
+  //@ts-ignore
+  const ja3n = req.socket.tlsClientHello?.ja3n;
+  const userAgent = req.headers["user-agent"];
+  console.log("JA3:", ja3);
+  console.log("JA3N:", ja3n);
+  console.log("User-Agent:", userAgent);
+  next();
+});*/
 
+// Serve static files
+app.use(express.static("public"));
 
 // Handle requests
 app.post("/api/login", (req: Request, res: Response) => {
@@ -92,10 +105,18 @@ const server = https.createServer(
   },
   app,
 );
+
 // Attach TLS fingerprinting to all sockets
-trackClientHellos(server);
+trackClientHellosJA3N(server);
+
 // Start listening
 server.listen(8443, () => console.log("SSL/TLS Server listening on :8443"));
+
+server.on('request', (request, response) => {
+    // In your normal request handler, check `tlsClientHello` on the request's socket:
+    // @ts-ignore
+    console.log('Received request with TLS client hello:', request.socket.tlsClientHello.ja3n);
+});
 
 // Handle server errors
 // server.on("tlsClientError", (err) => console.error(err));
