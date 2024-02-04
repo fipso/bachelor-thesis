@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.9)  3 FEB 2024 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.9)  4 FEB 2024 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,7 +293,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./images/logo.png, id=120, 353.32pt x 152.57pt>
+<./images/logo.png, id=124, 353.32pt x 152.57pt>
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
 Package pdftex.def Info: ./images/logo.png  used on input line 26.
@@ -315,81 +315,130 @@ Overfull \hbox (1.49033pt too wide) in paragraph at lines 47--47
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--54
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--54
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--54
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
 
  []
 
-[5] [6] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
+
+ []
+
+[5] [6] [7]
+
+LaTeX Warning: Citation `linkUNKOWN' on page 8 undefined on input line 71.
+
+[8] [9] [10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 []\OT1/cmr/m/n/14.4 Cybercrime Dam-ages \TS1/cmr/m/n/14.4 $\OT1/cmr/m/n/14.4 6 
 Tril-lion By
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 \OT1/cmr/m/n/14.4 2021 []$\OT1/cmtt/m/n/14.4 https : / / cybersecurityventures 
 . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 \OT1/cmr/m/n/14.4 Phish-ing Toolk-its []$\OT1/cmtt/m/n/14.4 https : / / catchin
 g-[]transparent-[]phish .
  []
 
 
-Underfull \hbox (badness 6032) in paragraph at lines 111--112
+Underfull \hbox (badness 6032) in paragraph at lines 115--116
 []\OT1/cmr/m/n/14.4 Secure au-then-ti-ca-tion scheme to thwart RT MITM, CR
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 111--112
+Underfull \hbox (badness 2096) in paragraph at lines 115--116
 \OT1/cmr/m/n/14.4 MITM and ma-li-cious browser ex-ten-sion based phish-ing at-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 []\OT1/cmr/m/n/14.4 Modlishka. Re-verse Proxy []$\OT1/cmtt/m/n/14.4 https : / /
  github . com / drk1wi /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 []\OT1/cmr/m/n/14.4 EvilNginx. Re-verse Proxy []$\OT1/cmtt/m/n/14.4 https : / /
  breakdev . org /
  []
 
-[12] (./expose.aux)
-Package rerunfilecheck Info: File `expose.out' has not changed.
-(rerunfilecheck)             Checksum: 69DD6E1733C91ADA517A5F51642A3808;4758.
+[13] (./expose.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `expose.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `expose.out':
+(rerunfilecheck)             Before: 6BDA69D2650C4131DF46266EDFF24B03;4891
+(rerunfilecheck)             After:  75EDBB9B95FDBD5E88C8021467840EE5;4370.
  ) 
 Here is how much of TeX's memory you used:
- 9827 strings out of 477985
- 161889 string characters out of 5840059
+ 9830 strings out of 477985
+ 161918 string characters out of 5840059
  1858388 words of memory out of 5000000
- 29879 multiletter control sequences out of 15000+600000
+ 29880 multiletter control sequences out of 15000+600000
  517955 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,6n,76p,707b,461s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1
-440.pfb>
-Output written on expose.pdf (12 pages, 104751 bytes).
+ 75i,6n,76p,752b,461s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.13} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.11.2} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.11.1} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.10.3} has been referenced but does not e
+xist, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm144
+0.pfb>
+Output written on expose.pdf (13 pages, 106814 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 279 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

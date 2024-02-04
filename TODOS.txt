@@ -11,3 +11,7 @@ Dont do timing analysis because you need a AI model to do that
 Implement classical client side js challenge
 
 Block requests from known cloud providers
+
+Use JA4+ as its way more reliable
+Wireshark, Nginx patched docker img
+Implement myself?
