@@ -1,0 +1,25 @@
+\begin{thebibliography}{9}
+	\bibitem{6trillion} Cybercrime Damages \$6 Trillion By 2021
+	\url{https://cybersecurityventures.com/annual-cybercrime-report-2017/}
+
+	\bibitem{link0} Catching Transparent Phish: Analyzing and Detecting MITM
+	Phishing Toolkits
+	\url{https://catching-transparent-phish.github.io/catching_transparent_phish.pdf}
+
+	\bibitem{link1} Geo-Location based QR-Code Authentication Scheme to Defeat Active
+	Real-Time Phishing Attack \url{https://sci-hub.hkvisa.net/10.1145/2517881.2517889}
+
+	\bibitem{link2} Analyzing 2FA Phishing Attacks and Their Prevention Techniques
+	\url{https://ieeexplore.ieee.org/abstract/document/9945766}
+
+	\bibitem{link3} Secure authentication scheme to thwart RT MITM, CR MITM and
+	malicious browser extension based phishing attacks
+	\url{https://www.sciencedirect.com/science/article/abs/pii/S2214212618300140}
+
+	\bibitem{link4} Modlishka. Reverse Proxy
+	\url{https://github.com/drk1wi/Modlishka}
+
+	\bibitem{link5} EvilNginx. Reverse Proxy
+	\url{https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens/}
+\end{thebibliography}
+
