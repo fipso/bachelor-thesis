@@ -1,4 +1,4 @@
-\documentclass[12pt, twocolumn]{report}
+\documentclass[12pt]{report}
 
 \usepackage{caption}
 \usepackage{float}
@@ -7,10 +7,11 @@
 \usepackage[nottoc, numbib]{tocbibind}
 \usepackage{outlines}
 
+\begin{document}
+
 \author{Philipp Liermann 20-475873-20\\Supervisor: Prof. Dr. Raad Bin Tareaf}
 \date{\today}
 
-\begin{document}
 
 \title{
 \begin{center}
@@ -58,8 +59,8 @@ were derived:
 As credential theft and cyberfraud in general are still a growing problem in
 the digital age, it is important to develop and implement effective measures to
 counteract this threat. The objective of this thesis is to find and document
-different strategy's that can help organizations and developers to mitigate
-this new attack vector.
+different strategy's that can help organizations and developers to protect their
+applications against the new transparent proxy phishing attack vector.
 
 \section{Theoretical foundations \& current state of research}
 Cyberfraud is a form of internet-based fraud, usually involving the use of false
@@ -105,7 +106,29 @@ the TLS implementation of a client or server by analyzing the handshake process.
 This can be used to identify which software is used by client or server. Industry
 standards for fingerprinting algorithms have existed for a long time. These
 include: JA3, JA3N and the whole JA4+ family. \\ \\
-
+Nginx is a popular open-source web server and reverse proxy server. It is used by
+millions of websites to serve web pages and other content. Nginx is known for its
+high performance, stability, and low resource usage. It is also known for its
+flexibility and extensibility, as it can be easily extended with third-party modules
+and plugins. Because Nginx can easily be configured to act as a reverse proxy and
+supports TLS, it is often used as a so called TLS terminator, meaning that it
+terminates the TLS connection and forwards the unencrypted traffic to a HTTP backend
+app. \\ \\
+Docker is a platform for developing, shipping, and running applications. It allows
+developers to package their applications and dependencies into containers, which
+can then be run on any system that has Docker installed. Docker containers are
+lightweight, portable, and self-sufficient, making them an ideal platform for
+deploying applications. \\ \\
+HTML is the standard markup language for creating web pages and web applications.
+It is used to structure and present content on the web. HTML is used in conjunction
+with CSS and JavaScript to create interactive and visually appealing web pages.
+\\ \\
+Unicode is a standard for encoding, representing, and handling text in most of the
+world's writing systems. It is used to represent characters from all of the world's
+writing systems, including Latin, Cyrillic, Greek, Arabic, Hebrew, Chinese, Japanese,
+Korean, and many others. Unicode is used in many modern software applications,
+including web browsers, word processors, and operating systems. In computer science
+literature, Unicode symbols are often represented as U+ followed by a hexadecimal number. \\ \\
 Many scientific papers have been published on this topic, but there is still a
 lack of information on how to protect against this new attack vector. This is why
 it is important to find and document different strategies that can help organizations
@@ -148,10 +171,6 @@ against the growing threat of cyberfraud, as it can help to prevent
 unauthorized access to financial accounts and other sensitive information. \\ \\
 
 \section{Phishing Attacks: Evolution and Impact}
-Trace the evolution of phishing attacks from simple scams to sophisticated
-reverse proxy phishing, including case studies or statistics to underline their
-significance.
-
 Phishing attacks are a type of cyberattack in which an attacker attempts to gain
 confidential information, such as passwords, credit card numbers, or other
 sensitive information, by sending emails or other messages disguised as legitimate
@@ -164,6 +183,65 @@ easy to recognize. However, as technology has advanced, so have phishing
 attacks. Today, phishing attacks are often highly sophisticated and difficult
 to detect, making them a significant threat to individuals and organizations.
 \\ \\
+Classical phishing fake login pages were usually simple HTML copies of the original
+login page, but connected to a fake backend service that would store the entered credentials and
+redirect the user to the original page or a fake error page. This way victims could recognize
+that they had fallen for a fake login page and update their credentials before the attacker could
+use them. \\ \\
+The new transparent proxy phishing attack vector is a new technique used by attackers
+to intercept and steal multi-factor authentication (MFA) tokens from unsuspecting
+users. Instead of copying HTML code from the original page that the attacker is
+trying to impersonate, this new attack uses a HTTP reverse proxy to just redirect
+the users traffic to the original page. The attacking proxy operator can view and
+modify all traffic that is going through it while the victim sees a one by one
+copy of the original login page. By doing so login credentials and 2FA tokens
+can be extracted easily. Also the victim will not recognize that he has fallen
+for a phishing attack, because the website actually behaves as expected. The user
+will not be redirected to a fake error page or the original page after entering
+his credentials, because a real session is established with the original server. \\ \\
+In summary the advantages over the classical fake HTML login page based attack are:
+\begin{itemize}
+ \item Knowing basic web development techniques including HTML, CSS and JavaScript
+       is not required to setup a phishing attack anymore
+
+  \item The victim will not recognize that he has fallen for a phishing attack
+
+  \item The attacker can view and modify all traffic that is going through the proxy,
+    including the entered credentials and 2FA tokens
+
+  \item Custom HTML and JavaScript can be injected into the original page to steal even more
+    information from the victim using social engineering techniques
+\end{itemize}
+In April 2017 a John Hopkins University Student named Xudong Zheng published a blog post with a proof of concept
+on how he used a homograph attack to impersonate apple.com. He used the Cyrillic letter "a" (U+0430) instead of the
+Latin letter "a" (U+0061) in the domain name. \\ This way he was able to register the domain "xn--80ak6aa92e.com"
+which looks exactly like "apple.com" in the browser address bar. 
+This attack was possible because the browser displayed the domain name in its punycode representation, which is
+a way to represent Unicode with the limited character subset of ASCII used for internet host names.
+\\ The combination of this attack with a transparent proxy phishing attack is especially dangerous, because
+the URL in the address bar will look exactly like the original URL and also behave exactly like it due to usage of 
+transparent proxying. It is close to impossible even for a educated user to recognize the he is being lured into a phishing attack.
+Luckily the browser vendors were quick to react and implemented a fix for this issue. \\ \\
+By reading literature on this topic, it becomes clear that performing a transparent proxy phishing attack is becoming
+easier and easier. This is because of the increasing number of open source reverse proxy phishing toolkits that are
+available on the internet. These toolkits are designed to allow read teams and cyber security researchers to set up and run transparent
+proxy phishing attacks in a controlled environment. However, these toolkits can also be used by malicious actors to perform
+real-world attacks. \\ The following are some of the most popular open source reverse proxy phishing toolkits:
+\begin{itemize}
+  \item Modlishka \cite{modlishka} is a low level HTTP reverse proxy framework that allows the attacker to intercept and modify
+    all traffic that is going through it. It is written in Go and can be easily extended with custom plugins. Modlishka also provides
+    a web interface to copy collected session data into an attackers browser to perform session hijacking attacks.
+    It is also capable of injecting custom HTML and JavaScript into the original page to steal even more information from the victim.
+
+  \item Evilginx2 \cite{evilginx2} is a more advanced transparent phishing toolkit that is also written in Go. It provides same
+    capabilities as Modlishka, but also includes ready to use templates and a custom DNS server. Its more user friendly and easier to use
+    than Modlishka, but also less flexible and extensible.
+
+  \item Murena \cite{murena} is a transparent phishing toolkit that is written in Python. It is not as advanced as Modlishka and Evilginx2,
+    but is still capable of intercepting and modifying all traffic that is going through it. It is also capable of injecting custom HTML and
+    JavaScript into the original page.
+\end{itemize}
+
 
 \section{Existing Countermeasures}
 There are a number of strategies and technologies that can be used to thwart phishing
@@ -243,4 +321,5 @@ Acknowledge any limitations of your study and propose areas for future research.
 \newpage
 \bibliographystyle{plain}
 \bibliography{refs}
+
 \end{document}
