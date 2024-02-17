@@ -1,5 +1,7 @@
 \documentclass[12pt]{report}
 
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
 \usepackage{caption}
 \usepackage{float}
 \usepackage{hyperref}
@@ -11,7 +13,6 @@
 
 \author{Philipp Liermann 20-475873-20\\Supervisor: Prof. Dr. Raad Bin Tareaf}
 \date{\today}
-
 
 \title{
 \begin{center}
@@ -244,23 +245,6 @@ real-world attacks. \\ The following are some of the most popular open source re
 
 
 \section{Existing Countermeasures}
-There are a number of strategies and technologies that can be used to thwart phishing
-attacks, including those targeting MFA systems. These include:
-\begin{itemize}
-	\item Geo-Location based QR-Code Authentication Scheme to Defeat Active Real-Time
-	      Phishing Attack \cite{link1}
-
-	\item Analyzing 2FA Phishing Attacks and Their Prevention Techniques \cite{link2}
-
-	\item Secure authentication scheme to thwart RT MITM, CR MITM and malicious
-	      browser extension based phishing attacks \cite{link3}
-\end{itemize}
-These strategies and technologies have been developed to help protect against
-phishing attacks, and have been shown to be effective in many cases. However, they
-are not foolproof, and there are still many ways in which attackers can bypass
-them. For example, attackers can use reverse proxy phishing toolkits to
-intercept and steal MFA tokens, and bypass MFA systems
-
 The paper "Catching Transparent Phish: Analyzing and Detecting MITM Phishing Toolkits" \cite{kondracki2021catching} provides a detailed
 analysis of the most used reverse proxy phishing toolkit and its potential to
 bypass MFA systems. The authors demonstrate how those toolkits can be used to intercept
@@ -271,24 +255,42 @@ toolkits in the wild, but only provide limited advice on how to detect client
 connections of those toolkits on the recieving server side.
 
 \newpage
-
-\chapter{Methodology}
-\section{Research Design}
-Outline the research approach, whether qualitative, quantitative, or mixed
-methods, justifying the choice based on your research questions.
-
-\section{Data Collection}
-Describe how data will be gathered, including any experimental setups, simulations,
-or surveys planned.
-
-\section{Analysis Techniques}
-Detail the methods for analyzing the collected data, such as statistical analysis,
-content analysis, or software testing methodologies.
-
 \chapter{Experimentation}
-\section{Simulation of Reverse Proxy Phishing Attacks}
-Describe the setup for simulating attacks, including the tools and
-environments used.
+\section{Simulation of Transparent Phishing Attacks}
+To test and analyze the capabilities of the most popular open source transparent phishing toolkits
+a controlled lab environment will be set up. The goal is to find flaws in their attack implementation
+and to develop and test new or improved countermeasures against these attacks.
+First a web application will be set up that is secured with a multi-factor authentication system.
+Then the open source transparent phishing toolkits will be used to set up attack simulations against
+this web application. The local web application will be running on a local machine, but still be secured
+with a valid self-signed TLS certificate. Our own certificate authority will have to be installed in the
+browser used for testing, a recent version of google chrome in this case. In a real world scenario an attacker
+would also have to buy a valid domain name. For our simulated attacks an entry in the hosts fill be sufficient
+to redirect the traffic to the local machine.
+
+\begin{center}
+\end{center}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[height=7cm]{./images/2fa_app.png}
+  \caption{Web application secured with a demo two-factor authentication system}
+\end{figure}
+
+The test environment web application implements a very basic credential based login system with two-factor
+authentication. For demo purposes the two-factor authentication logic will accept any 6 digit number as
+valid token.\\The frontend of this application is connected to a NodeJS based backend that is using express.js
+for routing and parsing of incoming requests. After one provides valid login credentials in the frontend, the backend
+will respond with a "Set-Cookie" header that creates a cookie containing the session token in the browser.
+This session token will be used to authenticate the user in the future.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[height=7cm]{./images/profile_page.png}
+  \caption{Profile page containing confidential information}
+\end{figure}
+
+TODO: elaborate here further
 
 \section{Evaluation of MFA Vulnerabilities}
 Explain how the simulations will be used to evaluate the vulnerabilities in
