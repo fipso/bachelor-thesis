@@ -1,16 +1,16 @@
-This is BibTeX, Version 0.99d (TeX Live 2023/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: expose.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--I didn't find a database entry for "6trillion"
-Warning--I didn't find a database entry for "link1"
-Warning--I didn't find a database entry for "link2"
-Warning--I didn't find a database entry for "link3"
+Warning--I didn't find a database entry for "modlishka"
+Warning--I didn't find a database entry for "evilginx2"
+Warning--I didn't find a database entry for "murena"
 Warning--empty journal in kondracki2021catching
 You've used 2 entries,
             2118 wiz_defined-function locations,
-            511 strings with 4381 characters,
+            511 strings with 4390 characters,
 and the built_in function-call counts, 567 in all, are:
 = -- 50
 > -- 36

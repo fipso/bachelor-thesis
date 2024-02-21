@@ -268,9 +268,6 @@ browser used for testing, a recent version of google chrome in this case. In a r
 would also have to buy a valid domain name. For our simulated attacks an entry in the hosts fill be sufficient
 to redirect the traffic to the local machine.
 
-\begin{center}
-\end{center}
-
 \begin{figure}[!htb]
   \centering
   \includegraphics[height=7cm]{./images/2fa_app.png}
@@ -280,9 +277,20 @@ to redirect the traffic to the local machine.
 The test environment web application implements a very basic credential based login system with two-factor
 authentication. For demo purposes the two-factor authentication logic will accept any 6 digit number as
 valid token.\\The frontend of this application is connected to a NodeJS based backend that is using express.js
-for routing and parsing of incoming requests. After one provides valid login credentials in the frontend, the backend
-will respond with a "Set-Cookie" header that creates a cookie containing the session token in the browser.
-This session token will be used to authenticate the user in the future.
+for routing and parsing of incoming requests. After one provides login credentials in the frontend a authentication
+endpoint in the backend will be called with the provided credentials. If the credentials are valid the backend
+will redirect the user to his profile page. This response will also contain a session cookie that will be used
+to authenticate the user in the future.\\For an attacker, stealing the content of that session cookie is enough to
+gain full access to that account. This is also true for most real world web applications where cookie based authenticaion
+is used, but this alone is not a securiy issue. Nearly 99\% of all websites are TLS secured today \cite{tlsPercentage} meaning
+that no one except the user and server can see the content of that HTTP request including the session cookie.\\ \\
+
+In our simulated attack scenario it will be our goal to steal the content of this session cookie to overtake the victims
+session. In the real world an attacker is likely saving login credentials eg. email and password from all requests he intercepts
+with his transparent phsihing toolkit's mitm proxy. Additionally he may inject custom HTML and JavaScript into the original page
+to steal even more information from the victim using social engineering techniques, for example by asking for an additional
+multi factor authentication token that he can use in the future. For the purpose of this experiment we will only focus on
+stealing the session cookie.\\ \\
 
 \begin{figure}[!htb]
   \centering
@@ -290,15 +298,16 @@ This session token will be used to authenticate the user in the future.
   \caption{Profile page containing confidential information}
 \end{figure}
 
-TODO: elaborate here further
-
-\section{Evaluation of MFA Vulnerabilities}
-Explain how the simulations will be used to evaluate the vulnerabilities in
-current MFA implementations.
-
+\newpage
 \section{Testing of Countermeasures}
-Outline the process for developing and testing new or improved countermeasures
-against these attacks.
+\subsection{Blacklisting well known TLS Fingerprints}
+The first countermeasure that we are trying to implement in our web applications backend is to blacklist TLS fingerprints of well known transparent phishing toolkits. This way we can detect if a client connection is relayed through a transparent phishing toolkit and show the user a warning or ignore the whole request. This approach comes with some obvious downsides:
+
+\begin{itemize}
+  \item The attacker can change the TLS fingerprint of his transparent phishing toolkit by modifying the TLS stack of the toolkit or by using a different toolkit with an unknown fingerprint
+  \item The attacker can spoof the TLS fingerprint of the victim's client
+  \item The attacker downgrades to HTTP and does not use TLS at all
+\end{itemize}
 
 \chapter{Results}
 \section{Findings from Simulations}
