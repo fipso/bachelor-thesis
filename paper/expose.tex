@@ -309,6 +309,14 @@ The first countermeasure that we are trying to implement in our web applications
   \item The attacker downgrades to HTTP and does not use TLS at all
 \end{itemize}
 
+\subsection{Evaluating TLS Fingerprinting Algorithms}
+In general performing TLS fingerprinting on a client connection works by analyzing the TLS ClientHello message that is sent by the client to the server during the TLS handshake process. This message contains a lot of information about the client's TLS implementation, including the version of the TLS protocol that the client supports, the list of supported cipher suites and extensions. To generate a unique fingerprint out of this information several algorithms already exist. The JA3 algorithm proposed first by Salesforce \cite{ja3Salesforce} collects values from the ClientHello into four different array lists and formats them into one comma separated string that gets hashed. In detail the values used from ClientHello are: SSLVersion, Cipher, SSLExtension, EllipticCurve, EllipticCurvePointFormat. An example derived from a ClientHello looks like this: "769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0". If no SSL extensions are used the field will be left empty. Example: "769,4-5-10-9-100-98-3-6-19-18-99,,,". Generating a MD5 hash from that string will leave us with the following 32 characters: "ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non existing extensions, because some TLS clients are using Google’s GREASE (Generate Random Extensions And Sustain Extensibility). This is a feature proposed by Google to break wrongly implemented TLS servers. It may sound controversial at first, but comes with good intentions. In a internet draft paper by D. Benjamin \cite{greaseDraft} he explains that its better to break some production systems in place instead of risking flawed TLS implementations to spread and risk outages of global scale.\\JA3 seems to be a good candidate for fingerprinting transparent phishing toolkits at first, but it after some testing it comes clear that JA3 can not be used to fingerprint instances of Google Chrome, due to it's reliance on the order of the cipher extension list in the ClientHello package. Google chrome uses a feature called "TLS ClientHello extension permutation" that prevents TLS fingerprinting for said reason. This can be bypassed by sorting the numeric values by size. Open source implementations of the JA3 algorithm with normalized extension orders exist under the name "JA3N". Sadly in our experimentation we were not able to reliably identify versions of Google Chrome using JA3 for unkown reasons.\\
+
+JA4
+
+TODO: the google feature is "to reduce potential ecosystem brittleness" and not for privacy. Quote more from:
+https://chromestatus.com/feature/5124606246518784
+
 \chapter{Results}
 \section{Findings from Simulations}
 Present the data collected from the simulations, providing analysis and interpretation.
