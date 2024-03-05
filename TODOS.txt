@@ -15,3 +15,5 @@ Block requests from known cloud providers
 Use JA4+ as its way more reliable
 Wireshark, Nginx patched docker img
 Implement myself?
+
+JA4L S/C
