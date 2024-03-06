@@ -16,4 +16,14 @@ Use JA4+ as its way more reliable
 Wireshark, Nginx patched docker img
 Implement myself?
 
-JA4L S/C
+JA4L S/C Timing
+JA4T TCP Fingerprinting
+JA4H HTTP Client Fingerprinting
+
+Request data from hunt.io
+
+Verify if client is actually supporting said TLS ciphers/versions
+Use different versions of openssl to support as much ciphers as possible
+
+Use serverless functions or ping providers to calculate realistic ping time
+Compare with actual ping time. Estimate bandwith based on hostname / isp. Mobile is allowed to be slow
