@@ -27,3 +27,17 @@ Use different versions of openssl to support as much ciphers as possible
 
 Use serverless functions or ping providers to calculate realistic ping time
 Compare with actual ping time. Estimate bandwith based on hostname / isp. Mobile is allowed to be slow
+
+https://malcolm.cloudflare.com/
+https://github.com/cloudflare/mitmengine
+Different TLS fingerprint
+https://jhalderm.com/pub/papers/interception-ndss17.pdf
+
+Parse most UAs https://github.com/avct/uasurfer
+
+Score system like: https://www.enea.com/insights/a-new-way-of-detecting-tls-ssl-mitm-attacks/
+- Round trip time (RTT) measurement
+- Certification Authority (CA) reputation
+- JA3 hashes
+
+https://link.springer.com/chapter/10.1007/978-3-642-33167-1_12
