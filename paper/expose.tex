@@ -138,7 +138,13 @@ and developers to mitigate this new attack vector. \\ \\
 Wireshark is a popular open-source network protocol analyzer that is used to capture and
 analyze network traffic. It is widely used by network administrators, security
 professionals, and developers to troubleshoot network problems, analyze network
-traffic, and detect security vulnerabilities.
+traffic, and detect security vulnerabilities. \\ \\
+Man in the Middle (MITM) attacks are a type of cyberattack in which an attacker intercepts
+and modifies communication between two parties without their knowledge. This type
+of attack is often used to steal sensitive information, such as login credentials,
+credit card numbers, or other personal information. MITM attacks can be difficult
+to detect, as the attacker can intercept and modify communication without the
+knowledge of the parties involved. \\ \\
 
 \section{Research design}
 This thesis will be conducted in a quantitative research design. By analyzing
@@ -356,6 +362,16 @@ The JA4+ family also comes with a fingerprinting algorithm for TLS called JA4. J
 
 TODO: the google feature is "to reduce potential ecosystem brittleness" and not for privacy. Quote more from:
 https://chromestatus.com/feature/5124606246518784
+
+\newpage
+\subsection{Mismatch of User-Agent and TLS Fingerprint}
+A broader and more flexible approach then the previous blacklist solution which tries to block or flag client requests using the TLS implementation of known transparent phishing toolkits, is to focus on detecting requests from TLS reverse proxies in general. The attack vector that is facilitate by abusing reverse proxies to spy on a users TLS encrypted session is more commonly known as a TLS MITM (Man in the Middle) Attack. The American content delivery network operator Cloudflare which is also known for DDoS mitigation and other cyber security related services is running an open-source monitoring service called MALCOLM which stands for "Measuring Active Listeners, Connection Observers, and Legitimate Monitors". It provides statistics about observed HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is a request that comes from either a "A device has a root certificate installed that allow an intermediary to decrypt and inspect traffic" or "An origin server provides its TLS private key to a third party (like a reverse proxy) that does TLS termination" \cite{cloudflareMALCOM}. The second definition means exactly the kind of TLS MITM attacks which we are trying to detect. The monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine) that Cloudflare describes as their HTTPS interception detector. MITMEngine is an open-source software written in go. It works by matching TLS fingerprints of requests to known browser User-Agent strings. If a mismatch is found the request is marked as potentially crafted by HTTPS Interception. This strategy again relies on maintaining a huge database of User-Agent and TLS Fingerprint pairs. Cloudflare states on the MALCOLM dashboard website that they can only identity 60\% of the clients that are served by their internal network. Especially the detection of Android based devices is not reliably possible due to the large amount of different Android based operating systems and browsers. Readers of the MALCOLM website are encouraged to contribute User-Agent TLS fingerprint pairs to the MITMEngine git repository to help overcome this issue.
+
+\newpage
+\subsection{Round Trip Time Analysis}
+
+\newpage
+\subsection{Combined Score Based Approach}
 
 \chapter{Results}
 \section{Findings from Simulations}

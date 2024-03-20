@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.21)  5 MAR 2024 18:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.20)  20 MAR 2024 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -366,7 +366,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count292
-<./images/logo.png, id=92, 353.32pt x 152.57pt>
+<./images/logo.png, id=100, 353.32pt x 152.57pt>
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
 Package pdftex.def Info: ./images/logo.png  used on input line 29.
@@ -403,57 +403,72 @@ l.33 \newpage
 LaTeX Warning: Citation `6trillion' on page 2 undefined on input line 72.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--142
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--148
 
  []
 
@@ -461,155 +476,160 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--142
 [3] [4] [5]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--178
+Underfull \hbox (badness 10000) in paragraph at lines 172--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--178
+Underfull \hbox (badness 10000) in paragraph at lines 172--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--178
+Underfull \hbox (badness 10000) in paragraph at lines 172--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--209
+Underfull \hbox (badness 10000) in paragraph at lines 186--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--209
+Underfull \hbox (badness 10000) in paragraph at lines 186--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--209
+Underfull \hbox (badness 10000) in paragraph at lines 186--215
 
  []
 
 [6
 
 ]
-Overfull \hbox (7.76581pt too wide) in paragraph at lines 210--212
+Overfull \hbox (7.76581pt too wide) in paragraph at lines 216--218
 []\OT1/cmr/m/n/12 Knowing ba-sic web de-vel-op-ment tech-niques in-clud-ing HTM
 L, CSS and JavaScript
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 221--236
+Underfull \hbox (badness 10000) in paragraph at lines 227--242
 
  []
 
 
-LaTeX Warning: Citation `modlishka' on page 8 undefined on input line 237.
+LaTeX Warning: Citation `modlishka' on page 8 undefined on input line 243.
 
 
-LaTeX Warning: Citation `evilginx2' on page 8 undefined on input line 242.
+LaTeX Warning: Citation `evilginx2' on page 8 undefined on input line 248.
 
 [8]
 
-LaTeX Warning: Citation `murena' on page 9 undefined on input line 246.
+LaTeX Warning: Citation `murena' on page 9 undefined on input line 252.
 
 [9]
 Chapter 2.
-<./images/2fa_app.png, id=168, 816.04875pt x 424.58624pt>
+<./images/2fa_app.png, id=178, 816.04875pt x 424.58624pt>
 File: ./images/2fa_app.png Graphic file (type png)
 <use ./images/2fa_app.png>
-Package pdftex.def Info: ./images/2fa_app.png  used on input line 278.
+Package pdftex.def Info: ./images/2fa_app.png  used on input line 284.
 (pdftex.def)             Requested size: 382.79585pt x 199.16928pt.
 
-LaTeX Warning: Citation `tlsPercentage' on page 10 undefined on input line 290.
+LaTeX Warning: Citation `tlsPercentage' on page 10 undefined on input line 296.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--292
+Underfull \hbox (badness 10000) in paragraph at lines 288--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--292
+Underfull \hbox (badness 10000) in paragraph at lines 288--298
 
  []
 
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 293--299
+Underfull \hbox (badness 10000) in paragraph at lines 299--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--299
+Underfull \hbox (badness 10000) in paragraph at lines 299--305
 
  []
 
-<./images/profile_page.png, id=173, 509.905pt x 351.3125pt>
+<./images/profile_page.png, id=183, 509.905pt x 351.3125pt>
 File: ./images/profile_page.png Graphic file (type png)
 <use ./images/profile_page.png>
-Package pdftex.def Info: ./images/profile_page.png  used on input line 302.
+Package pdftex.def Info: ./images/profile_page.png  used on input line 308.
 (pdftex.def)             Requested size: 289.08498pt x 199.16928pt.
 [11 <./images/2fa_app.png>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-20.
+26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 320.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 326.
  [12 <./images/profile_page.png>]
-Overfull \hbox (88.0791pt too wide) in paragraph at lines 333--334
+Overfull \hbox (88.0791pt too wide) in paragraph at lines 339--340
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 346.
+LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 353.
 
 
 
-LaTeX Warning: Citation `greaseDraft' on page 13 undefined on input line 346.
+LaTeX Warning: Citation `greaseDraft' on page 13 undefined on input line 353.
 
 
-LaTeX Warning: Citation `foxIOJa4' on page 13 undefined on input line 347.
+LaTeX Warning: Citation `foxIOJa4' on page 13 undefined on input line 354.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--349
+Underfull \hbox (badness 10000) in paragraph at lines 353--356
 
  []
 
 [13]
-<./images/JA4.png, id=215, 963.6pt x 542.025pt>
+<./images/JA4.png, id=225, 963.6pt x 542.025pt>
 File: ./images/JA4.png Graphic file (type png)
 <use ./images/JA4.png>
-Package pdftex.def Info: ./images/JA4.png  used on input line 352.
+Package pdftex.def Info: ./images/JA4.png  used on input line 359.
 (pdftex.def)             Requested size: 354.07097pt x 199.16928pt.
- [14 <./images/JA4.png (PNG copy)>] [15]
+ [14]
+
+LaTeX Warning: Citation `cloudflareMALCOM' on page 15 undefined on input line 3
+68.
+
+[15 <./images/JA4.png (PNG copy)>] [16] [17]
 Chapter 3.
-[16
+[18
 
 ]
 Chapter 4.
-[17
+[19
 
 ] (./expose.bbl
 Chapter 5.
-) [18
+) [20
 
 ] (./expose.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `expose.out' has not changed.
-(rerunfilecheck)             Checksum: 9D8EBC1CE05F472EE4A5BB456A5AB6F2;3994.
+(rerunfilecheck)             Checksum: 2A96DBCB6C1C43D64AB7A97522FD2A0A;4472.
  ) 
 Here is how much of TeX's memory you used:
- 11969 strings out of 477985
- 190745 string characters out of 5839380
+ 11975 strings out of 477985
+ 190827 string characters out of 5839380
  1875388 words of memory out of 6000000
- 31972 multiletter control sequences out of 15000+600000
+ 31974 multiletter control sequences out of 15000+600000
  518745 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,6n,76p,2464b,1850s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -619,10 +639,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on expose.pdf (19 pages, 236856 bytes).
+Output written on expose.pdf (21 pages, 240843 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 305 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
