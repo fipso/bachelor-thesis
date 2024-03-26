@@ -41,3 +41,7 @@ Score system like: https://www.enea.com/insights/a-new-way-of-detecting-tls-ssl-
 - JA3 hashes
 
 https://link.springer.com/chapter/10.1007/978-3-642-33167-1_12
+
+- Build a JA4 Database using Transparent Phishing Paper and MALCOLM
+- Mobile fingerprints using cloud providers
+- Pay for ads
