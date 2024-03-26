@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {0.1}Problem statement}{2}{section.0.1}%
 \contentsline {section}{\numberline {0.2}Research question}{2}{section.0.2}%
 \contentsline {section}{\numberline {0.3}Objective}{2}{section.0.3}%
-\contentsline {section}{\numberline {0.4}Theoretical foundations \& current state of research}{2}{section.0.4}%
+\contentsline {section}{\numberline {0.4}Theoretical foundations \& current state of research}{3}{section.0.4}%
 \contentsline {section}{\numberline {0.5}Research design}{5}{section.0.5}%
 \contentsline {chapter}{\numberline {1}Literature Review}{6}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Overview of Multi-Factor Authentication}{6}{section.1.1}%

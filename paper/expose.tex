@@ -36,9 +36,9 @@ These days most websites have implemented two or multi-factor authentication sys
 to prevent malicious third-party actors from using stolen login credentials to
 commit identity theft. Despite this, a new technique referred to as transparent
 proxy phishing still provides malicious actors the means to bypass two-factor authentication
-systems during social engineering based phishing attacks. This creates a
+systems during social engineering based phishing attacks.\\This creates a
 critical security vulnerability, as this technique can be used to gain unauthorized
-access to otherwise secure systems. To resolve this issue, it is imperative to
+access to otherwise secure systems.\\To resolve this issue, it is imperative to
 develop and implement effective measures to counteract transparent phishing and
 other methods of circumventing multi-factor authentication systems.
 
@@ -76,15 +76,16 @@ the loss of money, to identity theft, to the disruption of businesses.
 Cyberfraud has become so pervasive that it is essential for businesses and
 individuals to take measures to protect themselves from it. This includes using
 strong passwords, using two-factor authentication, and staying up to date with
-the latest security protocols. \\ \\ A phishing attack is a type of
+the latest security protocols.\\ \\
+A phishing attack is a type of
 cyberattack in which an attacker attempts to gain confidential information, such
 as passwords, credit card numbers, or other sensitive information, by sending
 emails or other messages disguised as legitimate entities. These messages often
 include malicious links to faked login prompts that will steal the victims credentials
 upon entering them. These attacks are becoming increasingly sophisticated and
 difficult to recognize, making it important for everyone to remain vigilant and
-take steps to protect against them. \\ \\ A HTTP reverse proxy is a type of
-proxy server that retrieves resources on behalf of a client from one or more
+take steps to protect against them. \\ \\
+A HTTP reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more
 servers. This type of proxy is sometimes referred to as a “gateway” or “tunneling”
 proxy because it acts as a gateway for the traffic to and from the server. A
 reverse proxy will typically receive a request from a client, then forward that
@@ -99,15 +100,17 @@ this new attack uses a HTTP reverse proxy to just redirect the users traffic
 to the original page. The attacking proxy operator can view and modify all traffic
 that is going through it while the victim sees a one by one copy of the original
 login page. By doing so login credentials and 2FA tokens can be extracted
-easily. \\ \\ TLS is a cryptographic protocol that provides end-to-end security
+easily.\\ \\
+TLS is a cryptographic protocol that provides end-to-end security
 for data sent between a client and a server. It is widely used to secure web
 traffic, email, and other types of data. TLS is the successor to SSL, and is
 often referred to as SSL/TLS. If a webserver is using TLS its URL starts with the
-well known https:// prefix. \\ \\ TLS Fingerprinting is a technique used to identify
+well known https:// prefix.\\ \\
+TLS Fingerprinting is a technique used to identify
 the TLS implementation of a client or server by analyzing the handshake process.
 This can be used to identify which software is used by client or server. Industry
 standards for fingerprinting algorithms have existed for a long time. These
-include: JA3, JA3N and the whole JA4+ family. \\ \\
+include: JA3, JA3N and the whole JA4+ family.\\ \\
 Nginx is a popular open-source web server and reverse proxy server. It is used by
 millions of websites to serve web pages and other content. Nginx is known for its
 high performance, stability, and low resource usage. It is also known for its
@@ -115,16 +118,15 @@ flexibility and extensibility, as it can be easily extended with third-party mod
 and plugins. Because Nginx can easily be configured to act as a reverse proxy and
 supports TLS, it is often used as a so called TLS terminator, meaning that it
 terminates the TLS connection and forwards the unencrypted traffic to a HTTP backend
-app. \\ \\
+app.\\ \\
 Docker is a platform for developing, shipping, and running applications. It allows
 developers to package their applications and dependencies into containers, which
 can then be run on any system that has Docker installed. Docker containers are
 lightweight, portable, and self-sufficient, making them an ideal platform for
-deploying applications. \\ \\
+deploying applications.\\ \\
 HTML is the standard markup language for creating web pages and web applications.
 It is used to structure and present content on the web. HTML is used in conjunction
-with CSS and JavaScript to create interactive and visually appealing web pages.
-\\ \\
+with CSS and JavaScript to create interactive and visually appealing web pages.\\ \\
 Unicode is a standard for encoding, representing, and handling text in most of the
 world's writing systems. It is used to represent characters from all of the world's
 writing systems, including Latin, Cyrillic, Greek, Arabic, Hebrew, Chinese, Japanese,
@@ -160,7 +162,7 @@ to follow strategies to protect web services from this threat.
 
 Multi-Factor Authentication (MFA) is a security system that requires more than
 one method of authentication from independent categories of credentials to verify
-the user's identity for a login or other transaction. The most common
+the user's identity for a login or other transaction.\\The most common
 categories are \cite{mfa}:
 \begin{itemize}
 	\item Something the user knows (e.g. a password)
@@ -174,13 +176,13 @@ and is widely used in the financial and healthcare industries, as well as in gov
 and military applications. MFA is also used in consumer applications, such as online
 banking and e-commerce. The use of MFA is growing rapidly, as more and more organizations
 recognize the need for stronger security measures to protect their users and their
-data. \\ \\ MFA is a critical component of a strong security posture, and is an
+data.\\ \\MFA is a critical component of a strong security posture, and is an
 essential tool for protecting against a wide range of cyber threats, including
 phishing, credential theft, and identity theft. MFA is also an important tool for
 protecting against insider threats, as it can help to prevent unauthorized
 access to sensitive data and systems. MFA is also an important tool for protecting
 against the growing threat of cyberfraud, as it can help to prevent
-unauthorized access to financial accounts and other sensitive information. \\ \\
+unauthorized access to financial accounts and other sensitive information.\\ \\
 
 \section{Phishing Attacks: Evolution and Impact}
 Phishing attacks are a type of cyberattack in which an attacker attempts to gain
@@ -188,18 +190,17 @@ confidential information, such as passwords, credit card numbers, or other
 sensitive information, by sending emails or other messages disguised as legitimate
 entities. These messages often include malicious links to faked login prompts
 that will steal the victims credentials upon entering them. These attacks are becoming
-increasingly sophisticated and difficult to recognize. Phishing has evolved
+increasingly sophisticated and difficult to recognize.\\Phishing has evolved
 over time, from simple scams to sophisticated attacks that are difficult to detect.
 In the early days of the internet, phishing attacks were relatively simple and
 easy to recognize. However, as technology has advanced, so have phishing
 attacks. Today, phishing attacks are often highly sophisticated and difficult
-to detect, making them a significant threat to individuals and organizations.
-\\ \\
+to detect, making them a significant threat to individuals and organizations.\\ \\
 Classical phishing fake login pages were usually simple HTML copies of the original
 login page, but connected to a fake backend service that would store the entered credentials and
 redirect the user to the original page or a fake error page. This way victims could recognize
 that they had fallen for a fake login page and update their credentials before the attacker could
-use them. \\ \\
+use them.\\ \\
 The new transparent proxy phishing attack vector is a new technique used by attackers
 to intercept and steal multi-factor authentication (MFA) tokens from unsuspecting
 users. Instead of copying HTML code from the original page that the attacker is
@@ -210,8 +211,9 @@ copy of the original login page. By doing so login credentials and 2FA tokens
 can be extracted easily. Also the victim will not recognize that he has fallen
 for a phishing attack, because the website actually behaves as expected. The user
 will not be redirected to a fake error page or the original page after entering
-his credentials, because a real session is established with the original server. \\ \\
+his credentials, because a real session is established with the original server.\\ \\
 In summary the advantages over the classical fake HTML login page based attack are:
+
 \begin{itemize}
  \item Knowing basic web development techniques including HTML, CSS and JavaScript
        is not required to setup a phishing attack anymore
@@ -224,21 +226,22 @@ In summary the advantages over the classical fake HTML login page based attack a
   \item Custom HTML and JavaScript can be injected into the original page to steal even more
     information from the victim using social engineering techniques
 \end{itemize}
+
 In April 2017 a John Hopkins University Student named Xudong Zheng published a blog post with a proof of concept
 on how he used a homograph attack to impersonate apple.com. He used the Cyrillic letter "a" (U+0430) instead of the
-Latin letter "a" (U+0061) in the domain name. \\ This way he was able to register the domain "xn--80ak6aa92e.com"
+Latin letter "a" (U+0061) in the domain name.\\This way he was able to register the domain "xn--80ak6aa92e.com"
 which looks exactly like "apple.com" in the browser address bar. 
 This attack was possible because the browser displayed the domain name in its punycode representation, which is
-a way to represent Unicode with the limited character subset of ASCII used for internet host names.
-\\ The combination of this attack with a transparent proxy phishing attack is especially dangerous, because
+a way to represent Unicode with the limited character subset of ASCII used for internet host names.\\
+The combination of this attack with a transparent proxy phishing attack is especially dangerous, because
 the URL in the address bar will look exactly like the original URL and also behave exactly like it due to usage of 
 transparent proxying. It is close to impossible even for a educated user to recognize the he is being lured into a phishing attack.
-Luckily the browser vendors were quick to react and implemented a fix for this issue. \\ \\
+Luckily the browser vendors were quick to react and implemented a fix for this issue.\\ \\
 By reading literature on this topic, it becomes clear that performing a transparent proxy phishing attack is becoming
 easier and easier. This is because of the increasing number of open source reverse proxy phishing toolkits that are
 available on the internet. These toolkits are designed to allow read teams and cyber security researchers to set up and run transparent
 proxy phishing attacks in a controlled environment. However, these toolkits can also be used by malicious actors to perform
-real-world attacks. \\ The following are some of the most popular open source reverse proxy phishing toolkits:
+real-world attacks.\\The following are some of the most popular open source reverse proxy phishing toolkits:
 \begin{itemize}
   \item Modlishka \cite{modlishka} is a low level HTTP reverse proxy framework that allows the attacker to intercept and modify
     all traffic that is going through it. It is written in Go and can be easily extended with custom plugins. Modlishka also provides
@@ -270,21 +273,19 @@ connections of those toolkits on the recieving server side.
 \section{Simulation of Transparent Phishing Attacks}
 To test and analyze the capabilities of the most popular open source transparent phishing toolkits
 a controlled lab environment will be set up. The goal is to find flaws in their attack implementation
-and to develop and test new or improved countermeasures against these attacks.
+and to develop and test new or improved countermeasures against these attacks.\\
 First a web application will be set up that is secured with a multi-factor authentication system.
 Then the open source transparent phishing toolkits will be used to set up attack simulations against
 this web application. The local web application will be running on a local machine, but still be secured
 with a valid self-signed TLS certificate. Our own certificate authority will have to be installed in the
 browser used for testing, a recent version of google chrome in this case. In a real world scenario an attacker
 would also have to buy a valid domain name. For our simulated attacks an entry in the hosts fill be sufficient
-to redirect the traffic to the local machine.
-
+to redirect the traffic to the local machine.\\
 \begin{figure}[!htb]
   \centering
   \includegraphics[height=7cm]{./images/2fa_app.png}
   \caption{Web application secured with a demo two-factor authentication system}
 \end{figure}
-
 The test environment web application implements a very basic credential based login system with two-factor
 authentication. For demo purposes the two-factor authentication logic will accept any 6 digit number as
 valid token.\\The frontend of this application is connected to a NodeJS based backend that is using express.js
@@ -322,7 +323,7 @@ The first countermeasure that we are trying to implement in our web applications
 
 Example implementation of a basic blocklist implemented using a custom nginx fork that supports JA4 fingerprinting:
 
-\begin{lstlisting}
+\begin{lstlisting}[breaklines=true]
 server {
     listen 443 ssl;
     server_name xu-bank.com;
@@ -350,7 +351,15 @@ server {
 The same approach can be turned into a whitelist by inverting the logic. This way only clients with a known good TLS fingerprint will be allowed to access the web application. This approach is more secure, but also comes with the downside that new clients will not be able to access the web application until their TLS fingerprint is added to the whitelist. Maintaining a trusted JA4 fingerprint database would require a lot of fingerprint collecting before said whitelist can be used in production as many different browsers and TLS implementations exist and change frequently.
 
 \subsection{Evaluating TLS Fingerprinting Algorithms}
-In general performing TLS fingerprinting on a client connection works by analyzing the TLS ClientHello message that is sent by the client to the server during the TLS handshake process. This message contains a lot of information about the client's TLS implementation, including the version of the TLS protocol that the client supports, the list of supported cipher suites and extensions. To generate a unique fingerprint out of this information several algorithms already exist. The JA3 algorithm proposed first by Salesforce \cite{ja3Salesforce} collects values from the ClientHello into four different array lists and formats them into one comma separated string that gets hashed. In detail the values used from ClientHello are: SSLVersion, Cipher, SSLExtension, EllipticCurve, EllipticCurvePointFormat. An example derived from a ClientHello looks like this: "769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0". If no SSL extensions are used the field will be left empty. Example: "769,4-5-10-9-100-98-3-6-19-18-99,,,". Generating a MD5 hash from that string will leave us with the following 32 characters: "ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non existing extensions, because some TLS clients are using Google’s GREASE (Generate Random Extensions And Sustain Extensibility). This is a feature proposed by Google to break wrongly implemented TLS servers. It may sound controversial at first, but comes with good intentions. In a internet draft paper by D. Benjamin \cite{greaseDraft} he explains that its better to break some production systems in place instead of risking flawed TLS implementations to spread and risk outages of global scale.\\JA3 seems to be a good candidate for fingerprinting transparent phishing toolkits at first, but it after some testing it comes clear that JA3 can not be used to fingerprint instances of Google Chrome, due to it's reliance on the order of the cipher extension list in the ClientHello package. Google chrome uses a feature called "TLS ClientHello extension permutation" that prevents TLS fingerprinting for said reason. This can be bypassed by sorting the numeric values by size. Open source implementations of the JA3 algorithm with normalized extension orders exist under the name "JA3N". Sadly in our experimentation we were not able to reliably identify versions of Google Chrome using JA3 for yet unkown reasons.\\ \\
+In general performing TLS fingerprinting on a client connection works by analyzing the TLS ClientHello message that is sent by the client to the server during the TLS handshake process. This message contains a lot of information about the client's TLS implementation, including the version of the TLS protocol that the client supports, the list of supported cipher suites and extensions. To generate a unique fingerprint out of this information several algorithms already exist.\\The JA3 algorithm proposed first by Salesforce \cite{ja3Salesforce} collects values from the ClientHello into four different array lists and formats them into one comma separated string that gets hashed. In detail the values used from ClientHello are: SSLVersion, Cipher, SSLExtension, EllipticCurve, EllipticCurvePointFormat.\\An example derived from a ClientHello looks like this:
+\begin{lstlisting}[breaklines=true]
+"769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0"
+\end{lstlisting}
+If no SSL extensions are used the field will be left empty.
+\begin{lstlisting}[breaklines=true]
+Example: "769,4-5-10-9-100-98-3-6-19-18-99,,,"
+\end{lstlisting}
+Generating a MD5 hash from that string will leave us with the following 32 characters: "ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non existing extensions, because some TLS clients are using Google’s GREASE (Generate Random Extensions And Sustain Extensibility). This is a feature proposed by Google to break wrongly implemented TLS servers. It may sound controversial at first, but comes with good intentions. In a internet draft paper by D. Benjamin \cite{greaseDraft} he explains that its better to break some production systems in place instead of risking flawed TLS implementations to spread and risk outages of global scale.\\JA3 seems to be a good candidate for fingerprinting transparent phishing toolkits at first, but it after some testing it comes clear that JA3 can not be used to fingerprint instances of Google Chrome, due to it's reliance on the order of the cipher extension list in the ClientHello package. Google chrome uses a feature called "TLS ClientHello extension permutation" that prevents TLS fingerprinting for said reason. This can be bypassed by sorting the numeric values by size. Open source implementations of the JA3 algorithm with normalized extension orders exist under the name "JA3N". Sadly in our experimentation we were not able to reliably identify versions of Google Chrome using JA3 for yet unkown reasons.\\ \\
 Luckily a better alternative to the JA3 algorithm exists. The JA4+ family is a set of new network fingerprinting algorithms developed by FoxIO \cite{foxIOJa4}.
 The JA4+ family also comes with a fingerprinting algorithm for TLS called JA4. JA4 is superior to JA3 in many ways. It supports HTTP 3 including its UDP based transport protocol QUIC and normalized the order of ciphers and extensions by default. It uses a different output format than JA3 which consists of three seperatable parts that more verbose and human readable in general. JA4 provides a more reliant and expressive fingerprinting solution for this papers use case. Other open-source implementations of JA4 are avaible and include a wireshark addon and an nginx fork. The later one will be used in our lab setup to collect JA4 fingerprints.
 
@@ -365,7 +374,7 @@ https://chromestatus.com/feature/5124606246518784
 
 \newpage
 \subsection{Mismatch of User-Agent and TLS Fingerprint}
-A broader and more flexible approach then the previous blacklist solution which tries to block or flag client requests using the TLS implementation of known transparent phishing toolkits, is to focus on detecting requests from TLS reverse proxies in general. The attack vector that is facilitate by abusing reverse proxies to spy on a users TLS encrypted session is more commonly known as a TLS MITM (Man in the Middle) Attack. The American content delivery network operator Cloudflare which is also known for DDoS mitigation and other cyber security related services is running an open-source monitoring service called MALCOLM which stands for "Measuring Active Listeners, Connection Observers, and Legitimate Monitors". It provides statistics about observed HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is a request that comes from either a "A device has a root certificate installed that allow an intermediary to decrypt and inspect traffic" or "An origin server provides its TLS private key to a third party (like a reverse proxy) that does TLS termination" \cite{cloudflareMALCOLM}. The second definition means exactly the kind of TLS MITM attacks which we are trying to detect. The monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine) that Cloudflare describes as their HTTPS interception detector. MITMEngine is an open-source software written in go. It works by matching TLS fingerprints of requests to known browser User-Agent strings. If a mismatch is found the request is marked as potentially crafted by HTTPS Interception. This strategy again relies on maintaining a huge database of User-Agent and TLS Fingerprint pairs. Cloudflare states on the MALCOLM dashboard website that they can only identity 60\% of the clients that are served by their internal network. Especially the detection of Android based devices is not reliably possible due to the large amount of different Android based operating systems and browsers. Readers of the MALCOLM website are encouraged to contribute User-Agent TLS fingerprint pairs to the MITMEngine git repository to help overcome this issue.
+A broader and more flexible approach then the previous blacklist solution which tries to block or flag client requests using the TLS implementation of known transparent phishing toolkits, is to focus on detecting requests from TLS reverse proxies in general. The attack vector that is facilitate by abusing reverse proxies to spy on a users TLS encrypted session is more commonly known as a TLS MITM (Man in the Middle) Attack.\\The American content delivery network operator Cloudflare which is also known for DDoS mitigation and other cyber security related services is running an open-source monitoring service called MALCOLM which stands for "Measuring Active Listeners, Connection Observers, and Legitimate Monitors". It provides statistics about observed HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is a request that comes from either a "A device has a root certificate installed that allow an intermediary to decrypt and inspect traffic" or "An origin server provides its TLS private key to a third party (like a reverse proxy) that does TLS termination" \cite{cloudflareMALCOLM}. The second definition means exactly the kind of TLS MITM attacks which we are trying to detect.\\The monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine) that Cloudflare describes as their HTTPS interception detector. MITMEngine is an open-source software written in go. It works by matching TLS fingerprints of requests to known browser User-Agent strings. If a mismatch is found the request is marked as potentially crafted by HTTPS Interception. This strategy again relies on maintaining a huge database of User-Agent and TLS Fingerprint pairs. Cloudflare states on the MALCOLM dashboard website that they can only identity 60\% of the clients that are served by their internal network. Especially the detection of Android based devices is not reliably possible due to the large amount of different Android based operating systems and browsers. Readers of the MALCOLM website are encouraged to contribute User-Agent TLS fingerprint pairs to the MITMEngine git repository to help overcome this issue.
 
 \newpage
 \subsection{Round Trip Time Analysis}
@@ -374,7 +383,7 @@ A broader and more flexible approach then the previous blacklist solution which 
 \subsection{Verify supported ciphers}
 A TLS ClientHello packet sent by a client always contains a list of supported ciphers. The list of ciphers and its orders can be used to fingerprint the client. Many open-source mitm revese proxy solutions are already capable of spoofing the supported cipher list in the ClientHello package. To detect client requests from said reverse proxies more reliably, verifying the implementation of each cipher could be helpful. A proof of concept cipher spoofing tool would need to support many different ciphers. To overcome this issue using a TLS server stack that supports as many ciphers as possible is required. TODO: TABLE, Talk about why we choose openssl.\\OpenSSL 3.1.1 supports 159ciphers in the build that is shipped with Fedora39 Linux.
 
-\begin{lstlisting}
+\begin{lstlisting}[breaklines=true,basicstyle=\tiny]
 $ openssl ciphers -v 'ALL:eNULL'
 TLS_AES_256_GCM_SHA384         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(256)            Mac=AEAD
 TLS_CHACHA20_POLY1305_SHA256   TLSv1.3 Kx=any      Au=any   Enc=CHACHA20/POLY1305(256) Mac=AEAD
