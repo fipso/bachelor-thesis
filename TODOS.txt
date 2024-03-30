@@ -45,3 +45,8 @@ https://link.springer.com/chapter/10.1007/978-3-642-33167-1_12
 - Build a JA4 Database using Transparent Phishing Paper and MALCOLM
 - Mobile fingerprints using cloud providers
 - Pay for ads
+
+https://www.ssllabs.com/ssltest/clients.html?_ga=2.242077510.578409429.1711648461-1926795453.1711648461
+json export available
+
+
