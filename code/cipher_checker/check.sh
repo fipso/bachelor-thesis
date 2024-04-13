@@ -37,7 +37,7 @@ TLSv1.2    :PSK-AES256-GCM-SHA384
 TLSv1.2    :PSK-CHACHA20-POLY1305
 TLSv1.2    :PSK-AES128-CCM
 TLSv1.2    :PSK-AES256-CCM
-TLSv1.2    :PSK-AES128-GCM-SHA25
+TLSv1.2    :PSK-AES128-GCM-SHA256
 TLSv1.2    :DHE-PSK-AES256-GCM-SHA384 
 TLSv1.2    :DHE-PSK-AES256-CCM        
 TLSv1.2    :DHE-PSK-AES128-CCM
@@ -70,8 +70,12 @@ SSLv3      :DHE-RSA-AES256-SHA
 END
 )
 
+# Spawn static https server to serve check.html and api
+www_port=8443
+openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
+
 # Start of test s_server port range
-port=4000
+port=8000
 
 while IFS= read -r line; do
   cs=$(echo $line | sed 's/.*://')
@@ -84,13 +88,13 @@ while IFS= read -r line; do
 
   # Use the correct openssl command based on TLS version
   if [ $is_tls13 -eq 1 ]; then
-    cipher_param="-ciphersuites $cs"
+    cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
   else
-    cipher_param="-cipher $cs"
+    cipher_param="-cipher $cs -no_tls1_3"
   fi
 
   # Redirect log to file
-  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param >> "logs/$port-$cs.txt" 2>&1 &
+  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
 
   port=$((port+1))
 done <<< "$ciphers"
@@ -104,6 +108,10 @@ while true; do
     if grep -q "error" $file; then
       # Pad the string to ensure alignment
       padded_filename=$(printf "%-50s" "\033[31m$filename\033[0m")
+      status_array+=("$padded_filename")
+    # if there are only 2 lines in the log color it orange
+    elif [ $(wc -l < $file) -eq 2 ]; then
+      padded_filename=$(printf "%-50s" "\033[33m$filename\033[0m")
       status_array+=("$padded_filename")
     else
       padded_filename=$(printf "%-50s" "\033[32m$filename\033[0m")

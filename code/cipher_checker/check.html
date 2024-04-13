@@ -4,10 +4,12 @@
     <div id="frames"></div>
 
     <script>
+      const DOMAIN = "ba-testing.unsafe.blazed.win";
+
       const frames = document.getElementById('frames');
       for(let i = 0; i < 61; i++){
-        const port = 4000+i;
-        const url = `https://localhost:${port}`;
+        const port = 8000+i;
+        const url = `https://${DOMAIN}:${port}`;
 
         const frame = document.createElement('iframe');
         frame.src = url;
