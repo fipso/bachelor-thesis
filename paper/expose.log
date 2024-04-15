@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.20)  26 MAR 2024 20:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.20)  15 APR 2024 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -536,90 +536,99 @@ File: ./images/2fa_app.png Graphic file (type png)
 Package pdftex.def Info: ./images/2fa_app.png  used on input line 286.
 (pdftex.def)             Requested size: 382.79585pt x 199.16928pt.
 
-LaTeX Warning: Citation `tlsPercentage' on page 10 undefined on input line 296.
+LaTeX Warning: Citation `tlsPercentage' on page 10 undefined on input line 297.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--298
+Underfull \hbox (badness 10000) in paragraph at lines 274--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--298
+Underfull \hbox (badness 10000) in paragraph at lines 274--299
 
  []
 
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 299--305
+Underfull \hbox (badness 10000) in paragraph at lines 300--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--305
+Underfull \hbox (badness 10000) in paragraph at lines 300--306
 
  []
 
 <./images/profile_page.png, id=193, 509.905pt x 351.3125pt>
 File: ./images/profile_page.png Graphic file (type png)
 <use ./images/profile_page.png>
-Package pdftex.def Info: ./images/profile_page.png  used on input line 308.
+Package pdftex.def Info: ./images/profile_page.png  used on input line 309.
 (pdftex.def)             Requested size: 289.08498pt x 199.16928pt.
 [11 <./images/2fa_app.png>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-26.
+27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 326.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 327.
  [12 <./images/profile_page.png>]
 
-LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 353.
+LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 354.
 
 
 [13]
-Overfull \hbox (59.87915pt too wide) in paragraph at lines 355--356
+Overfull \hbox (59.87915pt too wide) in paragraph at lines 356--357
 [][][][] 
  []
 
 
-LaTeX Warning: Citation `greaseDraft' on page 14 undefined on input line 361.
+LaTeX Warning: Citation `greaseDraft' on page 14 undefined on input line 362.
 
 
-LaTeX Warning: Citation `foxIOJa4' on page 14 undefined on input line 362.
+LaTeX Warning: Citation `foxIOJa4' on page 14 undefined on input line 363.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--364
+Underfull \hbox (badness 10000) in paragraph at lines 362--365
 
  []
 
 <./images/JA4.png, id=235, 963.6pt x 542.025pt>
 File: ./images/JA4.png Graphic file (type png)
 <use ./images/JA4.png>
-Package pdftex.def Info: ./images/JA4.png  used on input line 367.
+Package pdftex.def Info: ./images/JA4.png  used on input line 368.
 (pdftex.def)             Requested size: 354.07097pt x 199.16928pt.
 [14]
 
 LaTeX Warning: Citation `cloudflareMALCOLM' on page 15 undefined on input line 
-376.
+377.
 
 [15 <./images/JA4.png (PNG copy)>] [16] [17]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 397.
- [18] [19]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 398.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 4
+16.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 416.
+ [18] [19] [20]
+[21]
 Chapter 3.
-[20
+[22
 
 ]
 Chapter 4.
-[21
+[23
 
 ] (./expose.bbl
 Chapter 5.
-) [22
+) [24
 
 ] (./expose.aux)
 
@@ -629,26 +638,27 @@ Package rerunfilecheck Info: File `expose.out' has not changed.
 (rerunfilecheck)             Checksum: 563BEB3CC329B8435AB900EA94DCFB8D;4876.
  ) 
 Here is how much of TeX's memory you used:
- 12003 strings out of 477985
- 191213 string characters out of 5839380
- 2000388 words of memory out of 6000000
- 31979 multiletter control sequences out of 15000+600000
+ 12086 strings out of 477985
+ 192467 string characters out of 5839380
+ 2038388 words of memory out of 6000000
+ 31996 multiletter control sequences out of 15000+600000
  519085 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,7n,76p,2188b,1880s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/cm-super/sfrm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm
--super/sfrm1200.pfb>
-Output written on expose.pdf (23 pages, 283121 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/c
+m-super/sfrm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super
+/sfrm1200.pfb>
+Output written on expose.pdf (25 pages, 298782 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 306 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
+ 448 PDF objects out of 1000 (max. 8388607)
+ 390 compressed objects within 4 object streams
+ 159 named destinations out of 1000 (max. 500000)
  229 words of extra memory for PDF output out of 10000 (max. 10000000)
 

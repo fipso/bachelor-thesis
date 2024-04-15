@@ -399,6 +399,80 @@ $ openssl ciphers -v 'ALL:eNULL' | wc -l # Count the number of ciphers
 159
 \end{lstlisting}
 
+OpenSSl may be more well known as a library for cryptographic functions, but it also contains with a command line interface.
+The openssl binary comes with a built-in TLS and HTTP server implementation called s\_server. It can be used to quickly setup TLS servers for testing and debugging purposes.
+The list of supported ciphers for a server can be configured using the -ciphers option for TLSv1.2 and below and the -ciphersuites option for TLSv1.3 and above.
+For the sake of this paper a proof of concept solution was implemented using a simple bash script to spawn various instances of OpenSSL's s\_server with different cipher configurations.
+To validate if a client actually supports his claimed ciphers, each instance of s\_server will be configured to only support one cipher. The client will then be forced to use this cipher to establish a connection. If the client is not able to establish a connection an error will be written to a log file that is supervised by our bash script.
+
+\begin{lstlisting}[breaklines=true]
+#!/bin/bash
+
+# Cleanup from previous runs
+killall openssl
+rm -rf ./logs/*
+
+# List of default ciphers supported by openssl s_server
+ciphers=$(cat <<-END
+TLSv1.3    :TLS_AES_128_GCM_SHA256
+TLSv1.3    :TLS_AES_256_GCM_SHA384
+TLSv1.3    :TLS_AES_128_CCM_SHA256
+...
+END
+)
+
+# Spawn static https server to serve check.html and api
+www_port=8443
+openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
+
+# Start of test s_server port range
+port=8000
+
+while IFS= read -r line; do
+  cs=$(echo $line | sed 's/.*://')
+  echo "Spawning server with cipher: $cs"
+
+  cipher_param=""
+
+  # Detect if its TLSv1.3 or lower
+  is_tls13=$(echo $line | grep -c "TLSv1.3")
+
+  # Use the correct openssl command based on TLS version
+  if [ $is_tls13 -eq 1 ]; then
+    cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
+  else
+    cipher_param="-cipher $cs -no_tls1_3"
+  fi
+
+  # Redirect log to file
+  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
+
+  port=$((port+1))
+done <<< "$ciphers"
+
+# Check all log files for errors and print overview of server status
+...
+\end{lstlisting}
+
+To make a browser connect to all the created TLS servers and show connection errors verbosely creating a bunch of iframes is enough.
+To simply the process of creating the iframes a simple JavaScript script can be used.
+
+\begin{lstlisting}[breaklines=true]
+  const DOMAIN = "ba-testing.unsafe.blazed.win";
+
+  const frames = document.getElementById('frames');
+  for(let i = 0; i < 61; i++){
+    const port = 8000+i;
+    const url = `https://${DOMAIN}:${port}`;
+
+    const frame = document.createElement('iframe');
+    frame.src = url;
+    frame.width = 400;
+    frame.height = 200;
+    frames.appendChild(frame);
+  }
+\end{lstlisting}
+
 \newpage
 \subsection{Combined Score Based Approach}
 
