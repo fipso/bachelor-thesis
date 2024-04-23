@@ -2,12 +2,20 @@
 
 %\usepackage[a4paper, total={6in, 8in}]{geometry}
 
-%\usepackage{caption} \usepackage{float} \usepackage{hyperref}
-\usepackage{graphicx} \usepackage[nottoc, numbib]{tocbibind}
-%\usepackage{outlines}
-\usepackage{listings} \usepackage{minted}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[nottoc, numbib]{tocbibind}
+\usepackage{outlines}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{parskip}
 
 \KOMAoptions{twoside=false}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
 
 \begin{document}
 
@@ -15,7 +23,7 @@
 \date{\today}
 
 \title{ \begin{center} \includegraphics[width=8cm]{./images/logo.png}
-\end{center} \vspace{2cm} Hardening MFA web applications to counter evolving
+  \end{center} \vspace{2cm} Hardening MFA web applications to counter evolving
 transparent phishinging attack vectors \vspace{2cm} \large }
 
 \maketitle
@@ -38,13 +46,11 @@ secured web applications from transparent proxy phishing attacks? Based on this
 question the following sub questions were derived: \begin{itemize} \item What
   exactly are classical phishing attacks in general and how do they differ from
   the new attack vector?
-
   \item How big is the threat imposed by this new type of phishing attack?
-
   \item Why are many organizations still not aware of this issue?
-
-\item What can be done to help developers counteract this type of security
-threat? \end{itemize}
+  \item What can be done to help developers counteract this type of security
+    threat?
+\end{itemize}
 
 \section{Objective} As credential theft and cyberfraud in general are still a
 growing problem in the digital age, it is important to develop and implement
@@ -53,8 +59,8 @@ find and document different strategy's that can help organizations and
 developers to protect their applications against the new transparent proxy
 phishing attack vector.
 
-\section{Theoretical foundations \& current state of research} Cyberfraud is a
-form of internet-based fraud, usually involving the use of false identities
+\section{Theoretical foundations \& current state of research}
+\paragraph{Cyberfraud} is a form of internet-based fraud, usually involving the use of false identities
 and/or stolen information to illegally obtain money, property, or services.
 Cyberfraud is an increasingly pervasive problem that is becoming increasingly
 difficult to combat, as fraudsters become more sophisticated in their methods.
@@ -65,15 +71,19 @@ damaging, and can range from the loss of money, to identity theft, to the
 disruption of businesses. Cyberfraud has become so pervasive that it is
 essential for businesses and individuals to take measures to protect themselves
 from it. This includes using strong passwords, using two-factor authentication,
-and staying up to date with the latest security protocols.\\ \\ A phishing
-attack is a type of cyberattack in which an attacker attempts to gain
+and staying up to date with the latest security protocols.
+
+\paragraph{Phishing attack} is a type of cyberattack in which an attacker attempts to gain
 confidential information, such as passwords, credit card numbers, or other
 sensitive information, by sending emails or other messages disguised as
 legitimate entities. These messages often include malicious links to faked login
 prompts that will steal the victims credentials upon entering them. These
 attacks are becoming increasingly sophisticated and difficult to recognize,
 making it important for everyone to remain vigilant and take steps to protect
-against them. \\ \\ A HTTP reverse proxy is a type of proxy server that
+against them.
+
+\paragraph{HTTP Re}
+A HTTP reverse proxy is a type of proxy server that
 retrieves resources on behalf of a client from one or more servers. This type of
 proxy is sometimes referred to as a “gateway” or “tunneling” proxy because it
 acts as a gateway for the traffic to and from the server. A reverse proxy will
@@ -81,60 +91,92 @@ typically receive a request from a client, then forward that request to an
 appropriate server on the same network. It then retrieves the response from the
 server and sends it back to the client. This type of proxy server is most often
 used in enterprise networks to protect against malicious traffic, to balance
-load between multiple servers, and to cache static content. \\ \\ Transparent
-proxy phishing is a new technique used by attackers to intercept and steal
+load between multiple servers, and to cache static content.
+
+\paragraph{}
+Transparent proxy phishing is a new technique used by attackers to intercept and steal
 multi-factor authentication (MFA) tokens from unsuspecting users. Instead of
 copying HTML code from the original page that the attacker is trying to
 impersonate, this new attack uses a HTTP reverse proxy to just redirect the
 users traffic to the original page. The attacking proxy operator can view and
 modify all traffic that is going through it while the victim sees a one by one
 copy of the original login page. By doing so login credentials and 2FA tokens
-can be extracted easily.\\ \\ TLS is a cryptographic protocol that provides
+can be extracted easily.
+
+\paragraph{}
+TLS is a cryptographic protocol that provides
 end-to-end security for data sent between a client and a server. It is widely
 used to secure web traffic, email, and other types of data. TLS is the successor
 to SSL, and is often referred to as SSL/TLS. If a webserver is using TLS its URL
-starts with the well known https:// prefix.\\ \\ TLS Fingerprinting is a
-technique used to identify the TLS implementation of a client or server by
+starts with the well known https:// prefix.
+
+\paragraph{}
+TLS Fingerprinting is a technique used to identify the TLS implementation of a client or server by
 analyzing the handshake process. This can be used to identify which software is
 used by client or server. Industry standards for fingerprinting algorithms have
-existed for a long time. These include: JA3, JA3N and the whole JA4+ family.\\
-\\ Nginx is a popular open-source web server and reverse proxy server. It is
+existed for a long time. These include: JA3, JA3N and the whole JA4+ family.\ref{fig:clientHelloPacket}
+\begin{figure}[!htb] \centering
+  \includegraphics[height=7cm]{./images/client_hello_packet.png}
+  \caption{The TLS ClientHello packet that is used for fingerprinting the client}
+  \label{fig:clientHelloPacket}
+\end{figure}
+
+\paragraph{}
+Nginx is a popular open-source web server and reverse proxy server. It is
 used by millions of websites to serve web pages and other content. Nginx is
 known for its high performance, stability, and low resource usage. It is also
 known for its flexibility and extensibility, as it can be easily extended with
 third-party modules and plugins. Because Nginx can easily be configured to act
 as a reverse proxy and supports TLS, it is often used as a so called TLS
 terminator, meaning that it terminates the TLS connection and forwards the
-unencrypted traffic to a HTTP backend app.\\ \\ Docker is a platform for
+unencrypted traffic to a HTTP backend app.
+
+\paragraph{}
+Docker is a platform for
 developing, shipping, and running applications. It allows developers to package
 their applications and dependencies into containers, which can then be run on
 any system that has Docker installed. Docker containers are lightweight,
 portable, and self-sufficient, making them an ideal platform for deploying
-applications.\\ \\ HTML is the standard markup language for creating web pages
+applications.
+
+\paragraph{}
+HTML is the standard markup language for creating web pages
 and web applications. It is used to structure and present content on the web.
 HTML is used in conjunction with CSS and JavaScript to create interactive and
-visually appealing web pages.\\ \\ Unicode is a standard for encoding,
+visually appealing web pages.
+
+\paragraph{}
+Unicode is a standard for encoding,
 representing, and handling text in most of the world's writing systems. It is
 used to represent characters from all of the world's writing systems, including
 Latin, Cyrillic, Greek, Arabic, Hebrew, Chinese, Japanese, Korean, and many
 others. Unicode is used in many modern software applications, including web
 browsers, word processors, and operating systems. In computer science
 literature, Unicode symbols are often represented as U+ followed by a
-hexadecimal number. \\ \\ Many scientific papers have been published on this
+hexadecimal number.
+
+\paragraph{}
+Many scientific papers have been published on this
 topic, but there is still a lack of information on how to protect against this
 new attack vector. This is why it is important to find and document different
 strategies that can help organizations and developers to mitigate this new
-attack vector. \\ \\ Wireshark is a popular open-source network protocol
+attack vector.
+
+\paragraph{}
+Wireshark is a popular open-source network protocol
 analyzer that is used to capture and analyze network traffic. It is widely used
 by network administrators, security professionals, and developers to
 troubleshoot network problems, analyze network traffic, and detect security
-vulnerabilities. \\ \\ Man in the Middle (MITM) attacks are a type of
+vulnerabilities.
+
+\paragraph{}
+Man in the Middle (MITM) attacks are a type of
 cyberattack in which an attacker intercepts and modifies communication between
 two parties without their knowledge. This type of attack is often used to steal
 sensitive information, such as login credentials, credit card numbers, or other
 personal information. MITM attacks can be difficult to detect, as the attacker
 can intercept and modify communication without the knowledge of the parties
-involved. \\ \\
+involved.
 
 \section{Research design} This thesis will be conducted in a quantitative
 research design. By analyzing existing literature and scientific papers on the
@@ -150,68 +192,69 @@ Authentication}
 Multi-Factor Authentication (MFA) is a security system that requires more than
 one method of authentication from independent categories of credentials to
 verify the user's identity for a login or other transaction.\\The most common
-categories are \cite{mfa}: \begin{itemize} \item Something the user knows (e.g.
-  a password)
-
+categories are \cite{mfa}:
+\begin{itemize}
+  \item Something the user knows (e.g.a password)
   \item Something the user has (e.g. a smartphone)
+  \item Something the user is (e.g. a fingerprint)
+\end{itemize}
 
-\item Something the user is (e.g. a fingerprint) \end{itemize} MFA is used to
-  protect the user from unauthorized access to their accounts, and is widely
-  used in the financial and healthcare industries, as well as in government and
-  military applications. MFA is also used in consumer applications, such as
-  online banking and e-commerce. The use of MFA is growing rapidly, as more and
-  more organizations recognize the need for stronger security measures to
-  protect their users and their data.\\ \\MFA is a critical component of a
-  strong security posture, and is an essential tool for protecting against a
-  wide range of cyber threats, including phishing, credential theft, and
-  identity theft. MFA is also an important tool for protecting against insider
-  threats, as it can help to prevent unauthorized access to sensitive data and
-  systems. MFA is also an important tool for protecting against the growing
-  threat of cyberfraud, as it can help to prevent unauthorized access to
-  financial accounts and other sensitive information.\\ \\
+MFA is used to
+protect the user from unauthorized access to their accounts, and is widely
+used in the financial and healthcare industries, as well as in government and
+military applications. MFA is also used in consumer applications, such as
+online banking and e-commerce. The use of MFA is growing rapidly, as more and
+more organizations recognize the need for stronger security measures to
+protect their users and their data.\\ \\MFA is a critical component of a
+strong security posture, and is an essential tool for protecting against a
+wide range of cyber threats, including phishing, credential theft, and
+identity theft. MFA is also an important tool for protecting against insider
+threats, as it can help to prevent unauthorized access to sensitive data and
+systems. MFA is also an important tool for protecting against the growing
+threat of cyberfraud, as it can help to prevent unauthorized access to
+financial accounts and other sensitive information.
 
-  \section{Phishing Attacks: Evolution and Impact} Phishing attacks are a type
-  of cyberattack in which an attacker attempts to gain confidential information,
-  such as passwords, credit card numbers, or other sensitive information, by
-  sending emails or other messages disguised as legitimate entities. These
-  messages often include malicious links to faked login prompts that will steal
-  the victims credentials upon entering them. These attacks are becoming
-  increasingly sophisticated and difficult to recognize.\\Phishing has evolved
-  over time, from simple scams to sophisticated attacks that are difficult to
-  detect. In the early days of the internet, phishing attacks were relatively
-  simple and easy to recognize. However, as technology has advanced, so have
-  phishing attacks. Today, phishing attacks are often highly sophisticated and
-  difficult to detect, making them a significant threat to individuals and
-  organizations.\\ \\ Classical phishing fake login pages were usually simple
-  HTML copies of the original login page, but connected to a fake backend
-  service that would store the entered credentials and redirect the user to the
-  original page or a fake error page. This way victims could recognize that they
-  had fallen for a fake login page and update their credentials before the
-  attacker could use them.\\ \\ The new transparent proxy phishing attack vector
-  is a new technique used by attackers to intercept and steal multi-factor
-  authentication (MFA) tokens from unsuspecting users. Instead of copying HTML
-  code from the original page that the attacker is trying to impersonate, this
-  new attack uses a HTTP reverse proxy to just redirect the users traffic to the
-  original page. The attacking proxy operator can view and modify all traffic
-  that is going through it while the victim sees a one by one copy of the
-  original login page. By doing so login credentials and 2FA tokens can be
-  extracted easily. Also the victim will not recognize that he has fallen for a
-  phishing attack, because the website actually behaves as expected. The user
-  will not be redirected to a fake error page or the original page after
-  entering his credentials, because a real session is established with the
-  original server.\\ \\ In summary the advantages over the classical fake HTML
-  login page based attack are:
+\section{Phishing Attacks: Evolution and Impact}
+Phishing attacks are a type
+of cyberattack in which an attacker attempts to gain confidential information,
+such as passwords, credit card numbers, or other sensitive information, by
+sending emails or other messages disguised as legitimate entities. These
+messages often include malicious links to faked login prompts that will steal
+the victims credentials upon entering them. These attacks are becoming
+increasingly sophisticated and difficult to recognize.\\Phishing has evolved
+over time, from simple scams to sophisticated attacks that are difficult to
+detect. In the early days of the internet, phishing attacks were relatively
+simple and easy to recognize. However, as technology has advanced, so have
+phishing attacks. Today, phishing attacks are often highly sophisticated and
+difficult to detect, making them a significant threat to individuals and
+organizations.\\ \\ Classical phishing fake login pages were usually simple
+HTML copies of the original login page, but connected to a fake backend
+service that would store the entered credentials and redirect the user to the
+original page or a fake error page. This way victims could recognize that they
+had fallen for a fake login page and update their credentials before the
+attacker could use them.\\ \\ The new transparent proxy phishing attack vector
+is a new technique used by attackers to intercept and steal multi-factor
+authentication (MFA) tokens from unsuspecting users. Instead of copying HTML
+code from the original page that the attacker is trying to impersonate, this
+new attack uses a HTTP reverse proxy to just redirect the users traffic to the
+original page. The attacking proxy operator can view and modify all traffic
+that is going through it while the victim sees a one by one copy of the
+original login page. By doing so login credentials and 2FA tokens can be
+extracted easily. Also the victim will not recognize that he has fallen for a
+phishing attack, because the website actually behaves as expected. The user
+will not be redirected to a fake error page or the original page after
+entering his credentials, because a real session is established with the
+original server.\\ \\ In summary the advantages over the classical fake HTML
+login page based attack are:
 
-  \begin{itemize} \item Knowing basic web development techniques including HTML,
+\begin{itemize}
+  \item Knowing basic web development techniques including HTML,
     CSS and JavaScript is not required to setup a phishing attack anymore
-
-    \item The victim will not recognize that he has fallen for a phishing attack
-
-    \item The attacker can view and modify all traffic that is going through the
-      proxy, including the entered credentials and 2FA tokens
-
+  \item The victim will not recognize that he has fallen for a phishing attack
+  \item The attacker can view and modify all traffic that is going through the
+    proxy, including the entered credentials and 2FA tokens
   \item Custom HTML and JavaScript can be injected into the original page to
-steal even more information from the victim using social engineering techniques
+    steal even more information from the victim using social engineering techniques
 \end{itemize}
 
 In April 2017 a John Hopkins University Student named Xudong Zheng published a
@@ -235,29 +278,29 @@ toolkits are designed to allow read teams and cyber security researchers to set
 up and run transparent proxy phishing attacks in a controlled environment.
 However, these toolkits can also be used by malicious actors to perform
 real-world attacks.\\The following are some of the most popular open source
-reverse proxy phishing toolkits: \begin{itemize} \item Modlishka
-  \cite{modlishka} is a low level HTTP reverse proxy framework that allows the
-  attacker to intercept and modify all traffic that is going through it. It is
-  written in Go and can be easily extended with custom plugins. Modlishka also
-  provides a web interface to copy collected session data into an attackers
-  browser to perform session hijacking attacks. It is also capable of injecting
-  custom HTML and JavaScript into the original page to steal even more
-  information from the victim.
-
+reverse proxy phishing toolkits:
+\begin{itemize}
+  \item Modlishka \cite{modlishka} is a low level HTTP reverse proxy framework that allows the
+    attacker to intercept and modify all traffic that is going through it. It is
+    written in Go and can be easily extended with custom plugins. Modlishka also
+    provides a web interface to copy collected session data into an attackers
+    browser to perform session hijacking attacks. It is also capable of injecting
+    custom HTML and JavaScript into the original page to steal even more
+    information from the victim.
   \item Evilginx2 \cite{evilginx2} is a more advanced transparent phishing
     toolkit that is also written in Go. It provides same capabilities as
     Modlishka, but also includes ready to use templates and a custom DNS server.
     Its more user friendly and easier to use than Modlishka, but also less
     flexible and extensible.
-
   \item Murena \cite{murena} is a transparent phishing toolkit that is written
     in Python. It is not as advanced as Modlishka and Evilginx2, but is still
     capable of intercepting and modifying all traffic that is going through it.
     It is also capable of injecting custom HTML and JavaScript into the original
-page. \end{itemize}
+    page.
+\end{itemize}
 
-
-\section{Existing Countermeasures} The paper "Catching Transparent Phish:
+\section{Existing Countermeasures}
+The paper "Catching Transparent Phish:
 Analyzing and Detecting MITM Phishing Toolkits" \cite{kondracki2021catching}
 provides a detailed analysis of the most used reverse proxy phishing toolkit and
 its potential to bypass MFA systems. The authors demonstrate how those toolkits
@@ -311,7 +354,7 @@ he can use in the future. For the purpose of this experiment we will only focus
 on stealing the session cookie.\\ \\
 
 \begin{figure}[!htb] \centering
-\includegraphics[height=7cm]{./images/profile_page.png} \caption{Profile page
+  \includegraphics[height=7cm]{./images/profile_page.png} \caption{Profile page
 containing confidential information} \end{figure}
 
 \newpage \section{Testing of Countermeasures} \subsection{Blacklisting well
@@ -331,7 +374,7 @@ Example implementation of a basic blocklist implemented using a custom nginx
 fork that supports JA4 fingerprinting:
 
 \begin{minted}{nginx}
-server {
+  server {
     listen 443 ssl;
     server_name xu-bank.com;
 
@@ -344,15 +387,15 @@ server {
     }
 
     location / {
-        # block the request if the clients fingerprint is on the blocklist
-        if($allowed_client = 0) {
-            return 403;
-        }
+      # block the request if the clients fingerprint is on the blocklist
+      if($allowed_client = 0) {
+        return 403;
+      }
 
-        # forward the request to the backend
-        proxy_pass http://backend;
+      # forward the request to the backend
+      proxy_pass http://backend;
     }
-}
+  }
 \end{minted}
 
 The same approach can be turned into a whitelist by inverting the logic. This
@@ -376,109 +419,113 @@ collects values from the ClientHello into four different array lists and formats
 them into one comma separated string that gets hashed. In detail the values used
 from ClientHello are: SSLVersion, Cipher, SSLExtension, EllipticCurve,
 EllipticCurvePointFormat.\\An example derived from a ClientHello looks like
-this: \begin{lstlisting}[breaklines=true]
+this:
+\begin{minted}[breaklines]{python}
   "769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0"
-  \end{lstlisting} If no SSL extensions are used the field will be left empty.
-  \begin{lstlisting}[breaklines=true] Example:
-    "769,4-5-10-9-100-98-3-6-19-18-99,,," \end{lstlisting} Generating a MD5 hash
-    from that string will leave us with the following 32 characters:
-    "ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non
-    existing extensions, because some TLS clients are using Google’s GREASE
-    (Generate Random Extensions And Sustain Extensibility). This is a feature
-    proposed by Google to break wrongly implemented TLS servers. It may sound
-    controversial at first, but comes with good intentions. In a internet draft
-    paper by D. Benjamin \cite{greaseDraft} he explains that its better to break
-    some production systems in place instead of risking flawed TLS
-    implementations to spread and risk outages of global scale.\\JA3 seems to be
-    a good candidate for fingerprinting transparent phishing toolkits at first,
-    but it after some testing it comes clear that JA3 can not be used to
-    fingerprint instances of Google Chrome, due to it's reliance on the order of
-    the cipher extension list in the ClientHello package. Google chrome uses a
-    feature called "TLS ClientHello extension permutation" that prevents TLS
-    fingerprinting for said reason. This can be bypassed by sorting the numeric
-    values by size. Open source implementations of the JA3 algorithm with
-    normalized extension orders exist under the name "JA3N". Sadly in our
-    experimentation we were not able to reliably identify versions of Google
-    Chrome using JA3 for yet unkown reasons.\\ \\ Luckily a better alternative
-    to the JA3 algorithm exists. The JA4+ family is a set of new network
-    fingerprinting algorithms developed by FoxIO \cite{foxIOJa4}. The JA4+
-    family also comes with a fingerprinting algorithm for TLS called JA4. JA4 is
-    superior to JA3 in many ways. It supports HTTP 3 including its UDP based
-    transport protocol QUIC and normalized the order of ciphers and extensions
-    by default. It uses a different output format than JA3 which consists of
-    three seperatable parts that more verbose and human readable in general. JA4
-    provides a more reliant and expressive fingerprinting solution for this
-    papers use case. Other open-source implementations of JA4 are avaible and
-    include a wireshark addon and an nginx fork. The later one will be used in
-    our lab setup to collect JA4 fingerprints.
+\end{minted}
+If no SSL extensions are used the field will be left empty. Example:
+\begin{minted}[breaklines]{python} 
+  "769,4-5-10-9-100-98-3-6-19-18-99,,,"
+\end{minted}
+Generating a MD5 hash
+from that string will leave us with the following 32 characters:
+"ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non
+existing extensions, because some TLS clients are using Google’s GREASE
+(Generate Random Extensions And Sustain Extensibility). This is a feature
+proposed by Google to break wrongly implemented TLS servers. It may sound
+controversial at first, but comes with good intentions. In a internet draft
+paper by D. Benjamin \cite{greaseDraft} he explains that its better to break
+some production systems in place instead of risking flawed TLS
+implementations to spread and risk outages of global scale.\\JA3 seems to be
+a good candidate for fingerprinting transparent phishing toolkits at first,
+but it after some testing it comes clear that JA3 can not be used to
+fingerprint instances of Google Chrome, due to it's reliance on the order of
+the cipher extension list in the ClientHello package. Google chrome uses a
+feature called "TLS ClientHello extension permutation" that prevents TLS
+fingerprinting for said reason. This can be bypassed by sorting the numeric
+values by size. Open source implementations of the JA3 algorithm with
+normalized extension orders exist under the name "JA3N". Sadly in our
+experimentation we were not able to reliably identify versions of Google
+Chrome using JA3 for yet unkown reasons.\\ \\ Luckily a better alternative
+to the JA3 algorithm exists. The JA4+ family is a set of new network
+fingerprinting algorithms developed by FoxIO \cite{foxIOJa4}. The JA4+
+family also comes with a fingerprinting algorithm for TLS called JA4. JA4 is
+superior to JA3 in many ways. It supports HTTP 3 including its UDP based
+transport protocol QUIC and normalized the order of ciphers and extensions
+by default. It uses a different output format than JA3 which consists of
+three seperatable parts that more verbose and human readable in general. JA4
+provides a more reliant and expressive fingerprinting solution for this
+papers use case. Other open-source implementations of JA4 are avaible and
+include a wireshark addon and an nginx fork. The later one will be used in
+our lab setup to collect JA4 fingerprints.
 
-    \begin{figure}[!htb] \centering
-    \includegraphics[height=7cm]{./images/JA4.png} \caption{JA4 TLS client
-  fingerprint format} \end{figure}
+\begin{figure}[!htb] \centering
+  \includegraphics[height=7cm]{./images/JA4.png} \caption{JA4 TLS client
+fingerprint format} \end{figure}
 
-  TODO: the google feature is "to reduce potential ecosystem brittleness" and
-  not for privacy. Quote more from:
-  https://chromestatus.com/feature/5124606246518784
+TODO: the google feature is "to reduce potential ecosystem brittleness" and
+not for privacy. Quote more from:
+https://chromestatus.com/feature/5124606246518784
 
-  \newpage \subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
-  more flexible approach then the previous blacklist solution which tries to
-  block or flag client requests using the TLS implementation of known
-  transparent phishing toolkits, is to focus on detecting requests from TLS
-  reverse proxies in general. The attack vector that is facilitate by abusing
-  reverse proxies to spy on a users TLS encrypted session is more commonly known
-  as a TLS MITM (Man in the Middle) Attack.\\The American content delivery
-  network operator Cloudflare which is also known for DDoS mitigation and other
-  cyber security related services is running an open-source monitoring service
-  called MALCOLM which stands for "Measuring Active Listeners, Connection
-  Observers, and Legitimate Monitors". It provides statistics about observed
-  HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is
-  a request that comes from either a "A device has a root certificate installed
-  that allow an intermediary to decrypt and inspect traffic" or "An origin
-  server provides its TLS private key to a third party (like a reverse proxy)
-  that does TLS termination" \cite{cloudflareMALCOLM}. The second definition
-  means exactly the kind of TLS MITM attacks which we are trying to detect.\\The
-  monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine)
-  that Cloudflare describes as their HTTPS interception detector. MITMEngine is
-  an open-source software written in go. It works by matching TLS fingerprints
-  of requests to known browser User-Agent strings. If a mismatch is found the
-  request is marked as potentially crafted by HTTPS Interception. This strategy
-  again relies on maintaining a huge database of User-Agent and TLS Fingerprint
-  pairs. Cloudflare states on the MALCOLM dashboard website that they can only
-  identity 60\% of the clients that are served by their internal network.
-  Especially the detection of Android based devices is not reliably possible due
-  to the large amount of different Android based operating systems and browsers.
-  Readers of the MALCOLM website are encouraged to contribute User-Agent TLS
-  fingerprint pairs to the MITMEngine git repository to help overcome this
-  issue.
+\newpage \subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
+more flexible approach then the previous blacklist solution which tries to
+block or flag client requests using the TLS implementation of known
+transparent phishing toolkits, is to focus on detecting requests from TLS
+reverse proxies in general. The attack vector that is facilitate by abusing
+reverse proxies to spy on a users TLS encrypted session is more commonly known
+as a TLS MITM (Man in the Middle) Attack.\\The American content delivery
+network operator Cloudflare which is also known for DDoS mitigation and other
+cyber security related services is running an open-source monitoring service
+called MALCOLM which stands for "Measuring Active Listeners, Connection
+Observers, and Legitimate Monitors". It provides statistics about observed
+HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is
+a request that comes from either a "A device has a root certificate installed
+that allow an intermediary to decrypt and inspect traffic" or "An origin
+server provides its TLS private key to a third party (like a reverse proxy)
+that does TLS termination" \cite{cloudflareMALCOLM}. The second definition
+means exactly the kind of TLS MITM attacks which we are trying to detect.\\The
+monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine)
+that Cloudflare describes as their HTTPS interception detector. MITMEngine is
+an open-source software written in go. It works by matching TLS fingerprints
+of requests to known browser User-Agent strings. If a mismatch is found the
+request is marked as potentially crafted by HTTPS Interception. This strategy
+again relies on maintaining a huge database of User-Agent and TLS Fingerprint
+pairs. Cloudflare states on the MALCOLM dashboard website that they can only
+identity 60\% of the clients that are served by their internal network.
+Especially the detection of Android based devices is not reliably possible due
+to the large amount of different Android based operating systems and browsers.
+Readers of the MALCOLM website are encouraged to contribute User-Agent TLS
+fingerprint pairs to the MITMEngine git repository to help overcome this
+issue.
 
-  \newpage \subsection{Round Trip Time Analysis}
+\newpage \subsection{Round Trip Time Analysis}
 
-  \newpage \subsection{Verify supported ciphers} A TLS ClientHello packet sent
-  by a client always contains a list of supported ciphers. The list of ciphers
-  and its orders can be used to fingerprint the client. Many open-source mitm
-  revese proxy solutions are already capable of spoofing the supported cipher
-  list in the ClientHello package. To detect client requests from said reverse
-  proxies more reliably, verifying the implementation of each cipher could be
-  helpful. A proof of concept cipher spoofing tool would need to support many
-  different ciphers. To overcome this issue using a TLS server stack that
-  supports as many ciphers as possible is required. TODO: TABLE, Talk about why
-  we choose openssl.\\OpenSSL 3.1.1 supports 159ciphers in the build that is
-  shipped with Fedora39 Linux.
+\newpage \subsection{Verify supported ciphers} A TLS ClientHello packet sent
+by a client always contains a list of supported ciphers. The list of ciphers
+and its orders can be used to fingerprint the client. Many open-source mitm
+revese proxy solutions are already capable of spoofing the supported cipher
+list in the ClientHello package. To detect client requests from said reverse
+proxies more reliably, verifying the implementation of each cipher could be
+helpful. A proof of concept cipher spoofing tool would need to support many
+different ciphers. To overcome this issue using a TLS server stack that
+supports as many ciphers as possible is required. TODO: TABLE, Talk about why
+we choose openssl.\\OpenSSL 3.1.1 supports 159ciphers in the build that is
+shipped with Fedora39 Linux.
 
 \begin{lstlisting}[breaklines=true,basicstyle=\tiny]
-$ openssl ciphers -v 'ALL:eNULL'
-TLS_AES_256_GCM_SHA384         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(256)            Mac=AEAD
-TLS_CHACHA20_POLY1305_SHA256   TLSv1.3 Kx=any      Au=any   Enc=CHACHA20/POLY1305(256) Mac=AEAD
-TLS_AES_128_GCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(128)            Mac=AEAD
-TLS_AES_128_CCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESCCM(128)            Mac=AEAD
-ECDHE-ECDSA-AES256-GCM-SHA384  TLSv1.2 Kx=ECDH     Au=ECDSA Enc=AESGCM(256)            Mac=AEAD
-ECDHE-RSA-AES256-GCM-SHA384    TLSv1.2 Kx=ECDH     Au=RSA   Enc=AESGCM(256)            Mac=AEAD
-DHE-DSS-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=DSS   Enc=AESGCM(256)            Mac=AEAD
-DHE-RSA-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=RSA   Enc=AESGCM(256)            Mac=AEAD
-ECDHE-ECDSA-CHACHA20-POLY1305  TLSv1.2 Kx=ECDH     Au=ECDSA Enc=CHACHA20/POLY1305(256) Mac=AEAD
-...
-$ openssl ciphers -v 'ALL:eNULL' | wc -l # Count the number of ciphers
-159
+  $ openssl ciphers -v 'ALL:eNULL'
+  TLS_AES_256_GCM_SHA384         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(256)            Mac=AEAD
+  TLS_CHACHA20_POLY1305_SHA256   TLSv1.3 Kx=any      Au=any   Enc=CHACHA20/POLY1305(256) Mac=AEAD
+  TLS_AES_128_GCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(128)            Mac=AEAD
+  TLS_AES_128_CCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESCCM(128)            Mac=AEAD
+  ECDHE-ECDSA-AES256-GCM-SHA384  TLSv1.2 Kx=ECDH     Au=ECDSA Enc=AESGCM(256)            Mac=AEAD
+  ECDHE-RSA-AES256-GCM-SHA384    TLSv1.2 Kx=ECDH     Au=RSA   Enc=AESGCM(256)            Mac=AEAD
+  DHE-DSS-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=DSS   Enc=AESGCM(256)            Mac=AEAD
+  DHE-RSA-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=RSA   Enc=AESGCM(256)            Mac=AEAD
+  ECDHE-ECDSA-CHACHA20-POLY1305  TLSv1.2 Kx=ECDH     Au=ECDSA Enc=CHACHA20/POLY1305(256) Mac=AEAD
+  ...
+  $ openssl ciphers -v 'ALL:eNULL' | wc -l # Count the number of ciphers
+  159
 \end{lstlisting}
 
 OpenSSl may be more well known as a library for cryptographic functions, but it
@@ -495,30 +542,28 @@ cipher. The client will then be forced to use this cipher to establish a
 connection. If the client is not able to establish a connection an error will be
 written to a log file that is supervised by our bash script.
 
+\newpage
+
 \begin{minted}{bash}
-#!/bin/bash
+  #!/bin/bash
+  # Cleanup from previous runs
+  killall openssl && rm -rf ./logs/*
 
-# Cleanup from previous runs
-killall openssl
-rm -rf ./logs/*
+  # List of default ciphers supported by openssl s_server
+  ciphers=$(cat <<-END
+  TLSv1.3    :TLS_AES_128_GCM_SHA256
+  TLSv1.3    :TLS_AES_256_GCM_SHA384
+  ...
+  END)
 
-# List of default ciphers supported by openssl s_server
-ciphers=$(cat <<-END
-TLSv1.3    :TLS_AES_128_GCM_SHA256
-TLSv1.3    :TLS_AES_256_GCM_SHA384
-TLSv1.3    :TLS_AES_128_CCM_SHA256
-...
-END
-)
+  # Spawn static https server to serve check.html and api
+  www_port=8443
+  openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
 
-# Spawn static https server to serve check.html and api
-www_port=8443
-openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
+  # Start of test s_server port range
+  port=8000
 
-# Start of test s_server port range
-port=8000
-
-while IFS= read -r line; do
+  while IFS= read -r line; do
   cs=$(echo $line | sed 's/.*://')
   echo "Spawning server with cipher: $cs"
 
@@ -529,20 +574,23 @@ while IFS= read -r line; do
 
   # Use the correct openssl command based on TLS version
   if [ $is_tls13 -eq 1 ]; then
-    cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
+  cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
   else
-    cipher_param="-cipher $cs -no_tls1_3"
+  cipher_param="-cipher $cs -no_tls1_3"
   fi
 
-  # Redirect log to file
-  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
+  # Spawn s_server instance and redirect output log to file
+  openssl s_server -key key.pem -cert cert.pem -accept $port -www \
+  $cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
 
   port=$((port+1))
-done <<< "$ciphers"
+  done <<< "$ciphers"
 
-# Check all log files for errors and print overview of server status
-...
+  # Check all log files for errors and print overview of server status
+  ...
 \end{minted}
+
+\newpage
 
 To make a browser connect to all the created TLS servers and show connection errors verbosely creating a bunch of iframes is enough.
 To simplify the process of creating the iframes a simple JavaScript script can be used.
