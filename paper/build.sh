@@ -1,5 +1,5 @@
 #!/bin/bash
 
-pdflatex -pdf expose.tex
+pdflatex -pdf -shell-escape expose.tex
 bibtext expose
-pdflatex -pdf expose.tex
+pdflatex -pdf -shell-escape expose.tex

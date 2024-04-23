@@ -1,14 +1,17 @@
-\documentclass[12pt]{report}
+\documentclass[12pt]{scrbook}
 
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+%\usepackage[a4paper, total={6in, 8in}]{geometry}
 
-\usepackage{caption}
-\usepackage{float}
-\usepackage{hyperref}
+%\usepackage{caption}
+%\usepackage{float}
+%\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage[nottoc, numbib]{tocbibind}
-\usepackage{outlines}
+%\usepackage{outlines}
 \usepackage{listings}
+\usepackage{minted}
+
+\KOMAoptions{twoside=false}
 
 \begin{document}
 
@@ -323,7 +326,7 @@ The first countermeasure that we are trying to implement in our web applications
 
 Example implementation of a basic blocklist implemented using a custom nginx fork that supports JA4 fingerprinting:
 
-\begin{lstlisting}[breaklines=true]
+\begin{minted}{nginx}
 server {
     listen 443 ssl;
     server_name xu-bank.com;
@@ -346,7 +349,7 @@ server {
         proxy_pass http://backend;
     }
 }
-\end{lstlisting}
+\end{minted}
 
 The same approach can be turned into a whitelist by inverting the logic. This way only clients with a known good TLS fingerprint will be allowed to access the web application. This approach is more secure, but also comes with the downside that new clients will not be able to access the web application until their TLS fingerprint is added to the whitelist. Maintaining a trusted JA4 fingerprint database would require a lot of fingerprint collecting before said whitelist can be used in production as many different browsers and TLS implementations exist and change frequently.
 
@@ -405,7 +408,7 @@ The list of supported ciphers for a server can be configured using the -ciphers 
 For the sake of this paper a proof of concept solution was implemented using a simple bash script to spawn various instances of OpenSSL's s\_server with different cipher configurations.
 To validate if a client actually supports his claimed ciphers, each instance of s\_server will be configured to only support one cipher. The client will then be forced to use this cipher to establish a connection. If the client is not able to establish a connection an error will be written to a log file that is supervised by our bash script.
 
-\begin{lstlisting}[breaklines=true]
+\begin{minted}{bash}
 #!/bin/bash
 
 # Cleanup from previous runs
@@ -452,12 +455,12 @@ done <<< "$ciphers"
 
 # Check all log files for errors and print overview of server status
 ...
-\end{lstlisting}
+\end{minted}
 
 To make a browser connect to all the created TLS servers and show connection errors verbosely creating a bunch of iframes is enough.
-To simply the process of creating the iframes a simple JavaScript script can be used.
+To simplify the process of creating the iframes a simple JavaScript script can be used.
 
-\begin{lstlisting}[breaklines=true]
+\begin{minted}{javascript}
   const DOMAIN = "ba-testing.unsafe.blazed.win";
 
   const frames = document.getElementById('frames');
@@ -471,7 +474,7 @@ To simply the process of creating the iframes a simple JavaScript script can be 
     frame.height = 200;
     frames.appendChild(frame);
   }
-\end{lstlisting}
+\end{minted}
 
 \newpage
 \subsection{Combined Score Based Approach}
