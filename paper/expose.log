@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.4.23)  23 APR 2024 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.4.23)  23 APR 2024 20:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -165,7 +165,7 @@ Class scrbook Warning: Usage of package `tocbibind' together
 (scrbook)              the list of figures, list of tables, bibliography,
 (scrbook)              index and the running head.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `tocbibind' on input line 11.
+(scrbook)              package `tocbibind' on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -374,7 +374,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 14.
+(typearea)              on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
@@ -408,31 +408,31 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./expose.aux)
 \openout1 = `expose.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-Package scrbase Info: activating english \partname on input line 16.
-Package scrbase Info: activating english \chaptername on input line 16.
-Package scrbase Info: activating english \appendixname on input line 16.
-Package scrbase Info: activating english \figurename on input line 16.
-Package scrbase Info: activating english \tablename on input line 16.
-Package scrbase Info: activating english \contentsname on input line 16.
-Package scrbase Info: activating english \listfigurename on input line 16.
-Package scrbase Info: activating english \listtablename on input line 16.
-Package scrbase Info: activating english \bibname on input line 16.
-Package scrbase Info: activating english \indexname on input line 16.
-Package tocbasic Info: usage of `tocbibind' detected on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+Package scrbase Info: activating english \partname on input line 12.
+Package scrbase Info: activating english \chaptername on input line 12.
+Package scrbase Info: activating english \appendixname on input line 12.
+Package scrbase Info: activating english \figurename on input line 12.
+Package scrbase Info: activating english \tablename on input line 12.
+Package scrbase Info: activating english \contentsname on input line 12.
+Package scrbase Info: activating english \listfigurename on input line 12.
+Package scrbase Info: activating english \listtablename on input line 12.
+Package scrbase Info: activating english \bibname on input line 12.
+Package scrbase Info: activating english \indexname on input line 12.
+Package tocbasic Info: usage of `tocbibind' detected on input line 12.
 
 
 Package tocbasic Warning: `tocbibind' redefinition of `\listoffigures'
@@ -475,12 +475,12 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 <./images/logo.png, id=1, 353.32pt x 152.57pt>
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 32.
+Package pdftex.def Info: ./images/logo.png  used on input line 22.
 (pdftex.def)             Requested size: 227.62204pt x 98.29166pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 32.
+(Font)              <17.28> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 32.
+(Font)              <12> on input line 22.
  [1
 
 
@@ -500,75 +500,75 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 
-LaTeX Warning: Citation `6trillion' on page 3 undefined on input line 75.
+LaTeX Warning: Citation `6trillion' on page 3 undefined on input line 62.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--153
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--138
 
  []
 
@@ -591,32 +591,32 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              deprecated \float@addtolist interface.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--189
+Underfull \hbox (badness 10000) in paragraph at lines 158--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--189
+Underfull \hbox (badness 10000) in paragraph at lines 158--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--189
+Underfull \hbox (badness 10000) in paragraph at lines 158--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--219
+Underfull \hbox (badness 10000) in paragraph at lines 173--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--219
+Underfull \hbox (badness 10000) in paragraph at lines 173--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--219
+Underfull \hbox (badness 10000) in paragraph at lines 173--204
 
  []
 
@@ -624,38 +624,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--219
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 233--248
+Underfull \hbox (badness 10000) in paragraph at lines 217--238
 
  []
 
 [8]
 
-LaTeX Warning: Citation `modlishka' on page 9 undefined on input line 249.
+LaTeX Warning: Citation `modlishka' on page 9 undefined on input line 239.
 
 
-LaTeX Warning: Citation `evilginx2' on page 9 undefined on input line 254.
+LaTeX Warning: Citation `evilginx2' on page 9 undefined on input line 247.
 
 
-LaTeX Warning: Citation `murena' on page 9 undefined on input line 258.
+LaTeX Warning: Citation `murena' on page 9 undefined on input line 253.
 
 [9]
 chapter 2.
 <./images/2fa_app.png, id=40, 816.04875pt x 424.58624pt>
 File: ./images/2fa_app.png Graphic file (type png)
 <use ./images/2fa_app.png>
-Package pdftex.def Info: ./images/2fa_app.png  used on input line 289.
+Package pdftex.def Info: ./images/2fa_app.png  used on input line 285.
 (pdftex.def)             Requested size: 382.79585pt x 199.16928pt.
 
 LaTeX Warning: Citation `tlsPercentage' on page 10 undefined on input line 300.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--302
+Underfull \hbox (badness 10000) in paragraph at lines 272--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--302
+Underfull \hbox (badness 10000) in paragraph at lines 272--302
 
  []
 
@@ -663,19 +663,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--302
 
 
  <./images/2fa_app.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 303--309
+Underfull \hbox (badness 10000) in paragraph at lines 303--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--309
+Underfull \hbox (badness 10000) in paragraph at lines 303--312
 
  []
 
 <./images/profile_page.png, id=45, 509.905pt x 351.3125pt>
 File: ./images/profile_page.png Graphic file (type png)
 <use ./images/profile_page.png>
-Package pdftex.def Info: ./images/profile_page.png  used on input line 312.
+Package pdftex.def Info: ./images/profile_page.png  used on input line 314.
 (pdftex.def)             Requested size: 289.08498pt x 199.16928pt.
 [11 <./images/profile_page.png>]
 \openout3 = `expose.pyg'.
@@ -687,22 +687,26 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 ) [12]
 
-LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 357.
+LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 374.
 
 
 
-Overfull \hbox (45.3682pt too wide) in paragraph at lines 359--360
-[][][] 
+Overfull \hbox (59.46817pt too wide) in paragraph at lines 380--381
+[][][][] 
  []
 
 
-LaTeX Warning: Citation `greaseDraft' on page 13 undefined on input line 365.
+Package Listings Warning: Text dropped after begin of listing on input line 382
+.
 
 
-LaTeX Warning: Citation `foxIOJa4' on page 13 undefined on input line 366.
+LaTeX Warning: Citation `greaseDraft' on page 13 undefined on input line 390.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--368
+LaTeX Warning: Citation `foxIOJa4' on page 13 undefined on input line 404.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--414
 
  []
 
@@ -710,21 +714,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 365--368
 <./images/JA4.png, id=59, 963.6pt x 542.025pt>
 File: ./images/JA4.png Graphic file (type png)
 <use ./images/JA4.png>
-Package pdftex.def Info: ./images/JA4.png  used on input line 371.
+Package pdftex.def Info: ./images/JA4.png  used on input line 416.
 (pdftex.def)             Requested size: 354.07097pt x 199.16928pt.
  [14 <./images/JA4.png (PNG copy)>]
 
 LaTeX Warning: Citation `cloudflareMALCOLM' on page 15 undefined on input line 
-380.
+438.
 
 [15] [16]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 4
-01.
+80.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 401.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 480.
 \openout3 = `expose.pyg'.
 
 
@@ -757,10 +761,10 @@ runsystem(rm expose.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 10625 strings out of 477985
- 210661 string characters out of 5839380
+ 10626 strings out of 477985
+ 210668 string characters out of 5839380
  2003388 words of memory out of 6000000
- 30682 multiletter control sequences out of 15000+600000
+ 30683 multiletter control sequences out of 15000+600000
  519440 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,8n,106p,10601b,1298s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -776,7 +780,7 @@ c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
 frm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200
 .pfb>
-Output written on expose.pdf (23 pages, 315135 bytes).
+Output written on expose.pdf (23 pages, 315109 bytes).
 PDF statistics:
  147 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream
