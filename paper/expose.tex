@@ -73,7 +73,7 @@ essential for businesses and individuals to take measures to protect themselves
 from it. This includes using strong passwords, using two-factor authentication,
 and staying up to date with the latest security protocols.
 
-\paragraph{Phishing attack} is a type of cyberattack in which an attacker attempts to gain
+\paragraph{A Phishing attack} is a type of cyberattack in which an attacker attempts to gain
 confidential information, such as passwords, credit card numbers, or other
 sensitive information, by sending emails or other messages disguised as
 legitimate entities. These messages often include malicious links to faked login
@@ -82,8 +82,7 @@ attacks are becoming increasingly sophisticated and difficult to recognize,
 making it important for everyone to remain vigilant and take steps to protect
 against them.
 
-\paragraph{HTTP Re}
-A HTTP reverse proxy is a type of proxy server that
+\paragraph{A HTTP reverse proxy} is a type of proxy server that
 retrieves resources on behalf of a client from one or more servers. This type of
 proxy is sometimes referred to as a “gateway” or “tunneling” proxy because it
 acts as a gateway for the traffic to and from the server. A reverse proxy will
@@ -92,9 +91,25 @@ appropriate server on the same network. It then retrieves the response from the
 server and sends it back to the client. This type of proxy server is most often
 used in enterprise networks to protect against malicious traffic, to balance
 load between multiple servers, and to cache static content.
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=4cm]{./images/http_reverse_proxy.png}
+  \caption{How a HTTP reverse proxy works}
+\end{figure}
 
-\paragraph{}
-Transparent proxy phishing is a new technique used by attackers to intercept and steal
+\paragraph{Man in the Middle (MITM) attacks} are a type of
+cyberattack in which an attacker intercepts and modifies communication between
+two parties without their knowledge. This type of attack is often used to steal
+sensitive information, such as login credentials, credit card numbers, or other
+personal information. MITM attacks can be difficult to detect, as the attacker
+can intercept and modify communication without the knowledge of the parties
+involved.
+\begin{figure}[!h] \centering
+  \includegraphics[height=6cm]{./images/mitm_attack.png}
+  \caption{How a MITM attack works}
+\end{figure}
+
+\paragraph{Transparent proxy phishing} is a new technique used by attackers to intercept and steal
 multi-factor authentication (MFA) tokens from unsuspecting users. Instead of
 copying HTML code from the original page that the attacker is trying to
 impersonate, this new attack uses a HTTP reverse proxy to just redirect the
@@ -103,26 +118,22 @@ modify all traffic that is going through it while the victim sees a one by one
 copy of the original login page. By doing so login credentials and 2FA tokens
 can be extracted easily.
 
-\paragraph{}
-TLS is a cryptographic protocol that provides
+\paragraph{TLS} is a cryptographic protocol that provides
 end-to-end security for data sent between a client and a server. It is widely
 used to secure web traffic, email, and other types of data. TLS is the successor
 to SSL, and is often referred to as SSL/TLS. If a webserver is using TLS its URL
 starts with the well known https:// prefix.
 
-\paragraph{}
-TLS Fingerprinting is a technique used to identify the TLS implementation of a client or server by
+\paragraph{TLS Fingerprinting} is a technique used to identify the TLS implementation of a client or server by
 analyzing the handshake process. This can be used to identify which software is
 used by client or server. Industry standards for fingerprinting algorithms have
-existed for a long time. These include: JA3, JA3N and the whole JA4+ family.\ref{fig:clientHelloPacket}
-\begin{figure}[!htb] \centering
-  \includegraphics[height=7cm]{./images/client_hello_packet.png}
+existed for a long time. These include: JA3, JA3N and the whole JA4+ family.
+\begin{figure}[!h] \centering
+  \includegraphics[height=6cm]{./images/client_hello_packet.png}
   \caption{The TLS ClientHello packet that is used for fingerprinting the client}
-  \label{fig:clientHelloPacket}
 \end{figure}
 
-\paragraph{}
-Nginx is a popular open-source web server and reverse proxy server. It is
+\paragraph{Nginx} is a popular open-source web server and reverse proxy server. It is
 used by millions of websites to serve web pages and other content. Nginx is
 known for its high performance, stability, and low resource usage. It is also
 known for its flexibility and extensibility, as it can be easily extended with
@@ -131,22 +142,19 @@ as a reverse proxy and supports TLS, it is often used as a so called TLS
 terminator, meaning that it terminates the TLS connection and forwards the
 unencrypted traffic to a HTTP backend app.
 
-\paragraph{}
-Docker is a platform for
+\paragraph{Docker} is a platform for
 developing, shipping, and running applications. It allows developers to package
 their applications and dependencies into containers, which can then be run on
 any system that has Docker installed. Docker containers are lightweight,
 portable, and self-sufficient, making them an ideal platform for deploying
 applications.
 
-\paragraph{}
-HTML is the standard markup language for creating web pages
+\paragraph{HTML} is the standard markup language for creating web pages
 and web applications. It is used to structure and present content on the web.
 HTML is used in conjunction with CSS and JavaScript to create interactive and
 visually appealing web pages.
 
-\paragraph{}
-Unicode is a standard for encoding,
+\paragraph{Unicode} is a standard for encoding,
 representing, and handling text in most of the world's writing systems. It is
 used to represent characters from all of the world's writing systems, including
 Latin, Cyrillic, Greek, Arabic, Hebrew, Chinese, Japanese, Korean, and many
@@ -155,28 +163,17 @@ browsers, word processors, and operating systems. In computer science
 literature, Unicode symbols are often represented as U+ followed by a
 hexadecimal number.
 
-\paragraph{}
-Many scientific papers have been published on this
-topic, but there is still a lack of information on how to protect against this
-new attack vector. This is why it is important to find and document different
-strategies that can help organizations and developers to mitigate this new
-attack vector.
-
-\paragraph{}
-Wireshark is a popular open-source network protocol
+\paragraph{Wireshark} is a popular open-source network protocol
 analyzer that is used to capture and analyze network traffic. It is widely used
 by network administrators, security professionals, and developers to
 troubleshoot network problems, analyze network traffic, and detect security
 vulnerabilities.
 
-\paragraph{}
-Man in the Middle (MITM) attacks are a type of
-cyberattack in which an attacker intercepts and modifies communication between
-two parties without their knowledge. This type of attack is often used to steal
-sensitive information, such as login credentials, credit card numbers, or other
-personal information. MITM attacks can be difficult to detect, as the attacker
-can intercept and modify communication without the knowledge of the parties
-involved.
+Many scientific papers have been published on this
+topic, but there is still a lack of information on how to protect against this
+new attack vector. This is why it is important to find and document different
+strategies that can help organizations and developers to mitigate this new
+attack vector.
 
 \section{Research design} This thesis will be conducted in a quantitative
 research design. By analyzing existing literature and scientific papers on the
@@ -407,13 +404,21 @@ database would require a lot of fingerprint collecting before said whitelist can
 be used in production as many different browsers and TLS implementations exist
 and change frequently.
 
-\subsection{Evaluating TLS Fingerprinting Algorithms} In general performing TLS
-fingerprinting on a client connection works by analyzing the TLS ClientHello
+\subsection{Evaluating TLS Fingerprinting Algorithms}
+
+\paragraph{}
+In general performing TLS fingerprinting on a client connection works by analyzing the TLS ClientHello
 message that is sent by the client to the server during the TLS handshake
 process. This message contains a lot of information about the client's TLS
 implementation, including the version of the TLS protocol that the client
-supports, the list of supported cipher suites and extensions. To generate a
-unique fingerprint out of this information several algorithms already
+supports, the list of supported cipher suites and extensions.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[height=7cm]{./images/tls_client_hello_wireshark.png}
+  \caption{A TLS ClientHello packet captured using Wireshark}
+\end{figure}
+
+To generate a unique fingerprint out of this information several algorithms already
 exist.\\The JA3 algorithm proposed first by Salesforce \cite{ja3Salesforce}
 collects values from the ClientHello into four different array lists and formats
 them into one comma separated string that gets hashed. In detail the values used
@@ -446,7 +451,7 @@ fingerprinting for said reason. This can be bypassed by sorting the numeric
 values by size. Open source implementations of the JA3 algorithm with
 normalized extension orders exist under the name "JA3N". Sadly in our
 experimentation we were not able to reliably identify versions of Google
-Chrome using JA3 for yet unkown reasons.\\ \\ Luckily a better alternative
+Chrome using JA3 for yet unkown reasons.\\ \\Luckily a better alternative
 to the JA3 algorithm exists. The JA4+ family is a set of new network
 fingerprinting algorithms developed by FoxIO \cite{foxIOJa4}. The JA4+
 family also comes with a fingerprinting algorithm for TLS called JA4. JA4 is
