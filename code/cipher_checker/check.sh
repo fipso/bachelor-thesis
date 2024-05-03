@@ -88,13 +88,13 @@ while IFS= read -r line; do
 
   # Use the correct openssl command based on TLS version
   if [ $is_tls13 -eq 1 ]; then
-    cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
+    cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls1_1 -no_tls1 -no_ssl3"
   else
     cipher_param="-cipher $cs -no_tls1_3"
   fi
 
   # Redirect log to file
-  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
+  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -serverpref -brief >> "logs/$port-$cs.txt" 2>&1 &
 
   port=$((port+1))
 done <<< "$ciphers"
@@ -103,23 +103,31 @@ done <<< "$ciphers"
 while true; do
   echo -e "  \nServer status:\n"
   status_array=()
+  cDone=0
   for file in ./logs/*; do
     filename=$(basename $file)
     if grep -q "error" $file; then
       # Pad the string to ensure alignment
       padded_filename=$(printf "%-50s" "\033[31m$filename\033[0m")
       status_array+=("$padded_filename")
-    # if there are only 2 lines in the log color it orange
-    elif [ $(wc -l < $file) -eq 2 ]; then
+      cDone=$((cDone+1))
+    elif [ $(wc -l < $file) -le 2 ]; then
+      # if there are less or equal than 2 lines in the log color it orange
       padded_filename=$(printf "%-50s" "\033[33m$filename\033[0m")
       status_array+=("$padded_filename")
     else
       padded_filename=$(printf "%-50s" "\033[32m$filename\033[0m")
       status_array+=("$padded_filename")
+      cDone=$((cDone+1))
     fi
   done
 
   # Print array elements and pipe to column for multi-column display
   printf '%b\n' "${status_array[@]}" | column
   sleep 1
+
+  # If all servers are done, break the loop
+  if [ $cDone -eq $(ls ./logs | wc -l) ]; then
+    break
+  fi
 done
