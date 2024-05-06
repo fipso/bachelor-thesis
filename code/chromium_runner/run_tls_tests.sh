@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -x
+
 LINKS=$(cat <<-END
 https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F1192597%2Fchrome-linux.zip?generation=1693941360490354&alt=media
 https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F1192597%2Fchrome-linux.zip?generation=1693941360490354&alt=media
@@ -274,4 +277,10 @@ https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Li
 END
 )
 
-
+while IFS= read -r line; do
+  # Spawn container
+  containerId=$(podman run -d cipher_checker)
+  # Download chrome
+  podman exec -it $containerId /bin/bash -c "cd /app && wget -O chromium.zip \"$line\" && unzip chromium.zip && ./chromium https://ba-testing.unsafe.blazed.win:8443"
+  break
+done <<< "$LINKS"
