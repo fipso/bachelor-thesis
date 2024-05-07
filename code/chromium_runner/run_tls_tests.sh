@@ -281,6 +281,8 @@ while IFS= read -r line; do
   # Spawn container
   containerId=$(podman run -d cipher_checker)
   # Download chrome
-  podman exec -it $containerId /bin/bash -c "cd /app && wget -O chromium.zip \"$line\" && unzip chromium.zip && ./chromium https://ba-testing.unsafe.blazed.win:8443"
+  podman cp ./install_deps.sh $containerId:/app/install_deps.sh
+  podman exec $containerId /bin/bash -c "cd /app && wget -O chromium.zip '$line' && unzip chromium.zip && ./install_deps.sh ./chrome-linux/chrome && cd ./chrome-linux && bash -c 'Xvfb :99 -ac -screen 0 640x480x8 -nolisten tcp &' && ./chrome --no-sandbox https://ba-testing.unsafe.blazed.win:8443"
+  podman logs $containerId
   break
 done <<< "$LINKS"
