@@ -72,7 +72,11 @@ END
 
 # Spawn static https server to serve check.html and api
 www_port=8443
-openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
+openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW &
+
+# Spawn openssl s_server with -brief flag to collect browser user agent and supported ciphers
+www_meta_port=8444
+sleep 999999 | openssl s_server -key key.pem -cert cert.pem -accept $www_meta_port -brief &> ./browser_meta.txt &
 
 # Start of test s_server port range
 port=8000
@@ -94,14 +98,14 @@ while IFS= read -r line; do
   fi
 
   # Redirect log to file
-  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -serverpref -debug >> "logs/$port-$cs.txt" 2>&1 &
+  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -serverpref -debug > "logs/$port-$cs.txt" 2>&1 &
 
   port=$((port+1))
 done <<< "$ciphers"
 
 # Check all log files for errors and print overview of server status
 while true; do
-  result_json="["
+  result_json="{\"browser\":$(jq -R -s '.' < ./browser_meta.txt),\"ciphers\":["
 
   echo -e "  \nServer status:\n"
   status_array=()
@@ -138,9 +142,9 @@ while true; do
     result_json+="{\"cipher\":\"$cipherName\",\"status\":\"$status\",\"logs\":$(jq -R -s '.' < $file)},"
   done
 
-  # Remove trailing comma and end json array
+  # Remove trailing comma and end json
   result_json=$(echo $result_json | sed 's/,$//')
-  result_json+="]"
+  result_json+="]}"
 
   # Print array elements and pipe to column for multi-column display
   printf '%b\n' "${status_array[@]}" | column

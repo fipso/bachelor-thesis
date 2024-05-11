@@ -17,6 +17,9 @@
         frame.height = 200;
         frames.appendChild(frame);
       }
+
+      // Provide browser information to bash script
+      fetch(`https://${DOMAIN}:8444/`);
     </script>
   </body>
 </html>
