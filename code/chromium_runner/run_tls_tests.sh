@@ -282,7 +282,8 @@ while IFS= read -r line; do
   containerId=$(podman run -d cipher_checker)
   # Download chrome
   podman cp ./install_deps.sh $containerId:/app/install_deps.sh
-  podman exec $containerId /bin/bash -c "cd /app && wget -O chromium.zip '$line' && unzip chromium.zip && ./install_deps.sh ./chrome-linux/chrome && cd ./chrome-linux && bash -c 'Xvfb :99 -ac -screen 0 640x480x8 -nolisten tcp &' && ./chrome --no-sandbox --no-first-run --no-zygote --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage --ignore-certificate-errors --ignore-urlfetcher-cert-requests https://ba-testing.unsafe.blazed.win:8443/check.html"
-  podman logs $containerId
+  podman exec $containerId /bin/bash -c "cd /app && wget -O chromium.zip '$line' && unzip chromium.zip && ./install_deps.sh ./chrome-linux/chrome && cd ./chrome-linux && bash -c 'Xvfb :99 -ac -screen 0 640x480x8 -nolisten tcp &' && ./chrome --no-sandbox --no-first-run --no-zygote --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage https://ba-testing.unsafe.blazed.win:8443/check.html"
+  echo "Container ID: $containerId"
+  podman logs -f --tail 100 $containerId
   break
 done <<< "$LINKS"

@@ -2,7 +2,7 @@ FROM debian
 
 ENV DISPLAY :99
 
-RUN apt update && apt install -y openssl bsdmainutils wget unzip apt-file xvfb
+RUN apt update && apt install -y openssl bsdmainutils wget unzip apt-file xvfb vim jq
 RUN apt-file update
 
 # Install chrome deps

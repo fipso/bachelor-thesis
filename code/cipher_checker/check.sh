@@ -94,33 +94,53 @@ while IFS= read -r line; do
   fi
 
   # Redirect log to file
-  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -serverpref -brief >> "logs/$port-$cs.txt" 2>&1 &
+  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -serverpref -debug >> "logs/$port-$cs.txt" 2>&1 &
 
   port=$((port+1))
 done <<< "$ciphers"
 
 # Check all log files for errors and print overview of server status
 while true; do
+  result_json="["
+
   echo -e "  \nServer status:\n"
   status_array=()
   cDone=0
   for file in ./logs/*; do
     filename=$(basename $file)
+
+    # Extract cipher name: format is PORT-CIPHER-NAME.txt
+    cipherName="${filename#*-}"
+    cipherName="${cipherName%.txt}"
+    status=""
+
     if grep -q "error" $file; then
+      status="error"
+
       # Pad the string to ensure alignment
       padded_filename=$(printf "%-50s" "\033[31m$filename\033[0m")
       status_array+=("$padded_filename")
       cDone=$((cDone+1))
     elif [ $(wc -l < $file) -le 2 ]; then
+      status="no connection"
+
       # if there are less or equal than 2 lines in the log color it orange
       padded_filename=$(printf "%-50s" "\033[33m$filename\033[0m")
       status_array+=("$padded_filename")
     else
+      status="ok"
+
       padded_filename=$(printf "%-50s" "\033[32m$filename\033[0m")
       status_array+=("$padded_filename")
       cDone=$((cDone+1))
     fi
+
+    result_json+="{\"cipher\":\"$cipherName\",\"status\":\"$status\",\"logs\":$(jq -R -s '.' < $file)},"
   done
+
+  # Remove trailing comma and end json array
+  result_json=$(echo $result_json | sed 's/,$//')
+  result_json+="]"
 
   # Print array elements and pipe to column for multi-column display
   printf '%b\n' "${status_array[@]}" | column
@@ -128,6 +148,10 @@ while true; do
 
   # If all servers are done, break the loop
   if [ $cDone -eq $(ls ./logs | wc -l) ]; then
+    echo -e "\nAll tls servers are done!"
+    echo -e "\nResult JSON:\n"
+    echo "$result_json" | jq
+    echo "$result_json" > ./result.json
     break
   fi
 done
