@@ -89,14 +89,18 @@ https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Li
 END
 )
 
-while IFS= read -r line; do
+function runWithURL {
   # Spawn container
   containerId=$(podman run -d cipher_checker)
   # Copy dependency installer script
   podman cp ./install_deps.sh $containerId:/app/install_deps.sh
   # Download and run chrome 
-  podman exec $containerId /bin/bash -c "cd /app && wget -O chromium.zip '$line' && unzip chromium.zip && ./install_deps.sh ./chrome-linux/chrome && cd ./chrome-linux && bash -c 'Xvfb :99 -ac -screen 0 640x480x8 -nolisten tcp &' && ./chrome --no-sandbox --no-first-run --no-zygote --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage https://ba-testing.unsafe.blazed.win:8443/check.html"
+  podman exec $containerId /bin/bash -c "cd /app && wget -O chromium.zip '$1' && unzip chromium.zip && ./install_deps.sh ./chrome-linux/chrome && cd ./chrome-linux && bash -c 'Xvfb :99 -ac -screen 0 640x480x8 -nolisten tcp &' && ./chrome --no-sandbox --no-first-run --no-zygote --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage https://ba-testing.unsafe.blazed.win:8443/check.html"
   echo "Container ID: $containerId"
   #podman logs -f --tail 100 $containerId
   podman cp $containerId:/app/result.json ./results/$containerId.json
+}
+
+while IFS= read -r line; do
+  runWithURL $line &
 done <<< "$LINKS"
