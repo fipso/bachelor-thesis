@@ -101,6 +101,8 @@ function runWithURL {
   podman cp $containerId:/app/result.json ./results/$containerId.json
 }
 
+job=0
 while IFS= read -r line; do
-  runWithURL $line &
+  job=$((job+1))
+  runWithURL $line &> ./jobs/$job.txt &
 done <<< "$LINKS"
