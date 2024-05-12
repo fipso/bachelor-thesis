@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p ./logs/
+
 # Cleanup from previous runs
 killall openssl
 rm -rf ./logs/*
