@@ -111,7 +111,6 @@ while true; do
 
   echo -e "  \nServer status:\n"
   status_array=()
-  cDone=0
   for file in ./logs/*; do
     filename=$(basename $file)
 
@@ -126,7 +125,6 @@ while true; do
       # Pad the string to ensure alignment
       padded_filename=$(printf "%-50s" "\033[31m$filename\033[0m")
       status_array+=("$padded_filename")
-      cDone=$((cDone+1))
     elif [ $(wc -l < $file) -le 2 ]; then
       status="no connection"
 
@@ -138,7 +136,6 @@ while true; do
 
       padded_filename=$(printf "%-50s" "\033[32m$filename\033[0m")
       status_array+=("$padded_filename")
-      cDone=$((cDone+1))
     fi
 
     result_json+="{\"cipher\":\"$cipherName\",\"status\":\"$status\",\"logs\":$(jq -R -s '.' < $file)},"
@@ -152,9 +149,10 @@ while true; do
   printf '%b\n' "${status_array[@]}" | column
   sleep 1
 
-  # If all servers are done, break the loop
-  if [ $cDone -eq $(ls ./logs | wc -l) ]; then
-    echo -e "\nAll tls servers are done!"
+  # If browser meta has been written, stop
+  if [ $(wc -l <./browser_meta.txt) -ge 2 ]; then
+    echo -e "\nBrowser meta data collected\n"
+    echo -e "\nExiting...\n"
     echo -e "\nResult JSON:\n"
     echo "$result_json" | jq
     echo "$result_json" > ./result.json

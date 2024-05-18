@@ -1,13 +1,24 @@
 <html>
   <body>
-    <h1>TLS Client Support Verifier</h1>
+    <h1>TLS Client Support Verifier <span id="progress"></span></h1>
     <div id="frames"></div>
 
     <script>
       const DOMAIN = "ba-testing.unsafe.blazed.win";
+      const SERVER_AMOUNT = 61;
+
+      let framesDone = 0;
+      const onFrameDone = () => {
+        framesDone++;
+        document.getElementById('progress').innerText = `${framesDone}/${SERVER_AMOUNT}`;
+        if(framesDone === SERVER_AMOUNT){
+          // Provide browser information to bash script & exit
+          fetch(`https://${DOMAIN}:8444/`);
+        }
+      }
 
       const frames = document.getElementById('frames');
-      for(let i = 0; i < 61; i++){
+      for(let i = 0; i < SERVER_AMOUNT; i++){
         const port = 8000+i;
         const url = `https://${DOMAIN}:${port}`;
 
@@ -15,11 +26,10 @@
         frame.src = url;
         frame.width = 400;
         frame.height = 200;
+        frame.onload = onFrameDone;
+        frame.onerror = onFrameDone;
         frames.appendChild(frame);
       }
-
-      // Provide browser information to bash script
-      fetch(`https://${DOMAIN}:8444/`);
     </script>
   </body>
 </html>
