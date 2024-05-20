@@ -99,7 +99,7 @@ while IFS= read -r line; do
     cipher_param="-cipher $cs -no_tls1_3"
   fi
 
-  # Redirect log to file
+  # Spawn check server and redirect log to file
   openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -serverpref -debug > "logs/$port-$cs.txt" 2>&1 &
 
   port=$((port+1))
@@ -107,7 +107,7 @@ done <<< "$ciphers"
 
 # Check all log files for errors and print overview of server status
 while true; do
-  result_json="{\"browser\":$(jq -R -s '.' < ./browser_meta.txt),\"ciphers\":["
+  result_json="{\"ciphers\":["
 
   echo -e "  \nServer status:\n"
   status_array=()
@@ -138,16 +138,17 @@ while true; do
       status_array+=("$padded_filename")
     fi
 
-    result_json+="{\"cipher\":\"$cipherName\",\"status\":\"$status\",\"logs\":$(jq -R -s '.' < $file)},"
+    cmd=$(ps x | grep -- "-cipher $cipherName " | grep -v grep)
+    result_json+="{\"cipher\":\"$cipherName\",\"status\":\"$status\",\"logs\":$(jq -R -s '.' < $file),\"command\":\"$cmd\"},"
   done
-
-  # Remove trailing comma and end json
-  result_json=$(echo $result_json | sed 's/,$//')
-  result_json+="]}"
 
   # Print array elements and pipe to column for multi-column display
   printf '%b\n' "${status_array[@]}" | column
-  sleep 1
+
+  # Remove trailing comma
+  result_json=$(echo $result_json | sed 's/,$//')
+  # Add browser meta data and end json
+  result_json+="],\"browser\":$(jq -R -s '.' < ./browser_meta.txt)}"
 
   # If browser meta has been written, stop
   if [ $(wc -l <./browser_meta.txt) -ge 2 ]; then
@@ -158,4 +159,6 @@ while true; do
     echo "$result_json" > ./result.json
     break
   fi
+
+  sleep 1
 done

@@ -3,7 +3,7 @@
 mkdir -p ./results
 mkdir -p ./jobs
 
-rm -fs ./jobs/*
+rm -rf ./jobs/*
 
 set -x
 
@@ -101,4 +101,9 @@ job=0
 while IFS= read -r line; do
   job=$((job+1))
   runWithURL $job $line &> ./jobs/$job.txt &
+
+  # Wait for every 5 jobs to finish
+  if ! ((job % 5)) ; then
+    wait
+  fi
 done <<< "$LINKS"
