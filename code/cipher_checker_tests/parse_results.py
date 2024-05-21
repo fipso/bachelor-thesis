@@ -78,4 +78,4 @@ for result in results:
     # Print ciphers that were not checked
     for clientCipher in clientCiphers:
         if clientCipher not in checkedCiphers:
-            print("Not checked cipher:", cipher['cipher'], "\033[0m")
+            print("Not checked cipher:", clientCipher, "\033[0m")

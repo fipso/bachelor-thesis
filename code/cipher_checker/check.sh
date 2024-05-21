@@ -40,12 +40,12 @@ TLSv1.2    :PSK-CHACHA20-POLY1305
 TLSv1.2    :PSK-AES128-CCM
 TLSv1.2    :PSK-AES256-CCM
 TLSv1.2    :PSK-AES128-GCM-SHA256
-TLSv1.2    :DHE-PSK-AES256-GCM-SHA384 
-TLSv1.2    :DHE-PSK-AES256-CCM        
+TLSv1.2    :DHE-PSK-AES256-GCM-SHA384
+TLSv1.2    :DHE-PSK-AES256-CCM
 TLSv1.2    :DHE-PSK-AES128-CCM
-TLSv1.2    :ECDHE-PSK-CHACHA20-POLY1305 
-TLSv1.2    :RSA-PSK-AES256-GCM-SHA384 
-TLSv1.2    :RSA-PSK-AES128-GCM-SHA256 
+TLSv1.2    :ECDHE-PSK-CHACHA20-POLY1305
+TLSv1.2    :RSA-PSK-AES256-GCM-SHA384
+TLSv1.2    :RSA-PSK-AES128-GCM-SHA256
 TLSv1.2    :DHE-PSK-CHACHA20-POLY1305
 TLSv1.2    :DHE-PSK-AES128-GCM-SHA256
 TLSv1.2    :RSA-PSK-CHACHA20-POLY1305
@@ -66,11 +66,11 @@ END
 
 # Spawn static https server to serve check.html and api
 www_port=8443
-openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW &
+openssl s_server -key key_ecdsa.pem -cert cert_ecdsa.pem -accept $www_port -WWW &
 
 # Spawn openssl s_server with -brief flag to collect browser user agent and supported ciphers
 www_meta_port=8444
-sleep 999999 | openssl s_server -key key.pem -cert cert.pem -accept $www_meta_port -brief &> ./browser_meta.txt &
+sleep 999999 | openssl s_server -key key_ecdsa.pem -cert cert_ecdsa.pem -accept $www_meta_port -brief &> ./browser_meta.txt &
 
 # Start of test s_server port range
 port=8000
@@ -79,7 +79,16 @@ while IFS= read -r line; do
   cs=$(echo $line | sed 's/.*://')
   echo "Spawning server with cipher: $cs"
 
+  cert_param=""
   cipher_param=""
+
+  # Check if cipher contains ECDSA
+  is_ecdsa=$(echo $line | grep -c "ECDSA")
+  if [ $is_ecdsa -eq 1 ]; then
+    cert_param="-key key_ecdsa.pem -cert cert_ecdsa.pem"
+  else
+    cert_param="-key key_rsa.pem -cert cert_rsa.pem"
+  fi
 
   # Detect if its TLSv1.3 or lower
   is_tls13=$(echo $line | grep -c "TLSv1.3")
@@ -92,7 +101,7 @@ while IFS= read -r line; do
   fi
 
   # Spawn check server and redirect log to file
-  openssl s_server -key key.pem -cert cert.pem -accept $port -www $cipher_param -serverpref -debug > "logs/$port-$cs.txt" 2>&1 &
+  openssl s_server $cert_param -accept $port -www $cipher_param -serverpref -debug > "logs/$port-$cs.txt" 2>&1 &
 
   port=$((port+1))
 done <<< "$ciphers"

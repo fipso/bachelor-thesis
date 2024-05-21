@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function start_timeout {
-  sleep 120
+  sleep 60
   # Kill all children after timeout expires
   pkill -9 -P $$
 }
