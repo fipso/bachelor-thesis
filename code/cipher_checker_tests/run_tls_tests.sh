@@ -4,8 +4,7 @@ mkdir -p ./results
 mkdir -p ./jobs
 
 rm -rf ./jobs/*
-
-set -x
+rm -rf ./results/*
 
 LINKS=$(cat <<-END
 https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F1002910%2Fchrome-linux.zip?generation=1652397748160413&alt=media
@@ -100,10 +99,14 @@ function runWithURL {
 job=0
 while IFS= read -r line; do
   job=$((job+1))
+  echo "[Job $job] New Test with Browser: Chromium ${line##*/}"
   runWithURL $job $line &> ./jobs/$job.txt &
 
   # Wait for every 5 jobs to finish
   if ! ((job % 5)) ; then
+    echo "Waiting for jobs to finish..."
     wait
   fi
 done <<< "$LINKS"
+
+echo "Done :D"

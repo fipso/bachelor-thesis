@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function start_timeout {
-  sleep 60
+  sleep 45
   # Kill all children after timeout expires
   pkill -9 -P $$
 }
@@ -24,6 +24,7 @@ function run_chromium {
   # Run test chromium
   ./chrome-linux/chrome\
     --no-sandbox\
+    --disable-setuid-sandbox\
     --no-first-run\
     --no-zygote\
     --disable-gpu\
