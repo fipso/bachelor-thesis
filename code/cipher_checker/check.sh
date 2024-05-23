@@ -101,12 +101,13 @@ while IFS= read -r line; do
   fi
 
   # Spawn check server and redirect log to file
-  openssl s_server $cert_param -accept $port -www $cipher_param -serverpref -debug > "logs/$port-$cs.txt" 2>&1 &
+  (logpath="logs/$port-$cs.txt"; openssl s_server $cert_param -accept $port -www $cipher_param -serverpref -debug &> $logpath; echo "error: s_server exited with code $?" >> $logpath) &
 
   port=$((port+1))
 done <<< "$ciphers"
 
 # Check all log files for errors and print overview of server status
+stopRequested=false
 while true; do
   result_json="{\"ciphers\":["
 
@@ -151,14 +152,18 @@ while true; do
   # Add browser meta data and end json
   result_json+="],\"browser\":$(jq -R -s '.' < ./browser_meta.txt)}"
 
-  # If browser meta has been written, stop
-  if [ $(wc -l <./browser_meta.txt) -ge 2 ]; then
+  if [ "$stopRequested" = true ]; then
     echo -e "\nBrowser meta data collected\n"
     echo -e "\nExiting...\n"
     echo -e "\nResult JSON:\n"
     echo "$result_json" | jq
     echo "$result_json" > ./result.json
     break
+  fi
+
+  # If browser meta has been written, stop
+  if [ $(wc -l <./browser_meta.txt) -ge 2 ]; then
+    stopRequested=true
   fi
 
   sleep 1
