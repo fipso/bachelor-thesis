@@ -533,7 +533,7 @@ shipped with Fedora39 Linux.
   159
 \end{lstlisting}
 
-OpenSSl may be more well known as a library for cryptographic functions, but it
+OpenSSL may be more well known as a library for cryptographic functions, but it
 also contains with a command line interface. The openssl binary comes with a
 built-in TLS and HTTP server implementation called s\_server. It can be used to
 quickly setup TLS servers for testing and debugging purposes. The list of
@@ -601,20 +601,62 @@ To make a browser connect to all the created TLS servers and show connection err
 To simplify the process of creating the iframes a simple JavaScript script can be used.
 
 \begin{minted}{javascript}
-  const DOMAIN = "ba-testing.unsafe.blazed.win";
+      const DOMAIN = "ba-testing.unsafe.blazed.win";
+      const SERVER_AMOUNT = 41;
 
-  const frames = document.getElementById('frames');
-  for(let i = 0; i < 61; i++){
-    const port = 8000+i;
-    const url = `https://${DOMAIN}:${port}`;
+      let framesDone = 0;
+      const onFrameDone = () => {
+        framesDone++;
+        if(framesDone === SERVER_AMOUNT){
+          // Provide browser information to bash script & exit
+          fetch(`https://${DOMAIN}:8444/`);
+        }
+      }
 
-    const frame = document.createElement('iframe');
-    frame.src = url;
-    frame.width = 400;
-    frame.height = 200;
-    frames.appendChild(frame);
-  }
+      const frames = document.getElementById('frames');
+      for(let i = 0; i < SERVER_AMOUNT; i++){
+        const port = 8000+i;
+        const url = `https://${DOMAIN}:${port}`;
+
+        const frame = document.createElement('iframe');
+        frame.src = url;
+        frame.onload = onFrameDone;
+        frame.onerror = onFrameDone;
+        frames.appendChild(frame);
+      }
+
 \end{minted}
+
+After all iframes have either loaded successfully or failed the script performs a final fetch request to another
+s\_server that is running with the \-brief option. This server will collect the clients User\-Agent and supported TLS ciphers.
+After that, before the bash script exits, it will write a result json file that contains information about each tested cipher including logs
+of each s\_server instance that was used for cipher validation.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=6cm]{./images/cipher_check_setup.png}
+  \caption{Using iframes to connect to all spawned s\_server instances}
+\end{figure}
+
+To verify that this approach is working as expected across different versions of browser
+and TLS implementations a testing setup needed to be created. As running different versions of
+browsers on the same host is not easily possible, docker containers and some shell scripting was
+utilized.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=10cm]{./images/cipher_checker_tests.png}
+  \caption{The bash script spawns multiple instances of the cipher\_checker\_tests which includes check.sh and a browser for testing}
+\end{figure}
+
+To parse the result json files of each browser test a python script was made. It parses each json file, compares the supported ciphers
+with the list of ciphers that the client told the server it supports and also visualizes the results in a HTML table.  
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=18cm]{./images/cipher_checker_table.png}
+  \caption{Cutoff results table screenshot of 56 different versions of the Chromium browser}
+\end{figure}
 
 \newpage \subsection{Combined Score Based Approach}
 

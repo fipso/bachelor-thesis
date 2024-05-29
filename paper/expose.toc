@@ -28,12 +28,12 @@
 \contentsline {subsection}{\numberline {2.2.4}Round Trip Time Analysis}{19}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Verify supported ciphers}{20}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}Combined Score Based Approach}{23}{subsection.2.2.6}%
-\contentsline {chapter}{\numberline {3}Results}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Findings from Simulations}{24}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Effectiveness of Current Defenses}{24}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Proposed Solutions}{24}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Discussion}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Implications of Findings}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Limitations and Future Research}{25}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Bibliography}{26}{chapter.5}%
+\contentsline {chapter}{\numberline {3}Results}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Findings from Simulations}{25}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Effectiveness of Current Defenses}{25}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Proposed Solutions}{25}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Discussion}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Implications of Findings}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Limitations and Future Research}{26}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Bibliography}{27}{chapter.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
