@@ -550,49 +550,49 @@ written to a log file that is supervised by our bash script.
 \newpage
 
 \begin{minted}{bash}
-  #!/bin/bash
-  # Cleanup from previous runs
-  killall openssl && rm -rf ./logs/*
+#!/bin/bash
+# Cleanup from previous runs
+killall openssl && rm -rf ./logs/*
 
-  # List of default ciphers supported by openssl s_server
-  ciphers=$(cat <<-END
-  TLSv1.3    :TLS_AES_128_GCM_SHA256
-  TLSv1.3    :TLS_AES_256_GCM_SHA384
-  ...
-  END)
+# List of default ciphers supported by openssl s_server
+ciphers=$(cat <<-END
+TLSv1.3    :TLS_AES_128_GCM_SHA256
+TLSv1.3    :TLS_AES_256_GCM_SHA384
+...
+END)
 
-  # Spawn static https server to serve check.html and api
-  www_port=8443
-  openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
+# Spawn static https server to serve check.html and api
+www_port=8443
+openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
 
-  # Start of test s_server port range
-  port=8000
+# Start of test s_server port range
+port=8000
 
-  while IFS= read -r line; do
-  cs=$(echo $line | sed 's/.*://')
-  echo "Spawning server with cipher: $cs"
+while IFS= read -r line; do
+cs=$(echo $line | sed 's/.*://')
+echo "Spawning server with cipher: $cs"
 
-  cipher_param=""
+cipher_param=""
 
-  # Detect if its TLSv1.3 or lower
-  is_tls13=$(echo $line | grep -c "TLSv1.3")
+# Detect if its TLSv1.3 or lower
+is_tls13=$(echo $line | grep -c "TLSv1.3")
 
-  # Use the correct openssl command based on TLS version
-  if [ $is_tls13 -eq 1 ]; then
+# Use the correct openssl command based on TLS version
+if [ $is_tls13 -eq 1 ]; then
   cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
-  else
+else
   cipher_param="-cipher $cs -no_tls1_3"
-  fi
+fi
 
-  # Spawn s_server instance and redirect output log to file
-  openssl s_server -key key.pem -cert cert.pem -accept $port -www \
-  $cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
+# Spawn s_server instance and redirect output log to file
+openssl s_server -key key.pem -cert cert.pem -accept $port -www \
+$cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
 
-  port=$((port+1))
-  done <<< "$ciphers"
+port=$((port+1))
+done <<< "$ciphers"
 
-  # Check all log files for errors and print overview of server status
-  ...
+# Check all log files for errors and print overview of server status
+...
 \end{minted}
 
 \newpage
@@ -601,30 +601,24 @@ To make a browser connect to all the created TLS servers and show connection err
 To simplify the process of creating the iframes a simple JavaScript script can be used.
 
 \begin{minted}{javascript}
-      const DOMAIN = "ba-testing.unsafe.blazed.win";
-      const SERVER_AMOUNT = 41;
+  let framesDone = 0;
+  const onFrameDone = () => {
+    framesDone++;
+    if(framesDone === SERVER_AMOUNT){
+      fetch(`https://${DOMAIN}:8444/`); // Provide browser information to bash script & exit
+    }
+  }
+  const frames = document.getElementById('frames');
+  for(let i = 0; i < SERVER_AMOUNT; i++){
+    const port = 8000+i;
+    const url = `https://${DOMAIN}:${port}`;
 
-      let framesDone = 0;
-      const onFrameDone = () => {
-        framesDone++;
-        if(framesDone === SERVER_AMOUNT){
-          // Provide browser information to bash script & exit
-          fetch(`https://${DOMAIN}:8444/`);
-        }
-      }
-
-      const frames = document.getElementById('frames');
-      for(let i = 0; i < SERVER_AMOUNT; i++){
-        const port = 8000+i;
-        const url = `https://${DOMAIN}:${port}`;
-
-        const frame = document.createElement('iframe');
-        frame.src = url;
-        frame.onload = onFrameDone;
-        frame.onerror = onFrameDone;
-        frames.appendChild(frame);
-      }
-
+    const frame = document.createElement('iframe');
+    frame.src = url;
+    frame.onload = onFrameDone;
+    frame.onerror = onFrameDone;
+    frames.appendChild(frame);
+  }
 \end{minted}
 
 After all iframes have either loaded successfully or failed the script performs a final fetch request to another
@@ -638,9 +632,11 @@ of each s\_server instance that was used for cipher validation.
   \caption{Using iframes to connect to all spawned s\_server instances}
 \end{figure}
 
+\clearpage
+
 To verify that this approach is working as expected across different versions of browser
 and TLS implementations a testing setup needed to be created. As running different versions of
-browsers on the same host is not easily possible, docker containers and some shell scripting was
+browsers on the same host is not easily possible, docker containers and some shell scripts were
 utilized.
 
 \begin{figure}[!h]
@@ -651,6 +647,12 @@ utilized.
 
 To parse the result json files of each browser test a python script was made. It parses each json file, compares the supported ciphers
 with the list of ciphers that the client told the server it supports and also visualizes the results in a HTML table.  
+
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[height=45mm]{./images/parse_results.png}
+  \caption{The python script compares the sent client ciphers from the ClientHello with the s\_server connections that were successful}
+\end{figure}
 
 \begin{figure}[!h]
   \centering

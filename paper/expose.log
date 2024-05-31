@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.5.18)  29 MAY 2024 17:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.5.18)  31 MAY 2024 18:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -869,48 +869,49 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 \openout3 = `expose.pyg'.
 
 
-(./_minted-expose/48B6518EA8E2C27FC86FE9F5DB424BE624812AFC1D82BFC44723C412D8AA6
+(./_minted-expose/08AF024442E2D28E8A5BBD5A4F27E7F824812AFC1D82BFC44723C412D8AA6
 68C.pygtex) [21]
 \openout3 = `expose.pyg'.
 
 
-(./_minted-expose/1C828EBC7F759C141E4B3A29B5AA64B5E425CA39F3F2F4D8DBF1F38F81B47
+(./_minted-expose/E182EBDC89CF4A8C9AECBA7D1E77D8D0E425CA39F3F2F4D8DBF1F38F81B47
 192.pygtex)
 <./images/cipher_check_setup.png, id=224, 1343.0175pt x 522.95375pt>
 File: ./images/cipher_check_setup.png Graphic file (type png)
 <use ./images/cipher_check_setup.png>
 Package pdftex.def Info: ./images/cipher_check_setup.png  used on input line 63
-7.
+1.
 (pdftex.def)             Requested size: 438.42233pt x 170.71652pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images/cipher_checker_tests.png, id=225, 787.94376pt x 553.06625pt>
+ [22 <./images/cipher_check_setup.png>]
+<./images/cipher_checker_tests.png, id=231, 787.94376pt x 553.06625pt>
 File: ./images/cipher_checker_tests.png Graphic file (type png)
 <use ./images/cipher_checker_tests.png>
 Package pdftex.def Info: ./images/cipher_checker_tests.png  used on input line 
-648.
+644.
 (pdftex.def)             Requested size: 405.35672pt x 284.52756pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images/cipher_checker_table.png, id=226, 833.1125pt x 935.495pt>
+<./images/parse_results.png, id=232, 882.29625pt x 624.3325pt>
+File: ./images/parse_results.png Graphic file (type png)
+<use ./images/parse_results.png>
+Package pdftex.def Info: ./images/parse_results.png  used on input line 653.
+(pdftex.def)             Requested size: 180.93921pt x 128.0374pt.
+<./images/cipher_checker_table.png, id=233, 833.1125pt x 935.495pt>
 File: ./images/cipher_checker_table.png Graphic file (type png)
 <use ./images/cipher_checker_table.png>
 Package pdftex.def Info: ./images/cipher_checker_table.png  used on input line 
-657.
+659.
 (pdftex.def)             Requested size: 456.11577pt x 512.1496pt.
 
-Overfull \hbox (7.98482pt too wide) in paragraph at lines 657--658
+Overfull \hbox (7.98482pt too wide) in paragraph at lines 659--660
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22] [23 <./images/cipher_check_setup.png> <./images/cipher_checker_tests.png>]
-[24 <./images/cipher_checker_table.png>]
+[23
+
+ <./images/cipher_checker_tests.png> <./images/parse_results.png>] [24 <./image
+s/cipher_checker_table.png>]
 chapter 3.
 [25
 
@@ -935,10 +936,10 @@ runsystem(rm expose.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 18677 strings out of 477985
- 343352 string characters out of 5839370
+ 18685 strings out of 477985
+ 343573 string characters out of 5839370
  2003388 words of memory out of 6000000
- 38512 multiletter control sequences out of 15000+600000
+ 38518 multiletter control sequences out of 15000+600000
  519440 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,8n,106p,10601b,1303s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -954,10 +955,10 @@ c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
 frm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200
 .pfb>
-Output written on expose.pdf (27 pages, 1008338 bytes).
+Output written on expose.pdf (27 pages, 1405917 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 107 named destinations out of 1000 (max. 500000)
- 264 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 
