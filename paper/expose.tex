@@ -30,36 +30,43 @@ transparent phishinging attack vectors \vspace{2cm} \large }
 
 \newpage \tableofcontents
 
-\newpage \section{Problem statement} These days most websites have implemented
-two or multi-factor authentication systems to prevent malicious third-party
-actors from using stolen login credentials to commit identity theft. Despite
-this, a new technique referred to as transparent proxy phishing still provides
-malicious actors the means to bypass two-factor authentication systems during
-social engineering based phishing attacks.\\This creates a critical security
-vulnerability, as this technique can be used to gain unauthorized access to
-otherwise secure systems.\\To resolve this issue, it is imperative to develop
-and implement effective measures to counteract transparent phishing and other
-methods of circumventing multi-factor authentication systems.
+\newpage
+\section{Abstract}
+As of today most online services have implemented
+multi-factor authentication to prevent malicious third\-party actors from using stolen login credentials.
+Despite this, a new technique referred to as transparent proxy phishing still provides
+malicious actors the means of acquiring a victims private credentials and MFA tokens during a classical
+social engineering based phishing attack. The attacker is able to effectively duplicate legitimate services
+by using specifically configured reverse proxy servers that relay traffic from the victims browser to the original service
+while collecting and intercepting wanted information like passwords and credit card numbers.
+Also the ease with which transparent proxy phishing can be executed is alarming. Open\-source toolkits and publicly available resources have made it simpler than ever for attackers to deploy such sophisticated schemes without a deep understanding of web development or cybersecurity. This elevation in threat sophistication underscores the urgent need for a corresponding advancement in defensive measures.
+This creates a critical security threat, as the technique can be used to gain unauthorized access to
+otherwise secure systems. 
+To resolve this issue, it is imperative to develop
+and implement effective measures to counteract transparent phishing and alike.
+This paper will outline different strategies that can help organizations and
+developers to protect their applications against this new attack vector.
 
-\section{Research question} How can we protect multi factor authentication
-secured web applications from transparent proxy phishing attacks? Based on this
-question the following sub questions were derived: \begin{itemize} \item What
-  exactly are classical phishing attacks in general and how do they differ from
-  the new attack vector?
-  \item How big is the threat imposed by this new type of phishing attack?
-  \item Why are many organizations still not aware of this issue?
-  \item What can be done to help developers counteract this type of security
-    threat?
-\end{itemize}
+\newpage
+\section{Problem statement}
+As an online service provider it is crucial to protect the privacy and security of your users.
+Due to the fact the transparent or so called reverse proxy phishing attacks are becoming more common and sophisticated
+implementing additional active security measures to detect them is essential.
+Some research has been done on this topic already, still we are far away from production ready plug\-n\-play solutions.
+The goal of this paper is to provide a comprehensive overview of the current
+strategies to detect transparent phishing attacks and also to come up with a new approach
+of identify incoming client traffic that is relayed through a transparent phishing toolkit.
 
-\section{Objective} As credential theft and cyberfraud in general are still a
-growing problem in the digital age, it is important to develop and implement
-effective measures to counteract this threat. The objective of this thesis is to
-find and document different strategy's that can help organizations and
-developers to protect their applications against the new transparent proxy
-phishing attack vector.
+\section{Research question} How can we protect web applications against transparent proxy phishing attacks? Based on this
+question the following sub questions were derived:
+What exactly are classical phishing attacks in general and how do they differ from the new attack vector?\\
+How big is the threat imposed by this new type of phishing attack?\\
+How can a webserver know that a client connection is being relayed through a transparent phishing toolkit?
 
-\section{Theoretical foundations \& current state of research}
+\section{Objective} 
+The objectives of this research are threefold. Firstly, it aims to elucidate the mechanics and impact of transparent proxy phishing, underscoring why it is a growing concern in the cybersecurity community. Secondly, the study evaluates the current state of research, identifying gaps in existing defenses against this attack vector. Finally, through rigorous experimentation and practical simulations, the paper proposes new, effective strategies to mitigate this threat, contributing valuable insights to the arsenal of cybersecurity defense mechanisms.
+
+\newpage \section{Theoretical foundations}
 \paragraph{Cyberfraud} is a form of internet-based fraud, usually involving the use of false identities
 and/or stolen information to illegally obtain money, property, or services.
 Cyberfraud is an increasingly pervasive problem that is becoming increasingly
@@ -146,8 +153,7 @@ unencrypted traffic to a HTTP backend app.
 developing, shipping, and running applications. It allows developers to package
 their applications and dependencies into containers, which can then be run on
 any system that has Docker installed. Docker containers are lightweight,
-portable, and self-sufficient, making them an ideal platform for deploying
-applications.
+portable, and self-sufficient, making them an ideal platform for deploying applications.
 
 \paragraph{HTML} is the standard markup language for creating web pages
 and web applications. It is used to structure and present content on the web.
@@ -169,19 +175,62 @@ by network administrators, security professionals, and developers to
 troubleshoot network problems, analyze network traffic, and detect security
 vulnerabilities.
 
+\newpage \section{Current state of research}
 Many scientific papers have been published on this
 topic, but there is still a lack of information on how to protect against this
 new attack vector. This is why it is important to find and document different
 strategies that can help organizations and developers to mitigate this new
 attack vector.
 
-\section{Research design} This thesis will be conducted in a quantitative
-research design. By analyzing existing literature and scientific papers on the
-topic, but also by running own experiments in which open source reverse proxy
-phishing toolkits will be used to setup attack simulations with the goal to find
-flaws in their attack implementation. With the gained knowledge from this
-experiments this paper will outline easy to follow strategies to protect web
-services from this threat.
+\section{Research Design} 
+First, a thorough analysis of existing and scientific papers on reverse proxy
+ phishing toolkits will be undertaken. This literature review will critically
+ evaluate prior research findings, methodologies, and theoretical frameworks
+ deployed in the study of phishing attacks and defense mechanisms. By doing
+ so, it will identify potential gaps in the current body of knowledge and establish
+ a solid theoretical foundation for subsequent experimental work.
+In parallel, experimental research will be conducted by setting up controlled
+ attack simulations using various open\-source reverse proxy phishing toolkits
+. These toolkits, commonly used by adversaries in real\-world scenarios, will
+ be systematically evaluated to uncover flaws and weaknesses in their attack
+ implementations. Each experiment will involve detailed documentation of the
+ setup, execution, and outcomes of the phishing simulations, ensuring reproduc
+ibility and transparency in the research process.
+The experimental phase will involve the following steps:
+\begin{itemize}
+  \item Selection of Toolkits: A range of widely\-used open\-source reverse proxy
+    phishing toolkits will be selected based on criteria such as popularity, functionality
+    , and community support. Examples may include Evilginx, Modlishka, and Mura
+    ena.
+  \item Simulation Setup: Virtual environments replicating real\-world web services
+    will be created to serve as targets for the phishing simulations. These environments
+    will be configured to log detailed information on the interactions between
+    the phishing toolkits and the target web services.
+  \item Execution of Attacks: Each selected phishing toolkit will be deployed
+    against the simulated web services. Various attack scenarios will be tested
+    to evaluate the robustness and effectiveness of the phishings toolkits. Specific
+    metrics for assessment may include detection evasion, data exfiltration capabilities
+    , and overall success rate of phishing attempts.
+  \item Data Collection and Analysis: Data generated from the attack simulations
+    will be meticulously collected and analyzed. Statistical techniques will be
+    employed to identify patterns, correlations, and significant findings that
+    shed light on the strengths and weaknesses of the reverse proxy phishing tool
+    kits.
+  \item Validation of Findings: To ensure the reliability and validity of the
+    findings, additional experiments may be conducted with different configurations
+    and settings, including testing the toolkits against various web security measures.
+    Based on the insights gained through literature review and empirical experiments
+    , this thesis will then develop and outline easy\-to\-follow strategies to protect
+    web services from reverse proxy phishing attacks. These strategies will be
+    crafted in a manner that allows for intuitive implementation by security professionals
+    and web service administrators, aiming to enhance the overall resilience of
+    web services against such threats.
+\end{itemize}
+
+In conclusion, this research design integrates both the theoretical and practical
+ aspects of cybersecurity research, adopting a rigorous and systematic approach
+ to advance current understandings of reverse proxy phishing toolkits and contribute
+ to the development of effective defense mechanisms.
 
 \newpage \chapter{Literature Review} \section{Overview of Multi-Factor
 Authentication}
@@ -267,8 +316,10 @@ especially dangerous, because the URL in the address bar will look exactly like
 the original URL and also behave exactly like it due to usage of transparent
 proxying. It is close to impossible even for a educated user to recognize the he
 is being lured into a phishing attack. Luckily the browser vendors were quick to
-react and implemented a fix for this issue.\\ \\ By reading literature on this
-topic, it becomes clear that performing a transparent proxy phishing attack is
+react and implemented a fix for this issue.
+
+By reading literature on this topic, it becomes clear that 
+performing a transparent proxy phishing attack is
 becoming easier and easier. This is because of the increasing number of open
 source reverse proxy phishing toolkits that are available on the internet. These
 toolkits are designed to allow read teams and cyber security researchers to set
