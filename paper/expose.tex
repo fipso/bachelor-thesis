@@ -10,12 +10,17 @@
 \usepackage{outlines}
 \usepackage{listings}
 \usepackage{minted}
-\usepackage{parskip}
+\usepackage{paralist}
 
-\KOMAoptions{twoside=false}
+\KOMAoptions{twoside=false,parskip=half}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{\baselineskip}
+
+\RedeclareSectionCommands[
+beforeskip=1em,
+runin=false,
+afterskip=-\parskip
+]{paragraph,subparagraph}
 
 \begin{document}
 
@@ -33,13 +38,13 @@ transparent phishinging attack vectors \vspace{2cm} \large }
 \newpage
 \section{Abstract}
 As of today most online services have implemented
-multi-factor authentication to prevent malicious third\-party actors from using stolen login credentials.
+multi-factor authentication to prevent malicious third-party actors from using stolen login credentials.
 Despite this, a new technique referred to as transparent proxy phishing still provides
 malicious actors the means of acquiring a victims private credentials and MFA tokens during a classical
 social engineering based phishing attack. The attacker is able to effectively duplicate legitimate services
 by using specifically configured reverse proxy servers that relay traffic from the victims browser to the original service
 while collecting and intercepting wanted information like passwords and credit card numbers.
-Also the ease with which transparent proxy phishing can be executed is alarming. Open\-source toolkits and publicly available resources have made it simpler than ever for attackers to deploy such sophisticated schemes without a deep understanding of web development or cybersecurity. This elevation in threat sophistication underscores the urgent need for a corresponding advancement in defensive measures.
+Also the ease with which transparent proxy phishing can be executed is alarming. Open-source toolkits and publicly available resources have made it simpler than ever for attackers to deploy such sophisticated schemes without a deep understanding of web development or cybersecurity. This elevation in threat sophistication underscores the urgent need for a corresponding advancement in defensive measures.
 This creates a critical security threat, as the technique can be used to gain unauthorized access to
 otherwise secure systems. 
 To resolve this issue, it is imperative to develop
@@ -52,19 +57,20 @@ developers to protect their applications against this new attack vector.
 As an online service provider it is crucial to protect the privacy and security of your users.
 Due to the fact the transparent or so called reverse proxy phishing attacks are becoming more common and sophisticated
 implementing additional active security measures to detect them is essential.
-Some research has been done on this topic already, still we are far away from production ready plug\-n\-play solutions.
 The goal of this paper is to provide a comprehensive overview of the current
-strategies to detect transparent phishing attacks and also to come up with a new approach
-of identify incoming client traffic that is relayed through a transparent phishing toolkit.
+strategies to detect transparent phishing attacks by watching incoming client traffic.
+As this often requires TLS fingerprint to detect known reverse proxy software the paper will also
+try to propose a new approach of enumerating and actually validating supported TLS ciphers of a client.
 
-\section{Research question} How can we protect web applications against transparent proxy phishing attacks? Based on this
+\section{Research question}
+How can we protect web applications against transparent proxy phishing attacks? Based on this
 question the following sub questions were derived:
 What exactly are classical phishing attacks in general and how do they differ from the new attack vector?\\
 How big is the threat imposed by this new type of phishing attack?\\
 How can a webserver know that a client connection is being relayed through a transparent phishing toolkit?
 
 \section{Objective} 
-The objectives of this research are threefold. Firstly, it aims to elucidate the mechanics and impact of transparent proxy phishing, underscoring why it is a growing concern in the cybersecurity community. Secondly, the study evaluates the current state of research, identifying gaps in existing defenses against this attack vector. Finally, through rigorous experimentation and practical simulations, the paper proposes new, effective strategies to mitigate this threat, contributing valuable insights to the arsenal of cybersecurity defense mechanisms.
+The objectives of this research are threefold. Firstly, it aims to elucidate the mechanics and impact of transparent proxy phishing, underscoring why it is a growing concern in the cybersecurity community. Secondly, the study evaluates the current state of research, identifying gaps in existing defenses against this attack vector. Finally, through rigorous experimentation and practical simulations, the paper proposes new, effective strategies to mitigate this threat, contributing valuable insights to the arsenal of cybersecurity defense mechanisms. 
 
 \newpage \section{Theoretical foundations}
 \paragraph{Cyberfraud} is a form of internet-based fraud, usually involving the use of false identities
@@ -176,82 +182,80 @@ troubleshoot network problems, analyze network traffic, and detect security
 vulnerabilities.
 
 \newpage \section{Current state of research}
-Many scientific papers have been published on this
-topic, but there is still a lack of information on how to protect against this
-new attack vector. This is why it is important to find and document different
-strategies that can help organizations and developers to mitigate this new
-attack vector.
+Some research has been done on this topic already, still we are far away from production ready plug-n-play solutions that can
+reliably identify transparent phishing toolkits.
 
 \section{Research Design} 
-First, a thorough analysis of existing and scientific papers on reverse proxy
+First, a thorough analysis of existing and scientific papers on transparent proxy
  phishing toolkits will be undertaken. This literature review will critically
  evaluate prior research findings, methodologies, and theoretical frameworks
  deployed in the study of phishing attacks and defense mechanisms. By doing
  so, it will identify potential gaps in the current body of knowledge and establish
  a solid theoretical foundation for subsequent experimental work.
 In parallel, experimental research will be conducted by setting up controlled
- attack simulations using various open\-source reverse proxy phishing toolkits
-. These toolkits, commonly used by adversaries in real\-world scenarios, will
+ attack simulations using various open-source transparent proxy phishing toolkits
+. These toolkits, commonly used by adversaries in real-world scenarios, will
  be systematically evaluated to uncover flaws and weaknesses in their attack
  implementations. Each experiment will involve detailed documentation of the
  setup, execution, and outcomes of the phishing simulations, ensuring reproduc
-ibility and transparency in the research process.
+ibility and transparency in the research process.\\
 The experimental phase will involve the following steps:
-\begin{itemize}
-  \item Selection of Toolkits: A range of widely\-used open\-source reverse proxy
-    phishing toolkits will be selected based on criteria such as popularity, functionality
-    , and community support. Examples may include Evilginx, Modlishka, and Mura
-    ena.
-  \item Simulation Setup: Virtual environments replicating real\-world web services
-    will be created to serve as targets for the phishing simulations. These environments
-    will be configured to log detailed information on the interactions between
-    the phishing toolkits and the target web services.
-  \item Execution of Attacks: Each selected phishing toolkit will be deployed
-    against the simulated web services. Various attack scenarios will be tested
-    to evaluate the robustness and effectiveness of the phishings toolkits. Specific
-    metrics for assessment may include detection evasion, data exfiltration capabilities
-    , and overall success rate of phishing attempts.
-  \item Data Collection and Analysis: Data generated from the attack simulations
-    will be meticulously collected and analyzed. Statistical techniques will be
-    employed to identify patterns, correlations, and significant findings that
-    shed light on the strengths and weaknesses of the reverse proxy phishing tool
-    kits.
-  \item Validation of Findings: To ensure the reliability and validity of the
-    findings, additional experiments may be conducted with different configurations
-    and settings, including testing the toolkits against various web security measures.
-    Based on the insights gained through literature review and empirical experiments
-    , this thesis will then develop and outline easy\-to\-follow strategies to protect
-    web services from reverse proxy phishing attacks. These strategies will be
-    crafted in a manner that allows for intuitive implementation by security professionals
-    and web service administrators, aiming to enhance the overall resilience of
-    web services against such threats.
-\end{itemize}
+
+\paragraph{Selection of Toolkits}
+A range of widely-used open-source reverse proxy
+phishing toolkits will be selected based on criteria such as popularity, functionality
+, and community support. Examples may include Evilginx, Modlishka, and Mura
+ena.
+\paragraph{Simulation Setup}
+Virtual environments replicating real-world web services
+will be created to serve as targets for the phishing simulations. These environments
+will be configured to log detailed information on the interactions between
+the phishing toolkits and the target web services.
+\paragraph{Execution of Attacks}Each selected phishing toolkit will be deployed
+against the simulated web services. Various attack scenarios will be tested
+to evaluate the robustness and effectiveness of the phishings toolkits. Specific
+metrics for assessment may include detection evasion, data exfiltration capabilities
+, and overall success rate of phishing attempts.
+\paragraph{Data Collection and Analysis}
+Data generated from the attack simulations
+will be meticulously collected and analyzed. Statistical techniques will be
+employed to identify patterns, correlations, and significant findings that
+shed light on the strengths and weaknesses of the transparent proxy phishing toolkits.
+\paragraph{Validation of Findings}
+To ensure the reliability and validity of the
+findings, additional experiments may be conducted with different configurations
+and settings, including testing the toolkits against various web security measures.
+Based on the insights gained through literature review and empirical experiments
+, this thesis will then develop and outline easy-to-follow strategies to protect
+web services from reverse proxy phishing attacks. These strategies will be
+crafted in a manner that allows for intuitive implementation by security professionals
+and web service administrators, aiming to enhance the overall resilience of
+web services against such threats.
 
 In conclusion, this research design integrates both the theoretical and practical
- aspects of cybersecurity research, adopting a rigorous and systematic approach
- to advance current understandings of reverse proxy phishing toolkits and contribute
- to the development of effective defense mechanisms.
+aspects of cybersecurity research, adopting a rigorous and systematic approach
+to advance current understandings of reverse proxy phishing toolkits and contribute
+to the development of effective defense mechanisms.
 
 \newpage \chapter{Literature Review} \section{Overview of Multi-Factor
 Authentication}
 
 Multi-Factor Authentication (MFA) is a security system that requires more than
 one method of authentication from independent categories of credentials to
-verify the user's identity for a login or other transaction.\\The most common
-categories are \cite{mfa}:
-\begin{itemize}
-  \item Something the user knows (e.g.a password)
-  \item Something the user has (e.g. a smartphone)
-  \item Something the user is (e.g. a fingerprint)
-\end{itemize}
+verify the user's identity for a login or other transaction. The most common
+categories of things the can be used as a second or third factor are \cite{mfa}:
+\begin{compactitem}
+  \item Something the user knows (e.g., a password or PIN)
+  \item Something the user has (e.g., a smartphone, a hardware token, or a smart card)
+  \item Something the user is (e.g., biometric data such as fingerprints, facial recognition, or iris scans)
+\end{compactitem}
 
-MFA is used to
-protect the user from unauthorized access to their accounts, and is widely
+MFA is used to protect the user from unauthorized access to their accounts, and is widely
 used in the financial and healthcare industries, as well as in government and
 military applications. MFA is also used in consumer applications, such as
 online banking and e-commerce. The use of MFA is growing rapidly, as more and
 more organizations recognize the need for stronger security measures to
-protect their users and their data.\\ \\MFA is a critical component of a
+protect their users and their data.\\MFA is a critical component of a
 strong security posture, and is an essential tool for protecting against a
 wide range of cyber threats, including phishing, credential theft, and
 identity theft. MFA is also an important tool for protecting against insider
@@ -347,20 +351,125 @@ reverse proxy phishing toolkits:
     page.
 \end{itemize}
 
-\section{Existing Countermeasures}
-The paper "Catching Transparent Phish:
-Analyzing and Detecting MITM Phishing Toolkits" \cite{kondracki2021catching}
-provides a detailed analysis of the most used reverse proxy phishing toolkit and
-its potential to bypass MFA systems. The authors demonstrate how those toolkits
-can be used to intercept and steal MFA tokens, and propose a detection method
-based on a statistical model that evaluates a combination of TLS fingerprinting
-and response timing analysis. The authors provide an AI based solution for
-finding transparent phishing toolkits in the wild, but only provide limited
-advice on how to detect client connections of those toolkits on the recieving
-server side.
+\section{TLS Fingerprinting Algorithms}
+In general performing TLS fingerprinting on a client connection works by analyzing the TLS ClientHello
+message that is sent by the client to the server during the TLS handshake
+process. This message contains a lot of information about the client's TLS
+implementation, including the version of the TLS protocol that the client
+supports, the list of supported cipher suites and extensions.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[height=7cm]{./images/tls_client_hello_wireshark.png}
+  \caption{A TLS ClientHello packet captured using Wireshark}
+\end{figure}
 
-\newpage \chapter{Experimentation} \section{Simulation of Transparent Phishing
-Attacks} To test and analyze the capabilities of the most popular open source
+To generate a unique fingerprint out of this information several algorithms already
+exist.\\The JA3 algorithm proposed first by Salesforce \cite{ja3Salesforce}
+collects values from the ClientHello into four different array lists and formats
+them into one comma separated string that gets hashed. In detail the values used
+from ClientHello are: SSLVersion, Cipher, SSLExtension, EllipticCurve,
+EllipticCurvePointFormat.\\An example derived from a ClientHello looks like
+this:
+\begin{minted}[breaklines]{python}
+  "769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0"
+\end{minted}
+If no SSL extensions are used the field will be left empty. Example:
+\begin{minted}[breaklines]{python} 
+  "769,4-5-10-9-100-98-3-6-19-18-99,,,"
+\end{minted}
+Generating a MD5 hash
+from that string will leave us with the following 32 characters:
+"ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non
+existing extensions, because some TLS clients are using Google’s GREASE
+(Generate Random Extensions And Sustain Extensibility). This is a feature
+proposed by Google to break wrongly implemented TLS servers. It may sound
+controversial at first, but comes with good intentions. In a internet draft
+paper by D. Benjamin \cite{greaseDraft} he explains that its better to break
+some production systems in place instead of risking flawed TLS
+implementations to spread and risk outages of global scale.\\JA3 seems to be
+a good candidate for fingerprinting transparent phishing toolkits at first,
+but it after some testing it comes clear that JA3 can not be used to
+fingerprint instances of Google Chrome, due to it's reliance on the order of
+the cipher extension list in the ClientHello package. Google chrome uses a
+feature called "TLS ClientHello extension permutation" that prevents TLS
+fingerprinting for said reason. This can be bypassed by sorting the numeric
+values by size. Open source implementations of the JA3 algorithm with
+normalized extension orders exist under the name "JA3N". Sadly in our
+experimentation we were not able to reliably identify versions of Google
+Chrome using JA3 for yet unkown reasons.\\ \\Luckily a better alternative
+to the JA3 algorithm exists. The JA4+ family is a set of new network
+fingerprinting algorithms developed by FoxIO \cite{foxIOJa4}. The JA4+
+family also comes with a fingerprinting algorithm for TLS called JA4. JA4 is
+superior to JA3 in many ways. It supports HTTP 3 including its UDP based
+transport protocol QUIC and normalized the order of ciphers and extensions
+by default. It uses a different output format than JA3 which consists of
+three seperatable parts that more verbose and human readable in general. JA4
+provides a more reliant and expressive fingerprinting solution for this
+papers use case. Other open-source implementations of JA4 are avaible and
+include a wireshark addon and an nginx fork. The later one will be used in
+our lab setup to collect JA4 fingerprints.
+
+\begin{figure}[!htb] \centering
+  \includegraphics[height=7cm]{./images/JA4.png} \caption{JA4 TLS client
+fingerprint format} \end{figure}
+
+TODO: the google feature is "to reduce potential ecosystem brittleness" and
+not for privacy. Quote more from:
+https://chromestatus.com/feature/5124606246518784
+
+\section{Existing Countermeasures}
+The most prominent research on this topic is conducted in the paper "Catching Transparent Phish:
+Analyzing and Detecting MITM Phishing Toolkits" by Brian Kondracki Et al. \cite{kondracki2021catching}.
+The team of four provides a detailed overview of the most used transparent phishing toolkits and provides
+a list of statistical features that can be used to detect those by testing the TLS server of the toolkit.
+The list of features includes TLS fingerprints, User-Agents, simulated global network delay and TCP packet timings from benchmarks of said tools.
+Their model was able to detect the most common open-source MITM transparent phishing toolkits with an accuracy above 99\%.
+It is intended to be used with a script that scans the internet for phishing sites that are run using MITM phishing toolkits.
+Both is available as open-source on GitHub under the name PHOCA which means seal in latin.\cite{kondracki2021catchingGit}
+Through this research some of the chosen features for MITM toolkit server detection will be used to watch client traffic for signs of it being relayed through a transparent phishing toolkit.
+
+\newpage \subsection{Round Trip Time Analysis}
+The round trip time (RTT) of a network connection is the time it takes for a
+packet to travel from the sender to the receiver and back. It is an important
+metric for measuring network performance and can be used to detect network
+anomalies, such as packet loss or congestion.
+
+\newpage \subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
+more flexible approach then the previous blacklist solution which tries to
+block or flag client requests using the TLS implementation of known
+transparent phishing toolkits, is to focus on detecting requests from TLS
+reverse proxies in general. The attack vector that is facilitate by abusing
+reverse proxies to spy on a users TLS encrypted session is more commonly known
+as a TLS MITM (Man in the Middle) Attack.\\The American content delivery
+network operator Cloudflare which is also known for DDoS mitigation and other
+cyber security related services is running an open-source monitoring service
+called MALCOLM which stands for "Measuring Active Listeners, Connection
+Observers, and Legitimate Monitors". It provides statistics about observed
+HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is
+a request that comes from either a "A device has a root certificate installed
+that allow an intermediary to decrypt and inspect traffic" or "An origin
+server provides its TLS private key to a third party (like a reverse proxy)
+that does TLS termination" \cite{cloudflareMALCOLM}. The second definition
+means exactly the kind of TLS MITM attacks which we are trying to detect.\\The
+monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine)
+that Cloudflare describes as their HTTPS interception detector. MITMEngine is
+an open-source software written in go. It works by matching TLS fingerprints
+of requests to known browser User-Agent strings. If a mismatch is found the
+request is marked as potentially crafted by HTTPS Interception. This strategy
+again relies on maintaining a huge database of User-Agent and TLS Fingerprint
+pairs. Cloudflare states on the MALCOLM dashboard website that they can only
+identity 60\% of the clients that are served by their internal network.
+Especially the detection of Android based devices is not reliably possible due
+to the large amount of different Android based operating systems and browsers.
+Readers of the MALCOLM website are encouraged to contribute User-Agent TLS
+fingerprint pairs to the MITMEngine git repository to help overcome this
+issue.
+
+
+\newpage
+\chapter{Experimentation}
+\section{Simulation of Transparent Phishing Attacks}
+To test and analyze the capabilities of the most popular open source
 transparent phishing toolkits a controlled lab environment will be set up. The
 goal is to find flaws in their attack implementation and to develop and test new
 or improved countermeasures against these attacks.\\ First a web application
@@ -454,107 +563,6 @@ fingerprint is added to the whitelist. Maintaining a trusted JA4 fingerprint
 database would require a lot of fingerprint collecting before said whitelist can
 be used in production as many different browsers and TLS implementations exist
 and change frequently.
-
-\subsection{Evaluating TLS Fingerprinting Algorithms}
-
-\paragraph{}
-In general performing TLS fingerprinting on a client connection works by analyzing the TLS ClientHello
-message that is sent by the client to the server during the TLS handshake
-process. This message contains a lot of information about the client's TLS
-implementation, including the version of the TLS protocol that the client
-supports, the list of supported cipher suites and extensions.
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[height=7cm]{./images/tls_client_hello_wireshark.png}
-  \caption{A TLS ClientHello packet captured using Wireshark}
-\end{figure}
-
-To generate a unique fingerprint out of this information several algorithms already
-exist.\\The JA3 algorithm proposed first by Salesforce \cite{ja3Salesforce}
-collects values from the ClientHello into four different array lists and formats
-them into one comma separated string that gets hashed. In detail the values used
-from ClientHello are: SSLVersion, Cipher, SSLExtension, EllipticCurve,
-EllipticCurvePointFormat.\\An example derived from a ClientHello looks like
-this:
-\begin{minted}[breaklines]{python}
-  "769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0"
-\end{minted}
-If no SSL extensions are used the field will be left empty. Example:
-\begin{minted}[breaklines]{python} 
-  "769,4-5-10-9-100-98-3-6-19-18-99,,,"
-\end{minted}
-Generating a MD5 hash
-from that string will leave us with the following 32 characters:
-"ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non
-existing extensions, because some TLS clients are using Google’s GREASE
-(Generate Random Extensions And Sustain Extensibility). This is a feature
-proposed by Google to break wrongly implemented TLS servers. It may sound
-controversial at first, but comes with good intentions. In a internet draft
-paper by D. Benjamin \cite{greaseDraft} he explains that its better to break
-some production systems in place instead of risking flawed TLS
-implementations to spread and risk outages of global scale.\\JA3 seems to be
-a good candidate for fingerprinting transparent phishing toolkits at first,
-but it after some testing it comes clear that JA3 can not be used to
-fingerprint instances of Google Chrome, due to it's reliance on the order of
-the cipher extension list in the ClientHello package. Google chrome uses a
-feature called "TLS ClientHello extension permutation" that prevents TLS
-fingerprinting for said reason. This can be bypassed by sorting the numeric
-values by size. Open source implementations of the JA3 algorithm with
-normalized extension orders exist under the name "JA3N". Sadly in our
-experimentation we were not able to reliably identify versions of Google
-Chrome using JA3 for yet unkown reasons.\\ \\Luckily a better alternative
-to the JA3 algorithm exists. The JA4+ family is a set of new network
-fingerprinting algorithms developed by FoxIO \cite{foxIOJa4}. The JA4+
-family also comes with a fingerprinting algorithm for TLS called JA4. JA4 is
-superior to JA3 in many ways. It supports HTTP 3 including its UDP based
-transport protocol QUIC and normalized the order of ciphers and extensions
-by default. It uses a different output format than JA3 which consists of
-three seperatable parts that more verbose and human readable in general. JA4
-provides a more reliant and expressive fingerprinting solution for this
-papers use case. Other open-source implementations of JA4 are avaible and
-include a wireshark addon and an nginx fork. The later one will be used in
-our lab setup to collect JA4 fingerprints.
-
-\begin{figure}[!htb] \centering
-  \includegraphics[height=7cm]{./images/JA4.png} \caption{JA4 TLS client
-fingerprint format} \end{figure}
-
-TODO: the google feature is "to reduce potential ecosystem brittleness" and
-not for privacy. Quote more from:
-https://chromestatus.com/feature/5124606246518784
-
-\newpage \subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
-more flexible approach then the previous blacklist solution which tries to
-block or flag client requests using the TLS implementation of known
-transparent phishing toolkits, is to focus on detecting requests from TLS
-reverse proxies in general. The attack vector that is facilitate by abusing
-reverse proxies to spy on a users TLS encrypted session is more commonly known
-as a TLS MITM (Man in the Middle) Attack.\\The American content delivery
-network operator Cloudflare which is also known for DDoS mitigation and other
-cyber security related services is running an open-source monitoring service
-called MALCOLM which stands for "Measuring Active Listeners, Connection
-Observers, and Legitimate Monitors". It provides statistics about observed
-HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is
-a request that comes from either a "A device has a root certificate installed
-that allow an intermediary to decrypt and inspect traffic" or "An origin
-server provides its TLS private key to a third party (like a reverse proxy)
-that does TLS termination" \cite{cloudflareMALCOLM}. The second definition
-means exactly the kind of TLS MITM attacks which we are trying to detect.\\The
-monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine)
-that Cloudflare describes as their HTTPS interception detector. MITMEngine is
-an open-source software written in go. It works by matching TLS fingerprints
-of requests to known browser User-Agent strings. If a mismatch is found the
-request is marked as potentially crafted by HTTPS Interception. This strategy
-again relies on maintaining a huge database of User-Agent and TLS Fingerprint
-pairs. Cloudflare states on the MALCOLM dashboard website that they can only
-identity 60\% of the clients that are served by their internal network.
-Especially the detection of Android based devices is not reliably possible due
-to the large amount of different Android based operating systems and browsers.
-Readers of the MALCOLM website are encouraged to contribute User-Agent TLS
-fingerprint pairs to the MITMEngine git repository to help overcome this
-issue.
-
-\newpage \subsection{Round Trip Time Analysis}
 
 \newpage \subsection{Verify supported ciphers} A TLS ClientHello packet sent
 by a client always contains a list of supported ciphers. The list of ciphers

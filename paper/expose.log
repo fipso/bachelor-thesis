@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.5.18)  6 JUN 2024 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.5.18)  9 JUN 2024 17:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -501,18 +501,13 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 runsystem(mkdir -p _minted-expose)...executed.
 
 
-
-Class scrbook Warning: Usage of package `parskip' together
-(scrbook)              with a KOMA-Script class is not recommended.
-(scrbook)              I'd suggest to use option
-(scrbook)              `parskip' with one of it's several values.
-(scrbook)              Nevertheless, using requested
-(scrbook)              package `parskip' on input line 14.
-
-(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
-
-Couldn't patch \@startsection
+(/usr/share/texlive/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip71
+\plpartopsep=\skip72
+\plitemsep=\skip73
+\plparsep=\skip74
+\pl@lab=\toks22
 )
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 12
@@ -531,7 +526,8 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
 (typearea)              on input line 15.
- (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -563,35 +559,35 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./expose.aux)
 \openout1 = `expose.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-Package scrbase Info: activating english \partname on input line 20.
-Package scrbase Info: activating english \chaptername on input line 20.
-Package scrbase Info: activating english \appendixname on input line 20.
-Package scrbase Info: activating english \figurename on input line 20.
-Package scrbase Info: activating english \tablename on input line 20.
-Package scrbase Info: activating english \contentsname on input line 20.
-Package scrbase Info: activating english \listfigurename on input line 20.
-Package scrbase Info: activating english \listtablename on input line 20.
-Package scrbase Info: activating english \bibname on input line 20.
-Package scrbase Info: activating english \indexname on input line 20.
-Package tocbasic Info: usage of `tocbibind' detected on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+Package scrbase Info: activating english \partname on input line 25.
+Package scrbase Info: activating english \chaptername on input line 25.
+Package scrbase Info: activating english \appendixname on input line 25.
+Package scrbase Info: activating english \figurename on input line 25.
+Package scrbase Info: activating english \tablename on input line 25.
+Package scrbase Info: activating english \contentsname on input line 25.
+Package scrbase Info: activating english \listfigurename on input line 25.
+Package scrbase Info: activating english \listtablename on input line 25.
+Package scrbase Info: activating english \bibname on input line 25.
+Package scrbase Info: activating english \indexname on input line 25.
+Package tocbasic Info: usage of `tocbibind' detected on input line 25.
 
 
 Package tocbasic Warning: `tocbibind' redefinition of `\listoffigures'
@@ -610,7 +606,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 25.
 (./expose.out) (./expose.out)
 \@outlinefile=\write5
 \openout5 = `expose.out'.
@@ -622,7 +618,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 20.
+(scrbook)           before \begin{document} on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -638,12 +634,12 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \scratchbox=\box65
 \nofMPsegments=\count317
 \nofMParguments=\count318
-\everyMPshowfont=\toks22
+\everyMPshowfont=\toks23
 \MPscratchCnt=\count319
 \MPscratchDim=\dimen179
 \MPnumerator=\count320
 \makeMPintoPDFobject=\count321
-\everyMPtoPDFconversion=\toks23
+\everyMPtoPDFconversion=\toks24
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -660,12 +656,12 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 <./images/logo.png, id=4, 353.32pt x 152.57pt>
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 30.
+Package pdftex.def Info: ./images/logo.png  used on input line 35.
 (pdftex.def)             Requested size: 227.62204pt x 98.29166pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 30.
+(Font)              <17.28> on input line 35.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 30.
+(Font)              <12> on input line 35.
  [1
 
 
@@ -686,18 +682,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 [3] [4]
 
-LaTeX Warning: Citation `6trillion' on page 5 undefined on input line 75.
+LaTeX Warning: Citation `6trillion' on page 5 undefined on input line 81.
 
 <./images/http_reverse_proxy.png, id=85, 602.25pt x 225.84375pt>
 File: ./images/http_reverse_proxy.png Graphic file (type png)
 <use ./images/http_reverse_proxy.png>
 Package pdftex.def Info: ./images/http_reverse_proxy.png  used on input line 10
-3.
+9.
 (pdftex.def)             Requested size: 303.50435pt x 113.81102pt.
 <./images/mitm_attack.png, id=86, 853.1875pt x 621.32124pt>
 File: ./images/mitm_attack.png Graphic file (type png)
 <use ./images/mitm_attack.png>
-Package pdftex.def Info: ./images/mitm_attack.png  used on input line 115.
+Package pdftex.def Info: ./images/mitm_attack.png  used on input line 121.
 (pdftex.def)             Requested size: 234.42549pt x 170.71652pt.
 [5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./
 images/http_reverse_proxy.png>]
@@ -705,17 +701,13 @@ images/http_reverse_proxy.png>]
 File: ./images/client_hello_packet.png Graphic file (type png)
 <use ./images/client_hello_packet.png>
 Package pdftex.def Info: ./images/client_hello_packet.png  used on input line 1
-39.
+45.
 (pdftex.def)             Requested size: 389.4278pt x 170.71652pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [6 <./images/mitm_attack.png>] [7 <./images/client_hello_packet.png>] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 186--200
-
- []
-
 [9] [10]
 chapter 1.
 
@@ -734,22 +726,17 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              deprecated \float@addtolist interface.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--262
+Underfull \hbox (badness 10000) in paragraph at lines 268--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--295
+Underfull \hbox (badness 10000) in paragraph at lines 268--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--295
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--295
+Underfull \hbox (badness 10000) in paragraph at lines 268--299
 
  []
 
@@ -758,114 +745,118 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--295
 
 ] [12]
 
-LaTeX Warning: Citation `modlishka' on page 13 undefined on input line 331.
+LaTeX Warning: Citation `modlishka' on page 13 undefined on input line 335.
 
 
-LaTeX Warning: Citation `evilginx2' on page 13 undefined on input line 338.
+LaTeX Warning: Citation `evilginx2' on page 13 undefined on input line 342.
 
 
-LaTeX Warning: Citation `murena' on page 13 undefined on input line 343.
+LaTeX Warning: Citation `murena' on page 13 undefined on input line 347.
 
-[13] [14]
-chapter 2.
-<./images/2fa_app.png, id=167, 816.04875pt x 424.58624pt>
-File: ./images/2fa_app.png Graphic file (type png)
-<use ./images/2fa_app.png>
-Package pdftex.def Info: ./images/2fa_app.png  used on input line 376.
-(pdftex.def)             Requested size: 382.79585pt x 199.16928pt.
-
-LaTeX Warning: Citation `tlsPercentage' on page 15 undefined on input line 391.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--393
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--393
-
- []
-
-[15
-
-
- <./images/2fa_app.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 394--403
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--403
-
- []
-
-<./images/profile_page.png, id=174, 509.905pt x 351.3125pt>
-File: ./images/profile_page.png Graphic file (type png)
-<use ./images/profile_page.png>
-Package pdftex.def Info: ./images/profile_page.png  used on input line 405.
-(pdftex.def)             Requested size: 289.08498pt x 199.16928pt.
-[16 <./images/profile_page.png>]
-\openout3 = `expose.pyg'.
-
- (./_minted-expose/default.pygstyle)
-(./_minted-expose/D89616803E376AF3B7B232EE25D2CEE35BD83345266CAAD10DDD364159403
-30A.pygtex
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-) [17]
-<./images/tls_client_hello_wireshark.png, id=187, 1697.34125pt x 793.96625pt>
+<./images/tls_client_hello_wireshark.png, id=166, 1697.34125pt x 793.96625pt>
 File: ./images/tls_client_hello_wireshark.png Graphic file (type png)
 <use ./images/tls_client_hello_wireshark.png>
 Package pdftex.def Info: ./images/tls_client_hello_wireshark.png  used on input
- line 468.
+ line 362.
 (pdftex.def)             Requested size: 425.78464pt x 199.16928pt.
 
-
-LaTeX Warning: Citation `ja3Salesforce' on page 18 undefined on input line 473.
+LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 367.
 
 
 \openout3 = `expose.pyg'.
 
-
+(./_minted-expose/default.pygstyle)
 (./_minted-expose/D93ADD30F39CB0186F1C92259C4314152F5A8E51CA43F1E6C130173FF21D7
-B52.pygtex)
+B52.pygtex [13])
 \openout3 = `expose.pyg'.
 
 
 (./_minted-expose/8247D37183373D91FDB80B6F31F2479B2F5A8E51CA43F1E6C130173FF21D7
-B52.pygtex [18 <./images/tls_client_hello_wireshark.png>])
+B52.pygtex)
 
-LaTeX Warning: Citation `greaseDraft' on page 19 undefined on input line 493.
-
-
-LaTeX Warning: Citation `foxIOJa4' on page 19 undefined on input line 507.
+LaTeX Warning: Citation `greaseDraft' on page 14 undefined on input line 387.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--517
+LaTeX Warning: Citation `foxIOJa4' on page 14 undefined on input line 401.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--411
 
  []
 
-<./images/JA4.png, id=196, 963.6pt x 542.025pt>
+[14 <./images/tls_client_hello_wireshark.png>]
+<./images/JA4.png, id=179, 963.6pt x 542.025pt>
 File: ./images/JA4.png Graphic file (type png)
 <use ./images/JA4.png>
-Package pdftex.def Info: ./images/JA4.png  used on input line 519.
+Package pdftex.def Info: ./images/JA4.png  used on input line 413.
 (pdftex.def)             Requested size: 354.07097pt x 199.16928pt.
-[19]
 
-LaTeX Warning: Citation `cloudflareMALCOLM' on page 20 undefined on input line 
-541.
 
-[20 <./images/JA4.png (PNG copy)>] [21] [22]
+LaTeX Warning: Citation `kondracki2021catchingGit' on page 15 undefined on inpu
+t line 428.
+
+[15 <./images/JA4.png (PNG copy)>] [16]
+
+LaTeX Warning: Citation `cloudflareMALCOLM' on page 17 undefined on input line 
+446.
+
+[17] [18]
+chapter 2.
+<./images/2fa_app.png, id=199, 816.04875pt x 424.58624pt>
+File: ./images/2fa_app.png Graphic file (type png)
+<use ./images/2fa_app.png>
+Package pdftex.def Info: ./images/2fa_app.png  used on input line 481.
+(pdftex.def)             Requested size: 382.79585pt x 199.16928pt.
+
+LaTeX Warning: Citation `tlsPercentage' on page 19 undefined on input line 496.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--498
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--498
+
+ []
+
+[19
+
+
+ <./images/2fa_app.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 499--508
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--508
+
+ []
+
+<./images/profile_page.png, id=207, 509.905pt x 351.3125pt>
+File: ./images/profile_page.png Graphic file (type png)
+<use ./images/profile_page.png>
+Package pdftex.def Info: ./images/profile_page.png  used on input line 510.
+(pdftex.def)             Requested size: 289.08498pt x 199.16928pt.
+[20 <./images/profile_page.png>]
+\openout3 = `expose.pyg'.
+
+
+(./_minted-expose/D89616803E376AF3B7B232EE25D2CEE35BD83345266CAAD10DDD364159403
+30A.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+) [21] [22]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 5
-83.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+87.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 583.
- [23]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 587.
+
+[23]
 \openout3 = `expose.pyg'.
 
 
@@ -876,32 +867,32 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 
 (./_minted-expose/E182EBDC89CF4A8C9AECBA7D1E77D8D0E425CA39F3F2F4D8DBF1F38F81B47
 192.pygtex)
-<./images/cipher_check_setup.png, id=240, 1343.0175pt x 522.95375pt>
+<./images/cipher_check_setup.png, id=248, 1343.0175pt x 522.95375pt>
 File: ./images/cipher_check_setup.png Graphic file (type png)
 <use ./images/cipher_check_setup.png>
 Package pdftex.def Info: ./images/cipher_check_setup.png  used on input line 68
-2.
+6.
 (pdftex.def)             Requested size: 438.42233pt x 170.71652pt.
  [25 <./images/cipher_check_setup.png>]
-<./images/cipher_checker_tests.png, id=248, 787.94376pt x 553.06625pt>
+<./images/cipher_checker_tests.png, id=256, 787.94376pt x 553.06625pt>
 File: ./images/cipher_checker_tests.png Graphic file (type png)
 <use ./images/cipher_checker_tests.png>
 Package pdftex.def Info: ./images/cipher_checker_tests.png  used on input line 
-695.
+699.
 (pdftex.def)             Requested size: 405.35672pt x 284.52756pt.
-<./images/parse_results.png, id=249, 882.29625pt x 624.3325pt>
+<./images/parse_results.png, id=257, 882.29625pt x 624.3325pt>
 File: ./images/parse_results.png Graphic file (type png)
 <use ./images/parse_results.png>
-Package pdftex.def Info: ./images/parse_results.png  used on input line 704.
+Package pdftex.def Info: ./images/parse_results.png  used on input line 708.
 (pdftex.def)             Requested size: 180.93921pt x 128.0374pt.
-<./images/cipher_checker_table.png, id=250, 833.1125pt x 935.495pt>
+<./images/cipher_checker_table.png, id=258, 833.1125pt x 935.495pt>
 File: ./images/cipher_checker_table.png Graphic file (type png)
 <use ./images/cipher_checker_table.png>
 Package pdftex.def Info: ./images/cipher_checker_table.png  used on input line 
-710.
+714.
 (pdftex.def)             Requested size: 456.11577pt x 512.1496pt.
 
-Overfull \hbox (7.98482pt too wide) in paragraph at lines 710--711
+Overfull \hbox (7.98482pt too wide) in paragraph at lines 714--715
  [][] 
  []
 
@@ -936,10 +927,10 @@ runsystem(rm expose.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 18692 strings out of 477985
- 343628 string characters out of 5839370
+ 18805 strings out of 477985
+ 345044 string characters out of 5839370
  2003388 words of memory out of 6000000
- 38520 multiletter control sequences out of 15000+600000
+ 38624 multiletter control sequences out of 15000+600000
  519440 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,8n,106p,10601b,1303s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -955,10 +946,10 @@ c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
 frm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200
 .pfb>
-Output written on expose.pdf (30 pages, 1409935 bytes).
+Output written on expose.pdf (30 pages, 1410421 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
- 113 named destinations out of 1000 (max. 500000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 369 compressed objects within 4 object streams
+ 121 named destinations out of 1000 (max. 500000)
  285 words of extra memory for PDF output out of 10000 (max. 10000000)
 
