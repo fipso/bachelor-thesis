@@ -29,7 +29,7 @@ afterskip=-\parskip
 
 \title{ \begin{center} \includegraphics[width=8cm]{./images/logo.png}
   \end{center} \vspace{2cm} Hardening MFA web applications to counter evolving
-transparent phishinging attack vectors \vspace{2cm} \large }
+transparent phishing attack vectors \vspace{2cm} \large }
 
 \maketitle
 
@@ -180,6 +180,15 @@ analyzer that is used to capture and analyze network traffic. It is widely used
 by network administrators, security professionals, and developers to
 troubleshoot network problems, analyze network traffic, and detect security
 vulnerabilities.
+
+\paragraph{TCP} is a standard protocol that is used to establish and maintain a connection between
+two devices on a network. It is used to transmit data between devices in a 
+reliable and ordered manner. TCP is used in many applications, including web servers,
+email servers, and file transfer protocols. TCP is part of the TCP/IP protocol suite.
+A TCP connection is established using a three-way handshake, in which the client and server
+exchange a series of messages to establish a connection. These messages include a SYN message
+from the client, a SYN-ACK message from the server, and an ACK message from the client.
+Once the connection is established, data can be transmitted between the client and server in both directions.
 
 \newpage \section{Current state of research}
 Some research has been done on this topic already, still we are far away from production ready plug-n-play solutions that can
@@ -433,6 +442,20 @@ The round trip time (RTT) of a network connection is the time it takes for a
 packet to travel from the sender to the receiver and back. It is an important
 metric for measuring network performance and can be used to detect network
 anomalies, such as packet loss or congestion.
+In the context of this research RTT analysis can also be used to detect 
+the usage of reverse proxy software and MITM phishing toolkits.
+In the previously mentioned paper by Kondracki the team was able to identify
+the most common open-source MITM phishing toolkits by analyzing the RTT of
+specific TCP handshake related packets. Because relaying traffic from a HTTPS secured
+web server, through the reverse proxy's own HTTPS server and then to the client,
+there will be always two TCP connections for each client HTTP request.
+This will lead to increased RTT values that can be measured.
+In real world scenarios the delay added by physical and global routing factors, will be 
+a hundred times larger than the delay added by a reverse proxy implementation.
+To account for this the team measured the normal RTT of thousands of test connections
+across the globe. In their final statistical model this was enough to detect and identify
+the reverse proxy servers of transparent phishing toolkits with high reliability based on their
+TCP round trip timings alone.
 
 \newpage \subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
 more flexible approach then the previous blacklist solution which tries to
