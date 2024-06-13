@@ -36,6 +36,7 @@ transparent phishing attack vectors \vspace{2cm} \large }
 \newpage \tableofcontents
 
 \newpage
+\chapter{Overview}
 \section{Abstract}
 As of today most online services have implemented
 multi-factor authentication to prevent malicious third-party actors from using stolen login credentials.
@@ -45,13 +46,10 @@ social engineering based phishing attack. The attacker is able to effectively du
 by using specifically configured reverse proxy servers that relay traffic from the victims browser to the original service
 while collecting and intercepting wanted information like passwords and credit card numbers.
 Also the ease with which transparent proxy phishing can be executed is alarming. Open-source toolkits and publicly available resources have made it simpler than ever for attackers to deploy such sophisticated schemes without a deep understanding of web development or cybersecurity. This elevation in threat sophistication underscores the urgent need for a corresponding advancement in defensive measures.
-This creates a critical security threat, as the technique can be used to gain unauthorized access to
-otherwise secure systems. 
 To resolve this issue, it is imperative to develop
 and implement effective measures to counteract transparent phishing and alike.
-This paper will outline different strategies that can help organizations and
-developers to protect their applications against this new attack vector.
-
+This paper will review, evaluate and try to improve different strategies
+to help developers to protect their applications against this new type of phishing attacks.
 \newpage
 \section{Problem statement}
 As an online service provider it is crucial to protect the privacy and security of your users.
@@ -59,12 +57,12 @@ Due to the fact the transparent or so called reverse proxy phishing attacks are 
 implementing additional active security measures to detect them is essential.
 The goal of this paper is to provide a comprehensive overview of the current
 strategies to detect transparent phishing attacks by watching incoming client traffic.
-As this often requires TLS fingerprint to detect known reverse proxy software the paper will also
-try to propose a new approach of enumerating and actually validating supported TLS ciphers of a client.
+As this often requires TLS fingerprinting to detect known reverse proxy software the paper will also
+try to propose a new approach of enumerating and actually validating supported TLS ciphers of web browsers to make TLS fingerprint spoofing harder for attackers.
 
 \section{Research question}
-How can we protect web applications against transparent proxy phishing attacks? Based on this
-question the following sub questions were derived:
+How can we protect web applications against transparent proxy phishing attacks?
+Based on this question the following sub questions were derived:
 What exactly are classical phishing attacks in general and how do they differ from the new attack vector?\\
 How big is the threat imposed by this new type of phishing attack?\\
 How can a webserver know that a client connection is being relayed through a transparent phishing toolkit?
@@ -73,8 +71,7 @@ How can a webserver know that a client connection is being relayed through a tra
 The objectives of this research are threefold. Firstly, it aims to elucidate the mechanics and impact of transparent proxy phishing, underscoring why it is a growing concern in the cybersecurity community. Secondly, the study evaluates the current state of research, identifying gaps in existing defenses against this attack vector. Finally, through rigorous experimentation and practical simulations, the paper proposes new, effective strategies to mitigate this threat, contributing valuable insights to the arsenal of cybersecurity defense mechanisms. 
 
 \newpage \section{Theoretical foundations}
-\paragraph{Cyberfraud} is a form of internet-based fraud, usually involving the use of false identities
-and/or stolen information to illegally obtain money, property, or services.
+\paragraph{Cyberfraud} is a form of internet-based fraud, usually involving the use of false identities and/or stolen information to illegally obtain money, property, or services.
 Cyberfraud is an increasingly pervasive problem that is becoming increasingly
 difficult to combat, as fraudsters become more sophisticated in their methods.
 In 2020, cyberfraud was estimated to cost the global economy over \$6
@@ -83,8 +80,8 @@ The social, economic and reputational costs of cyberfraud can be incredibly
 damaging, and can range from the loss of money, to identity theft, to the
 disruption of businesses. Cyberfraud has become so pervasive that it is
 essential for businesses and individuals to take measures to protect themselves
-from it. This includes using strong passwords, using two-factor authentication,
-and staying up to date with the latest security protocols.
+from it. This includes using strong passwords and authentication systems that require
+two or even more external factors for authentication.
 
 \paragraph{A Phishing attack} is a type of cyberattack in which an attacker attempts to gain
 confidential information, such as passwords, credit card numbers, or other
@@ -137,8 +134,7 @@ used to secure web traffic, email, and other types of data. TLS is the successor
 to SSL, and is often referred to as SSL/TLS. If a webserver is using TLS its URL
 starts with the well known https:// prefix.
 
-\paragraph{TLS Fingerprinting} is a technique used to identify the TLS implementation of a client or server by
-analyzing the handshake process. This can be used to identify which software is
+\paragraph{TLS Fingerprinting} is a technique used to identify the TLS implementation of a client or server by analyzing the handshake process. This can be used to identify which software is
 used by client or server. Industry standards for fingerprinting algorithms have
 existed for a long time. These include: JA3, JA3N and the whole JA4+ family.
 \begin{figure}[!h] \centering
@@ -160,6 +156,8 @@ developing, shipping, and running applications. It allows developers to package
 their applications and dependencies into containers, which can then be run on
 any system that has Docker installed. Docker containers are lightweight,
 portable, and self-sufficient, making them an ideal platform for deploying applications.
+
+\paragraph{Podman} is a daemonless container engine for developing, managing, and running OCI container images. It is very similar to Docker, but does not require higher privileges to run containers as it fully runs in user space.
 
 \paragraph{HTML} is the standard markup language for creating web pages
 and web applications. It is used to structure and present content on the web.
@@ -587,7 +585,7 @@ database would require a lot of fingerprint collecting before said whitelist can
 be used in production as many different browsers and TLS implementations exist
 and change frequently.
 
-\newpage \subsection{Verify supported ciphers} A TLS ClientHello packet sent
+\newpage \subsection{Validation of client cipher list} A TLS ClientHello packet sent
 by a client always contains a list of supported ciphers. The list of ciphers
 and its orders can be used to fingerprint the client. Many open-source mitm
 revese proxy solutions are already capable of spoofing the supported cipher
@@ -742,23 +740,24 @@ with the list of ciphers that the client told the server it supports and also vi
   \caption{Cutoff results table screenshot of 56 different versions of the Chromium browser}
 \end{figure}
 
-\newpage \subsection{Combined Score Based Approach}
+\newpage
 
-\chapter{Results} \section{Findings from Simulations} Present the data collected
-from the simulations, providing analysis and interpretation.
-
-\section{Effectiveness of Current Defenses} Assess the effectiveness of existing
-defenses against reverse proxy phishing based on your findings.
+\chapter{Results} 
+\section{Findings from Simulations} 
 
 \section{Proposed Solutions} Introduce any new solutions or improvements to
 existing solutions developed through your research.
 
-\chapter{Discussion} \section{Implications of Findings} Discuss the broader
+\chapter{Discussion}
+\section{Implications of Findings} Discuss the broader
 implications of your findings for cybersecurity practices and MFA
 implementation.
 
-\section{Limitations and Future Research} Acknowledge any limitations of your
-study and propose areas for future research.
+\section{Limitations and Future Research} 
+\paragraph{Validation of client cipher list}
+The proof of concept solution shell script check.sh was able to validate the supported
+client ciphers of the 59 versions of chromium that we tested it with. Unfortunately all of those
+tested browsers had the exact same client cipher list which mean they use the same or a very similar TLS implementation. The client cipher list only overlapped with 14 ciphers that our openssl s\_server based testing setup could verify.
 
 \newpage \bibliographystyle{plain} \bibliography{refs}
 
