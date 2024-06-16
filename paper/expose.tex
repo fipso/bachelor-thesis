@@ -62,7 +62,7 @@ try to propose a new approach of enumerating and actually validating supported T
 
 \section{Research question}
 How can we protect web applications against transparent proxy phishing attacks?
-Based on this question the following sub questions were derived:
+Based on this question the following sub questions were derived:\\
 What exactly are classical phishing attacks in general and how do they differ from the new attack vector?\\
 How big is the threat imposed by this new type of phishing attack?\\
 How can a webserver know that a client connection is being relayed through a transparent phishing toolkit?
@@ -82,6 +82,20 @@ disruption of businesses. Cyberfraud has become so pervasive that it is
 essential for businesses and individuals to take measures to protect themselves
 from it. This includes using strong passwords and authentication systems that require
 two or even more external factors for authentication.
+
+\paragraph{HTML} is the standard markup language for creating web pages
+and web applications. It is used to structure and present content on the web.
+HTML is used in conjunction with CSS and JavaScript to create interactive and
+visually appealing web pages.
+
+\paragraph{Unicode} is a standard for encoding,
+representing, and handling text in most of the world's writing systems. It is
+used to represent characters from all of the world's writing systems, including
+Latin, Cyrillic, Greek, Arabic, Hebrew, Chinese, Japanese, Korean, and many
+others. Unicode is used in many modern software applications, including web
+browsers, word processors, and operating systems. In computer science
+literature, Unicode symbols are often represented as U+ followed by a
+hexadecimal number.
 
 \paragraph{A Phishing attack} is a type of cyberattack in which an attacker attempts to gain
 confidential information, such as passwords, credit card numbers, or other
@@ -151,6 +165,9 @@ as a reverse proxy and supports TLS, it is often used as a so called TLS
 terminator, meaning that it terminates the TLS connection and forwards the
 unencrypted traffic to a HTTP backend app.
 
+\paragraph{Containerization}
+is a lightweight alternative to full machine virtualization that involves encapsulating an application in a container with its own operating environment. Containers are isolated from one another and from the host system, but share the same kernel. This makes them more lightweight and faster to start up than virtual machines. Containers are often used to deploy applications in a consistent and reproducible way, and are commonly used in cloud computing environments.
+
 \paragraph{Docker} is a platform for
 developing, shipping, and running applications. It allows developers to package
 their applications and dependencies into containers, which can then be run on
@@ -159,25 +176,7 @@ portable, and self-sufficient, making them an ideal platform for deploying appli
 
 \paragraph{Podman} is a daemonless container engine for developing, managing, and running OCI container images. It is very similar to Docker, but does not require higher privileges to run containers as it fully runs in user space.
 
-\paragraph{HTML} is the standard markup language for creating web pages
-and web applications. It is used to structure and present content on the web.
-HTML is used in conjunction with CSS and JavaScript to create interactive and
-visually appealing web pages.
-
-\paragraph{Unicode} is a standard for encoding,
-representing, and handling text in most of the world's writing systems. It is
-used to represent characters from all of the world's writing systems, including
-Latin, Cyrillic, Greek, Arabic, Hebrew, Chinese, Japanese, Korean, and many
-others. Unicode is used in many modern software applications, including web
-browsers, word processors, and operating systems. In computer science
-literature, Unicode symbols are often represented as U+ followed by a
-hexadecimal number.
-
-\paragraph{Wireshark} is a popular open-source network protocol
-analyzer that is used to capture and analyze network traffic. It is widely used
-by network administrators, security professionals, and developers to
-troubleshoot network problems, analyze network traffic, and detect security
-vulnerabilities.
+\paragraph{Socket} is an endpoint for communication between two machines or processes. Sockets are used to establish a connection between a client and a server, allowing them to exchange data. Sockets can be used to communicate over a network or between processes on the same machine. On Linux hosts a socket can even be represented as a file using the unix domain socket standard.
 
 \paragraph{TCP} is a standard protocol that is used to establish and maintain a connection between
 two devices on a network. It is used to transmit data between devices in a 
@@ -187,6 +186,12 @@ A TCP connection is established using a three-way handshake, in which the client
 exchange a series of messages to establish a connection. These messages include a SYN message
 from the client, a SYN-ACK message from the server, and an ACK message from the client.
 Once the connection is established, data can be transmitted between the client and server in both directions.
+
+\paragraph{Wireshark} is a popular open-source network protocol
+analyzer that is used to capture and analyze network traffic. It is widely used
+by network administrators, security professionals, and developers to
+troubleshoot network problems, analyze network traffic, and detect security
+vulnerabilities.
 
 \newpage \section{Current state of research}
 Some research has been done on this topic already, still we are far away from production ready plug-n-play solutions that can
@@ -208,36 +213,24 @@ In parallel, experimental research will be conducted by setting up controlled
 ibility and transparency in the research process.\\
 The experimental phase will involve the following steps:
 
+\paragraph{Simulation Setup}
+A virtual lab environment containing a dummy login service will be set up.
+The service will be secured via a self signed TLS certificate so it can be targeted
+by transparent phishing toolkits.
+
 \paragraph{Selection of Toolkits}
 A range of widely-used open-source reverse proxy
 phishing toolkits will be selected based on criteria such as popularity, functionality
-, and community support. Examples may include Evilginx, Modlishka, and Mura
-ena.
-\paragraph{Simulation Setup}
-Virtual environments replicating real-world web services
-will be created to serve as targets for the phishing simulations. These environments
-will be configured to log detailed information on the interactions between
-the phishing toolkits and the target web services.
-\paragraph{Execution of Attacks}Each selected phishing toolkit will be deployed
-against the simulated web services. Various attack scenarios will be tested
-to evaluate the robustness and effectiveness of the phishings toolkits. Specific
-metrics for assessment may include detection evasion, data exfiltration capabilities
-, and overall success rate of phishing attempts.
+, and community support. Examples may include Evilginx, Modlishka, and Murena.
+
+\paragraph{Evaluating current Countermeasures}
+Each selected phishing toolkit will be deployed against the simulated web service.
+Various countermeasure configurations will be tested to evaluate if relayed client connections
+can be blocked or flagged successfully.
+
 \paragraph{Data Collection and Analysis}
-Data generated from the attack simulations
-will be meticulously collected and analyzed. Statistical techniques will be
-employed to identify patterns, correlations, and significant findings that
-shed light on the strengths and weaknesses of the transparent proxy phishing toolkits.
+
 \paragraph{Validation of Findings}
-To ensure the reliability and validity of the
-findings, additional experiments may be conducted with different configurations
-and settings, including testing the toolkits against various web security measures.
-Based on the insights gained through literature review and empirical experiments
-, this thesis will then develop and outline easy-to-follow strategies to protect
-web services from reverse proxy phishing attacks. These strategies will be
-crafted in a manner that allows for intuitive implementation by security professionals
-and web service administrators, aiming to enhance the overall resilience of
-web services against such threats.
 
 In conclusion, this research design integrates both the theoretical and practical
 aspects of cybersecurity research, adopting a rigorous and systematic approach
@@ -537,19 +530,21 @@ containing confidential information} \end{figure}
 
 \newpage \section{Testing of Countermeasures} \subsection{Blacklisting well
 known TLS Fingerprints} The first countermeasure that we are trying to implement
-in our web applications backend is to blacklist TLS fingerprints of well known
+into our lab setup is to blacklist TLS fingerprints of well known
 transparent phishing toolkits. This way we can detect if a client connection is
 relayed through a transparent phishing toolkit and show the user a warning or
 ignore the whole request. This approach comes with some obvious downsides:
 
-\begin{itemize} \item The attacker can change the TLS fingerprint of his
+\begin{itemize}
+  \item The attacker can change the TLS fingerprint of his
   transparent phishing toolkit by modifying the TLS stack of the toolkit or by
-  using a different toolkit with an unknown fingerprint \item The attacker can
-  spoof the TLS fingerprint of the victim's client \item The attacker downgrades
-to HTTP and does not use TLS at all \end{itemize}
+  using a different toolkit with an unknown fingerprint
+  \item The attacker can spoof the TLS fingerprint of the victim's client
+  \item The attacker downgrades to HTTP and does not use TLS at all
+\end{itemize}
 
-Example implementation of a basic blocklist implemented using a custom nginx
-fork that supports JA4 fingerprinting:
+Following is an example implementation of a basic blocklist implemented using a custom Nginx
+fork that supports JA4 fingerprinting. If the client's TLS fingerprint is on the blocklist, the request will be blocked and the client will receive a 403 Forbidden response. Instead of blocking the request, passing down information about whether a malicious fingerprint was detected or not to the underlying backend app, a HTTP header could be added.
 
 \begin{minted}{nginx}
   server {
@@ -587,17 +582,18 @@ and change frequently.
 
 \newpage \subsection{Validation of client cipher list} A TLS ClientHello packet sent
 by a client always contains a list of supported ciphers. The list of ciphers
-and its orders can be used to fingerprint the client. Many open-source mitm
-revese proxy solutions are already capable of spoofing the supported cipher
-list in the ClientHello package. To detect client requests from said reverse
+and its orders can be used to fingerprint the client. Many open-source MITM
+reverse proxy solutions are already capable of spoofing the supported cipher
+list in the ClientHello package. To detect client requests crafted by said reverse
 proxies more reliably, verifying the implementation of each cipher could be
 helpful. A proof of concept cipher spoofing tool would need to support many
 different ciphers. To overcome this issue using a TLS server stack that
-supports as many ciphers as possible is required. TODO: TABLE, Talk about why
-we choose openssl.\\OpenSSL 3.1.1 supports 159ciphers in the build that is
-shipped with Fedora39 Linux.
+supports as many ciphers as possible is required. In the cryptographic world many battle tested
+libaries exist that support a wide range of ciphers. The list includes OpenSSL, GnuTLS, mbedTLS and BoringSSL.
+As OpenSSL has a long history in development and adoption, it is a good candidate for this task.
+OpenSSL 3.1.1 supports 159 ciphers in the build that is shipped with Fedora39 Linux.
 
-\begin{lstlisting}[breaklines=true,basicstyle=\tiny]
+\begin{lstlisting}[breaklines=true,basicstyle=\tiny,caption={Listing supported ciphers and counting them in a shell},captionpos=b]
   $ openssl ciphers -v 'ALL:eNULL'
   TLS_AES_256_GCM_SHA384         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(256)            Mac=AEAD
   TLS_CHACHA20_POLY1305_SHA256   TLSv1.3 Kx=any      Au=any   Enc=CHACHA20/POLY1305(256) Mac=AEAD
@@ -677,8 +673,10 @@ done <<< "$ciphers"
 
 \newpage
 
-To make a browser connect to all the created TLS servers and show connection errors verbosely creating a bunch of iframes is enough.
-To simplify the process of creating the iframes a simple JavaScript script can be used.
+Now the testing browser needs to connect to each of the spawned TLS sockets. There are multiple ways to achieve this.
+A "iframe" is a HTML element that allows web developers to embed other website into the current page. Also it is possible
+to use JavaScript's fetch API to create a connection, but the iframe approach is more verbose as it directly shows
+connection errors inside each iframe. To simplify the process of creating the iframes a simple JavaScript script will be used:
 
 \begin{minted}{javascript}
   let framesDone = 0;
@@ -703,7 +701,7 @@ To simplify the process of creating the iframes a simple JavaScript script can b
 
 After all iframes have either loaded successfully or failed the script performs a final fetch request to another
 s\_server that is running with the \-brief option. This server will collect the clients User\-Agent and supported TLS ciphers.
-After that, before the bash script exits, it will write a result json file that contains information about each tested cipher including logs
+After that, before the bash script exits, it will write a result JSON file that contains information about each tested cipher including logs
 of each s\_server instance that was used for cipher validation.
 
 \begin{figure}[!h]
@@ -715,9 +713,12 @@ of each s\_server instance that was used for cipher validation.
 \clearpage
 
 To verify that this approach is working as expected across different versions of browser
-and TLS implementations a testing setup needed to be created. As running different versions of
-browsers on the same host is not easily possible, docker containers and some shell scripts were
-utilized.
+and TLS implementations a testing setup needed to be created. 
+As installing different versions of the same browser on the same machine is not intended by the browser vendors and
+some automated setup that is reasonably fast and reproducible is of interest, a containerized setup was chosen.
+Docker is the most popular containerization platform and is supported on all major operating systems.
+Due to the fact that this project is only intended for testing purposes and not for production use, a more lightweight alternative
+to Docker called Podman was used. It does not require root privileges to run containers and is fully compatible with Docker images and containers.
 
 \begin{figure}[!h]
   \centering
@@ -725,8 +726,9 @@ utilized.
   \caption{The bash script spawns multiple instances of the cipher\_checker\_tests which includes check.sh and a browser for testing}
 \end{figure}
 
-To parse the result json files of each browser test a python script was made. It parses each json file, compares the supported ciphers
-with the list of ciphers that the client told the server it supports and also visualizes the results in a HTML table.  
+To parse the result JSON files of each browser test, a python script was made. It parses each JSON file, compares the supported ciphers
+with the list of ciphers that the client told the server it supports and also visualizes the results in a HTML table.
+The resulting table shows all tested browser versions on the vertical axis and all sent client ciphers on the other.
 
 \begin{figure}[!hb]
   \centering
@@ -762,3 +764,4 @@ tested browsers had the exact same client cipher list which mean they use the sa
 \newpage \bibliographystyle{plain} \bibliography{refs}
 
 \end{document}
+

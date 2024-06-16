@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2023)
+This is BibTeX, Version 0.99d (TeX Live 2023/Fedora 39)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: expose.aux
 The style file: plain.bst
@@ -7,10 +7,16 @@ Warning--I didn't find a database entry for "6trillion"
 Warning--I didn't find a database entry for "modlishka"
 Warning--I didn't find a database entry for "evilginx2"
 Warning--I didn't find a database entry for "murena"
+Warning--I didn't find a database entry for "ja3Salesforce"
+Warning--I didn't find a database entry for "greaseDraft"
+Warning--I didn't find a database entry for "foxIOJa4"
+Warning--I didn't find a database entry for "kondracki2021catchingGit"
+Warning--I didn't find a database entry for "cloudflareMALCOLM"
+Warning--I didn't find a database entry for "tlsPercentage"
 Warning--empty journal in kondracki2021catching
 You've used 2 entries,
             2118 wiz_defined-function locations,
-            511 strings with 4390 characters,
+            523 strings with 4562 characters,
 and the built_in function-call counts, 567 in all, are:
 = -- 50
 > -- 36
@@ -49,4 +55,4 @@ warning$ -- 1
 while$ -- 4
 width$ -- 3
 write$ -- 22
-(There were 5 warnings)
+(There were 11 warnings)
