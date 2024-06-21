@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.5.18)  16 JUN 2024 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.6.20)  21 JUN 2024 14:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -701,48 +701,47 @@ Class scrbook Warning: \float@addtolists detected!
 
 ] [4]
 
-LaTeX Warning: Citation `6trillion' on page 5 undefined on input line 78.
+LaTeX Warning: Citation `6trillion' on page 5 undefined on input line 96.
 
 <./images/http_reverse_proxy.png, id=83, 602.25pt x 225.84375pt>
 File: ./images/http_reverse_proxy.png Graphic file (type png)
 <use ./images/http_reverse_proxy.png>
-Package pdftex.def Info: ./images/http_reverse_proxy.png  used on input line 10
-6.
+Package pdftex.def Info: ./images/http_reverse_proxy.png  used on input line 14
+0.
 (pdftex.def)             Requested size: 303.50435pt x 113.81102pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images/mitm_attack.png, id=84, 853.1875pt x 621.32124pt>
+[5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<./images/mitm_attack.png, id=100, 853.1875pt x 621.32124pt>
 File: ./images/mitm_attack.png Graphic file (type png)
 <use ./images/mitm_attack.png>
-Package pdftex.def Info: ./images/mitm_attack.png  used on input line 118.
+Package pdftex.def Info: ./images/mitm_attack.png  used on input line 152.
 (pdftex.def)             Requested size: 234.42549pt x 170.71652pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<./images/client_hello_packet.png, id=99, 716.6775pt x 314.17375pt>
+[6 <./images/http_reverse_proxy.png> <./images/mitm_attack.png>]
+<./images/client_hello_packet.png, id=113, 716.6775pt x 314.17375pt>
 File: ./images/client_hello_packet.png Graphic file (type png)
 <use ./images/client_hello_packet.png>
 Package pdftex.def Info: ./images/client_hello_packet.png  used on input line 1
-41.
+78.
 (pdftex.def)             Requested size: 389.4278pt x 170.71652pt.
+ [7 <./images/client_hello_packet.png>] [8]
 
-[6 <./images/http_reverse_proxy.png> <./images/mitm_attack.png>] [7 <./images/c
-lient_hello_packet.png>] [8] [9] [10]
+LaTeX Warning: Citation `kondracki2021catchingGit' on page 9 undefined on input
+ line 254.
+
+[9] [10]
 chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--297
+Underfull \hbox (badness 10000) in paragraph at lines 341--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--297
+Underfull \hbox (badness 10000) in paragraph at lines 341--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--297
+Underfull \hbox (badness 10000) in paragraph at lines 341--372
 
  []
 
@@ -751,182 +750,185 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--297
 
 ] [12]
 
-LaTeX Warning: Citation `modlishka' on page 13 undefined on input line 333.
+LaTeX Warning: Citation `modlishka' on page 13 undefined on input line 411.
 
 
-LaTeX Warning: Citation `evilginx2' on page 13 undefined on input line 340.
+LaTeX Warning: Citation `evilginx2' on page 13 undefined on input line 422.
 
 
-LaTeX Warning: Citation `murena' on page 13 undefined on input line 345.
+LaTeX Warning: Citation `murena' on page 13 undefined on input line 428.
 
-<./images/tls_client_hello_wireshark.png, id=170, 1697.34125pt x 793.96625pt>
+<./images/tls_client_hello_wireshark.png, id=176, 1697.34125pt x 793.96625pt>
 File: ./images/tls_client_hello_wireshark.png Graphic file (type png)
 <use ./images/tls_client_hello_wireshark.png>
 Package pdftex.def Info: ./images/tls_client_hello_wireshark.png  used on input
- line 360.
+ line 446.
 (pdftex.def)             Requested size: 425.78464pt x 199.16928pt.
 
-LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 365.
+LaTeX Warning: Citation `ja3Salesforce' on page 13 undefined on input line 452.
 
 
 \openout3 = `expose.pyg'.
 
 (./_minted-expose/default.pygstyle)
-(./_minted-expose/D93ADD30F39CB0186F1C92259C4314152F5A8E51CA43F1E6C130173FF21D7
-B52.pygtex [13])
+(./_minted-expose/9D09F4D6B1782FB65E852CA25FEC2A892F5A8E51CA43F1E6C130173FF21D7
+B52.pygtex [13]
+Overfull \hbox (58.2193pt too wide) in paragraph at lines 2--2
+[]\OT1/cmtt/m/n/12 "769,47[]53[]5[]10[]49161[]49162[]49171[]49172[]50[]56[]19[]
+4,0[]10[]11,23[]24[]25,0"[]|  
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
 \openout3 = `expose.pyg'.
 
 
-(./_minted-expose/8247D37183373D91FDB80B6F31F2479B2F5A8E51CA43F1E6C130173FF21D7
+(./_minted-expose/C9F1741F223D3CB82977F589ED638FE42F5A8E51CA43F1E6C130173FF21D7
 B52.pygtex)
 
-LaTeX Warning: Citation `greaseDraft' on page 14 undefined on input line 385.
+LaTeX Warning: Citation `greaseDraft' on page 14 undefined on input line 472.
 
 
-LaTeX Warning: Citation `foxIOJa4' on page 14 undefined on input line 399.
+LaTeX Warning: Citation `foxIOJa4' on page 14 undefined on input line 486.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--409
+Underfull \hbox (badness 10000) in paragraph at lines 465--496
 
  []
 
 [14 <./images/tls_client_hello_wireshark.png>]
-<./images/JA4.png, id=183, 963.6pt x 542.025pt>
+<./images/JA4.png, id=193, 963.6pt x 542.025pt>
 File: ./images/JA4.png Graphic file (type png)
 <use ./images/JA4.png>
-Package pdftex.def Info: ./images/JA4.png  used on input line 411.
+Package pdftex.def Info: ./images/JA4.png  used on input line 498.
 (pdftex.def)             Requested size: 354.07097pt x 199.16928pt.
+ [15 <./images/JA4.png (PNG copy)>] [16]
 
+LaTeX Warning: Citation `cloudflareMALCOLM' on page 17 undefined on input line 
+547.
 
-LaTeX Warning: Citation `kondracki2021catchingGit' on page 15 undefined on inpu
-t line 426.
-
-[15 <./images/JA4.png (PNG copy)>] [16] [17]
-
-LaTeX Warning: Citation `cloudflareMALCOLM' on page 18 undefined on input line 
-464.
-
-[18]
+[17]
 chapter 3.
-<./images/2fa_app.png, id=203, 816.04875pt x 424.58624pt>
+<./images/2fa_app.png, id=207, 816.04875pt x 424.58624pt>
 File: ./images/2fa_app.png Graphic file (type png)
 <use ./images/2fa_app.png>
-Package pdftex.def Info: ./images/2fa_app.png  used on input line 497.
+Package pdftex.def Info: ./images/2fa_app.png  used on input line 580.
 (pdftex.def)             Requested size: 382.79585pt x 199.16928pt.
 
-LaTeX Warning: Citation `tlsPercentage' on page 19 undefined on input line 512.
+LaTeX Warning: Citation `tlsPercentage' on page 18 undefined on input line 595.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--514
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--514
+Underfull \hbox (badness 10000) in paragraph at lines 567--597
 
  []
 
-[19
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--597
+
+ []
+
+[18
 
 
  <./images/2fa_app.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 515--524
+Underfull \hbox (badness 10000) in paragraph at lines 598--607
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--524
+Underfull \hbox (badness 10000) in paragraph at lines 598--607
 
  []
 
-<./images/profile_page.png, id=211, 509.905pt x 351.3125pt>
+<./images/profile_page.png, id=214, 509.905pt x 351.3125pt>
 File: ./images/profile_page.png Graphic file (type png)
 <use ./images/profile_page.png>
-Package pdftex.def Info: ./images/profile_page.png  used on input line 526.
+Package pdftex.def Info: ./images/profile_page.png  used on input line 609.
 (pdftex.def)             Requested size: 289.08498pt x 199.16928pt.
-[20 <./images/profile_page.png>]
+[19 <./images/profile_page.png>]
 \openout3 = `expose.pyg'.
 
 
-(./_minted-expose/D89616803E376AF3B7B232EE25D2CEE35BD83345266CAAD10DDD364159403
+(./_minted-expose/3443E88D4B623DA6DDAB95D2DB730CB55BD83345266CAAD10DDD364159403
 30A.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
- [21]) [22]
+ [20]) [21]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 594.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 6
-06.
+nput line 691.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
+03.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 606.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 703.
 
-[23]
+[22]
 \openout3 = `expose.pyg'.
 
 
-(./_minted-expose/08AF024442E2D28E8A5BBD5A4F27E7F824812AFC1D82BFC44723C412D8AA6
-68C.pygtex) [24]
+(./_minted-expose/4A1E3FA74F8BBCE8F01E871D9D0182B524812AFC1D82BFC44723C412D8AA6
+68C.pygtex) [23]
 \openout3 = `expose.pyg'.
 
 
-(./_minted-expose/E182EBDC89CF4A8C9AECBA7D1E77D8D0E425CA39F3F2F4D8DBF1F38F81B47
+(./_minted-expose/A0177420582C64BD69416C626A5CD7D7E425CA39F3F2F4D8DBF1F38F81B47
 192.pygtex)
-<./images/cipher_check_setup.png, id=252, 1343.0175pt x 522.95375pt>
+<./images/cipher_check_setup.png, id=255, 1343.0175pt x 522.95375pt>
 File: ./images/cipher_check_setup.png Graphic file (type png)
 <use ./images/cipher_check_setup.png>
-Package pdftex.def Info: ./images/cipher_check_setup.png  used on input line 70
-7.
+Package pdftex.def Info: ./images/cipher_check_setup.png  used on input line 81
+2.
 (pdftex.def)             Requested size: 438.42233pt x 170.71652pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25] [26 <./images/cipher_check_setup.png>]
-<./images/cipher_checker_tests.png, id=264, 787.94376pt x 553.06625pt>
+[24] [25 <./images/cipher_check_setup.png>]
+<./images/cipher_checker_tests.png, id=267, 787.94376pt x 553.06625pt>
 File: ./images/cipher_checker_tests.png Graphic file (type png)
 <use ./images/cipher_checker_tests.png>
 Package pdftex.def Info: ./images/cipher_checker_tests.png  used on input line 
-723.
+834.
 (pdftex.def)             Requested size: 405.35672pt x 284.52756pt.
-<./images/parse_results.png, id=265, 882.29625pt x 624.3325pt>
+<./images/parse_results.png, id=268, 882.29625pt x 624.3325pt>
 File: ./images/parse_results.png Graphic file (type png)
 <use ./images/parse_results.png>
-Package pdftex.def Info: ./images/parse_results.png  used on input line 733.
+Package pdftex.def Info: ./images/parse_results.png  used on input line 848.
 (pdftex.def)             Requested size: 180.93921pt x 128.0374pt.
-<./images/cipher_checker_table.png, id=266, 833.1125pt x 935.495pt>
+<./images/cipher_checker_table.png, id=269, 833.1125pt x 935.495pt>
 File: ./images/cipher_checker_table.png Graphic file (type png)
 <use ./images/cipher_checker_table.png>
 Package pdftex.def Info: ./images/cipher_checker_table.png  used on input line 
-739.
+855.
 (pdftex.def)             Requested size: 456.11577pt x 512.1496pt.
 
-Overfull \hbox (7.98482pt too wide) in paragraph at lines 739--740
+Overfull \hbox (7.98482pt too wide) in paragraph at lines 855--857
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27
+[26
 
- <./images/cipher_checker_tests.png>] [28 <./images/parse_results.png>]
-[29 <./images/cipher_checker_table.png>]
+ <./images/cipher_checker_tests.png>] [27 <./images/parse_results.png>]
+[28 <./images/cipher_checker_table.png>]
 chapter 4.
-[30
+[29
 
 
 ]
 chapter 5.
-[31
+[30
 
 
 ] (./expose.bbl
 chapter 6.
-) [32
+) [31
 
 
 ] (./expose.aux)
@@ -939,29 +941,29 @@ runsystem(rm expose.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 18814 strings out of 477985
- 345161 string characters out of 5839370
+ 18822 strings out of 477985
+ 345259 string characters out of 5839370
  2004388 words of memory out of 6000000
- 38624 multiletter control sequences out of 15000+600000
- 519440 words of font info for 56 fonts, out of 8000000 for 9000
+ 38626 multiletter control sequences out of 15000+600000
+ 519608 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,8n,106p,10601b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,106p,10601b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
-frm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200
-.pfb>
-Output written on expose.pdf (32 pages, 1414221 bytes).
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm0600
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on expose.pdf (31 pages, 1422306 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 380 compressed objects within 4 object streams
- 130 named destinations out of 1000 (max. 500000)
+ 473 PDF objects out of 1000 (max. 8388607)
+ 387 compressed objects within 4 object streams
+ 135 named destinations out of 1000 (max. 500000)
  277 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,45 +5,48 @@
 \contentsline {section}{\numberline {1.4}Objective}{4}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Theoretical foundations}{5}{section.1.5}%
 \contentsline {paragraph}{\nonumberline Cyberfraud}{5}{paragraph*.3}%
-\contentsline {paragraph}{\nonumberline A Phishing attack}{5}{paragraph*.5}%
-\contentsline {paragraph}{\nonumberline A HTTP reverse proxy}{5}{paragraph*.7}%
-\contentsline {paragraph}{\nonumberline Man in the Middle (MITM) attacks}{5}{paragraph*.10}%
-\contentsline {paragraph}{\nonumberline Transparent proxy phishing}{6}{paragraph*.13}%
-\contentsline {paragraph}{\nonumberline TLS}{6}{paragraph*.15}%
-\contentsline {paragraph}{\nonumberline TLS Fingerprinting}{6}{paragraph*.17}%
-\contentsline {paragraph}{\nonumberline Nginx}{7}{paragraph*.20}%
-\contentsline {paragraph}{\nonumberline Containerization}{7}{paragraph*.22}%
-\contentsline {paragraph}{\nonumberline Docker}{7}{paragraph*.24}%
-\contentsline {paragraph}{\nonumberline Podman}{8}{paragraph*.26}%
-\contentsline {paragraph}{\nonumberline HTML}{8}{paragraph*.28}%
-\contentsline {paragraph}{\nonumberline Unicode}{8}{paragraph*.30}%
-\contentsline {paragraph}{\nonumberline Wireshark}{8}{paragraph*.32}%
+\contentsline {paragraph}{\nonumberline HTML}{5}{paragraph*.5}%
+\contentsline {paragraph}{\nonumberline Unicode}{5}{paragraph*.7}%
+\contentsline {paragraph}{\nonumberline A Phishing attack}{5}{paragraph*.9}%
+\contentsline {paragraph}{\nonumberline A HTTP reverse proxy}{5}{paragraph*.11}%
+\contentsline {paragraph}{\nonumberline Man in the Middle (MITM) attacks}{6}{paragraph*.14}%
+\contentsline {paragraph}{\nonumberline Transparent proxy phishing}{6}{paragraph*.17}%
+\contentsline {paragraph}{\nonumberline TLS}{7}{paragraph*.19}%
+\contentsline {paragraph}{\nonumberline TLS Fingerprinting}{7}{paragraph*.21}%
+\contentsline {paragraph}{\nonumberline Nginx}{7}{paragraph*.24}%
+\contentsline {paragraph}{\nonumberline Containerization}{8}{paragraph*.26}%
+\contentsline {paragraph}{\nonumberline Docker}{8}{paragraph*.28}%
+\contentsline {paragraph}{\nonumberline Podman}{8}{paragraph*.30}%
+\contentsline {paragraph}{\nonumberline Socket}{8}{paragraph*.32}%
 \contentsline {paragraph}{\nonumberline TCP}{8}{paragraph*.34}%
+\contentsline {paragraph}{\nonumberline Wireshark}{8}{paragraph*.36}%
 \contentsline {section}{\numberline {1.6}Current state of research}{9}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Research Design}{9}{section.1.7}%
-\contentsline {paragraph}{\nonumberline Simulation Setup}{9}{paragraph*.36}%
-\contentsline {paragraph}{\nonumberline Selection of Toolkits}{9}{paragraph*.38}%
-\contentsline {paragraph}{\nonumberline Evaluating current Countermeasures}{9}{paragraph*.40}%
-\contentsline {paragraph}{\nonumberline Data Collection and Analysis}{9}{paragraph*.42}%
-\contentsline {paragraph}{\nonumberline Validation of Findings}{9}{paragraph*.44}%
+\contentsline {paragraph}{\nonumberline Simulation Setup}{9}{paragraph*.38}%
+\contentsline {paragraph}{\nonumberline Selection of Toolkits}{10}{paragraph*.40}%
+\contentsline {paragraph}{\nonumberline Evaluating current Countermeasures}{10}{paragraph*.42}%
+\contentsline {paragraph}{\nonumberline Data Collection and Analysis}{10}{paragraph*.44}%
+\contentsline {paragraph}{\nonumberline Validation of Findings}{10}{paragraph*.46}%
 \contentsline {chapter}{\numberline {2}Literature Review}{11}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Overview of Multi-Factor Authentication}{11}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Phishing Attacks: Evolution and Impact}{11}{section.2.2}%
+\contentsline {paragraph}{\nonumberline Punycode Domains}{12}{paragraph*.48}%
+\contentsline {paragraph}{\nonumberline Open-Source MITM Phishing Toolkits}{13}{paragraph*.50}%
 \contentsline {section}{\numberline {2.3}TLS Fingerprinting Algorithms}{13}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Existing Countermeasures}{15}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Round Trip Time Analysis}{17}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Mismatch of User-Agent and TLS Fingerprint}{18}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Experimentation}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Simulation of Transparent Phishing Attacks}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Testing of Countermeasures}{21}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Blacklisting well known TLS Fingerprints}{21}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{23}{subsection.3.2.2}%
-\contentsline {chapter}{\numberline {4}Results}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Findings from Simulations}{30}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Proposed Solutions}{30}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Discussion}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implications of Findings}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations and Future Research}{31}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Validation of client cipher list}{31}{paragraph*.54}%
-\contentsline {chapter}{\numberline {6}Bibliography}{32}{chapter.6}%
+\contentsline {subsection}{\numberline {2.4.1}Round Trip Time Analysis}{16}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Mismatch of User-Agent and TLS Fingerprint}{17}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Experimentation}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Simulation of Transparent Phishing Attacks}{18}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Testing of Countermeasures}{20}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Blacklisting well known TLS Fingerprints}{20}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{22}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Results}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Findings from Simulations}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Proposed Solutions}{29}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Discussion}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implications of Findings}{30}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Limitations and Future Research}{30}{section.5.2}%
+\contentsline {paragraph}{\nonumberline Validation of client cipher list}{30}{paragraph*.60}%
+\contentsline {chapter}{\numberline {6}Bibliography}{31}{chapter.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
