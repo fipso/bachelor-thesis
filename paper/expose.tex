@@ -56,8 +56,8 @@ will review, evaluate and try to improve different strategies to help
 developers protect their applications against this new type of phishing attack.
 
 \newpage \section{Problem statement} As an online service provider
-it is crucial to protect the privacy and security of your users. Due to the
-fact the transparent or so called reverse proxy phishing attacks are
+it is crucial to protect the privacy and security of its users. Due to the
+fact that transparent or so called reverse proxy phishing attacks are
 becoming more common and sophisticated implementing additional active
 security measures to detect them is essential. The goal of this paper is to
 provide a comprehensive overview of the current strategies to detect
@@ -68,13 +68,23 @@ validating supported TLS ciphers of web browsers to make TLS fingerprint
 spoofing harder for attackers.
 
 \section{Research question}
-How can we protect web applications against transparent proxy phishing attacks?
-Based on this question the following sub questions were derived:\\
-What exactly are classical phishing attacks in general and how do they differ
-from the new attack vector?\\
-How big is the threat imposed by this new type of phishing attack?\\
-How can a webserver know that a client connection is being relayed through a
-transparent phishing toolkit?
+This study centers on developing effective defenses for web applications against the rising threat of transparent proxy phishing attacks. The central question guiding this research is:
+\begin{itemize}
+    \item How can web applications be safeguarded against transparent proxy phishing attacks?
+\end{itemize}
+From this primary inquiry, several sub-questions emerge, focusing on specific aspects of the threat to better understand and address it:
+\begin{itemize}
+    \item What defines traditional phishing attacks, and how are they distinct from transparent proxy phishing attacks?
+
+    This question aims to delineate the operational mechanisms of both, highlighting the unique challenges posed by the newer method.
+    \item What is the magnitude of the threat posed by transparent proxy phishing attacks?
+
+    Here, we seek to quantify the severity and prevalence of these attacks to better understand their impact on current security frameworks.
+    \item How can a webserver detect that a client connection is being manipulated by a transparent phishing toolkit?
+
+    This focuses on identifying the technical indicators that can alert servers to the presence of such phishing activities, forming the basis for developing more robust detection techniques.
+\end{itemize}
+These sub-questions are designed to dissect the broader problem into manageable segments, allowing for a more structured and focused inquiry into each aspect of transparent proxy phishing.
 
 \section{Objective}
 The objectives of this research are threefold. Firstly, it aims to elucidate the
@@ -273,39 +283,37 @@ attack simulations using various open-source transparent proxy phishing toolkits
 . These toolkits, commonly used by adversaries in real-world scenarios, will
 be systematically evaluated to uncover flaws and weaknesses in their attack
 implementations. Each experiment will involve detailed documentation of the
-setup, execution, and outcomes of the phishing simulations, ensuring reproduc
-ibility and transparency in the research process.\\
-The experimental phase will involve the following steps:
+setup, execution, and outcomes of the phishing simulations, ensuring reproducibility
+and transparency in the research process.  Experimental phase will involve the following steps:
 
 \paragraph{Simulation Setup}
-A virtual lab environment containing a dummy login service will be set up.
-The service will be secured via a self signed TLS certificate so it can be
-targeted
-by transparent phishing toolkits.
+A virtual lab environment containing a dummy MFA protected login service will be set up.
+The service will be secured via HTTPS using a self signed TLS certificate so it resembles a real
+world setup and also allows analysis of TLS handshakes.
 
 \paragraph{Selection of Toolkits}
-A range of widely-used open-source reverse proxy
-phishing toolkits will be selected based on criteria such as popularity,
-functionality
-, and community support. Examples may include Evilginx, Modlishka, and Murena.
+A range of widely-used open-source reverse proxy phishing toolkits will be selected
+based on criteria such as popularity, functionality and community support.
+Examples may include Evilginx, Modlishka, and Murena.
 
 \paragraph{Evaluating current Countermeasures}
 Each selected phishing toolkit will be deployed against the simulated web
-service.
-Various countermeasure configurations will be tested to evaluate if relayed
-client connections
-can be blocked or flagged successfully.
+service. Various countermeasure configurations will be tested to evaluate if relayed
+client connections can be blocked or flagged successfully.
 
 \paragraph{Data Collection and Analysis}
+Countermeasures will be tested against a variety of lab setups.
+These include swapping out MITM toolkits and client browser versions.
+A automated testing solution may be needed to perform reproducible tests.
 
 \paragraph{Validation of Findings}
+The results of the experiments with existing and refined approaches will be reviewed
+and discussed
 
-In conclusion, this research design integrates both the theoretical and
-practical
+In conclusion, this research design integrates both the theoretical and practical
 aspects of cybersecurity research, adopting a rigorous and systematic approach
 to advance current understandings of reverse proxy phishing toolkits and
-contribute
-to the development of effective defense mechanisms.
+contribute to the development of effective defense mechanisms.
 
 \newpage \chapter{Literature Review} \section{Overview of Multi-Factor
   Authentication}
@@ -456,12 +464,12 @@ from ClientHello are: SSLVersion, Cipher, SSLExtension, EllipticCurve,
 EllipticCurvePointFormat.\\An example derived from a ClientHello looks like
 this:
 \begin{minted}[breaklines]{python}
-        "769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0"
-    \end{minted}
+"769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0"
+\end{minted}
 If no SSL extensions are used the field will be left empty. Example:
 \begin{minted}[breaklines]{python}
-        "769,4-5-10-9-100-98-3-6-19-18-99,,,"
-    \end{minted}
+"769,4-5-10-9-100-98-3-6-19-18-99,,,"
+\end{minted}
 Generating a MD5 hash
 from that string will leave us with the following 32 characters:
 "ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non
@@ -502,9 +510,9 @@ TODO: the google feature is "to reduce potential ecosystem brittleness" and
 not for privacy. Quote more from:
 https://chromestatus.com/feature/5124606246518784
 
+\newpage
 \section{Existing Countermeasures}
-
-\newpage \subsection{Round Trip Time Analysis}
+\subsection{Round Trip Time Analysis}
 The round trip time (RTT) of a network connection is the time it takes for a
 packet to travel from the sender to the receiver and back. It is an important
 metric for measuring network performance and can be used to detect network
@@ -529,7 +537,7 @@ the reverse proxy servers of transparent phishing toolkits with high reliability
 based on their
 TCP round trip timings alone.
 
-\newpage \subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
+\subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
 more flexible approach then the previous blacklist solution which tries to
 block or flag client requests using the TLS implementation of known
 transparent phishing toolkits, is to focus on detecting requests from TLS
@@ -635,29 +643,29 @@ about whether a malicious fingerprint was detected or not to the underlying
 backend app, a HTTP header could be added.
 
 \begin{minted}{nginx}
-        server {
-            listen 443 ssl;
-            server_name xu-bank.com;
+server {
+     listen 443 ssl;
+     server_name xu-bank.com;
 
-            # ... other ssl configuration
+     # ... other ssl configuration
 
-            # blocklist
-            map $http_ssl_ja4 $allowed_client {
-                default                                 1;
-                "t13d191000_9dc949149365_e7c285222651"  0; # evilginx2
-            }
+     # blocklist
+     map $http_ssl_ja4 $allowed_client {
+         default                                 1;
+         "t13d191000_9dc949149365_e7c285222651"  0; # evilginx2
+     }
 
-            location / {
-                # block the request if the clients fingerprint is on the blocklist
-                if($allowed_client = 0) {
-                    return 403;
-                }
+     location / {
+         # block the request if the clients fingerprint is on the blocklist
+         if($allowed_client = 0) {
+             return 403;
+         }
 
-                # forward the request to the backend
-                proxy_pass http://backend;
-            }
-        }
-    \end{minted}
+         # forward the request to the backend
+         proxy_pass http://backend;
+     }
+}
+\end{minted}
 
 The same approach can be turned into a whitelist by inverting the logic. This
 way only clients with a known good TLS fingerprint will be allowed to access the
@@ -668,8 +676,7 @@ database would require a lot of fingerprint collecting before said whitelist can
 be used in production as many different browsers and TLS implementations exist
 and change frequently.
 
-\newpage \subsection{Validation of client cipher list} A TLS ClientHello packet
-sent
+\subsection{Validation of client cipher list} A TLS ClientHello packet sent
 by a client always contains a list of supported ciphers. The list of ciphers
 and its orders can be used to fingerprint the client. Many open-source MITM
 reverse proxy solutions are already capable of spoofing the supported cipher
@@ -690,15 +697,15 @@ Linux.
 \begin{lstlisting}[breaklines=true,basicstyle=\tiny,caption={Listing supported
             ciphers and counting them in a shell},captionpos=b]
 $ openssl ciphers -v 'ALL:eNULL'
-TLS_AES_256_GCM_SHA384         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(256)           Mac=AEAD
-TLS_CHACHA20_POLY1305_SHA256   TLSv1.3 Kx=any      Au=any          Enc=CHACHA20/POLY1305(256) Mac=AEAD
-TLS_AES_128_GCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(128)           Mac=AEAD
-TLS_AES_128_CCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESCCM(128)           Mac=AEAD
-ECDHE-ECDSA-AES256-GCM-SHA384  TLSv1.2 Kx=ECDH     Au=ECDSA Enc=AESGCM(256)           Mac=AEAD
-ECDHE-RSA-AES256-GCM-SHA384    TLSv1.2 Kx=ECDH     Au=RSA   Enc=AESGCM(256)           Mac=AEAD
- DHE-DSS-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=DSS   Enc=AESGCM(256)           Mac=AEAD
-DHE-RSA-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=RSA   Enc=AESGCM(256)           Mac=AEAD
-ECDHE-ECDSA-CHACHA20-POLY1305  TLSv1.2 Kx=ECDH     Au=ECDSA        Enc=CHACHA20/POLY1305(256) Mac=AEAD
+TLS_AES_256_GCM_SHA384         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(256)             Mac=AEAD
+TLS_CHACHA20_POLY1305_SHA256   TLSv1.3 Kx=any      Au=any   Enc=CHACHA20/POLY1305(256)  Mac=AEAD
+TLS_AES_128_GCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESGCM(128)             Mac=AEAD
+TLS_AES_128_CCM_SHA256         TLSv1.3 Kx=any      Au=any   Enc=AESCCM(128)             Mac=AEAD
+ECDHE-ECDSA-AES256-GCM-SHA384  TLSv1.2 Kx=ECDH     Au=ECDSA Enc=AESGCM(256)             Mac=AEAD
+ECDHE-RSA-AES256-GCM-SHA384    TLSv1.2 Kx=ECDH     Au=RSA   Enc=AESGCM(256)             Mac=AEAD
+DHE-DSS-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=DSS   Enc=AESGCM(256)             Mac=AEAD
+DHE-RSA-AES256-GCM-SHA384      TLSv1.2 Kx=DH       Au=RSA   Enc=AESGCM(256)             Mac=AEAD
+ECDHE-ECDSA-CHACHA20-POLY1305  TLSv1.2 Kx=ECDH     Au=ECDSA Enc=CHACHA20/POLY1305(256)  Mac=AEAD
  ...
 $ openssl ciphers -v 'ALL:eNULL' | wc -l # Count the number of ciphers
 159
@@ -718,53 +725,47 @@ cipher. The client will then be forced to use this cipher to establish a
 connection. If the client is not able to establish a connection an error will be
 written to a log file that is supervised by our bash script.
 
-\newpage
-
 \begin{minted}{bash}
-        #!/bin/bash
-        # Cleanup from previous runs
-        killall openssl && rm -rf ./logs/*
+...
+# List of default ciphers supported by openssl s_server
+ciphers=$(cat <<-END
+TLSv1.3    :TLS_AES_128_GCM_SHA256
+TLSv1.3    :TLS_AES_256_GCM_SHA384
+...
+END)
 
-        # List of default ciphers supported by openssl s_server
-        ciphers=$(cat <<-END
-        TLSv1.3    :TLS_AES_128_GCM_SHA256
-        TLSv1.3    :TLS_AES_256_GCM_SHA384
-        ...
-        END)
+# Spawn static https server to serve check.html and api
+www_port=8443
+openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
 
-        # Spawn static https server to serve check.html and api
-        www_port=8443
-        openssl s_server -key key.pem -cert cert.pem -accept $www_port -WWW 2>&1 &
+# Start of test s_server port range
+port=8000
 
-        # Start of test s_server port range
-        port=8000
+while IFS= read -r line; do
+cs=$(echo $line | sed 's/.*://')
+echo "Spawning server with cipher: $cs"
 
-        while IFS= read -r line; do
-        cs=$(echo $line | sed 's/.*://')
-        echo "Spawning server with cipher: $cs"
+cipher_param=""
 
-        cipher_param=""
+# Detect if its TLSv1.3 or lower
+is_tls13=$(echo $line | grep -c "TLSv1.3")
 
-        # Detect if its TLSv1.3 or lower
-        is_tls13=$(echo $line | grep -c "TLSv1.3")
+# Use the correct openssl command based on TLS version
+if [ $is_tls13 -eq 1 ]; then
+cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
+else
+cipher_param="-cipher $cs -no_tls1_3"
+fi
 
-        # Use the correct openssl command based on TLS version
-        if [ $is_tls13 -eq 1 ]; then
-        cipher_param="-ciphersuites $cs -no_tls1_2 -no_tls_1_1 -no_tls_1 -no_ssl3"
-        else
-        cipher_param="-cipher $cs -no_tls1_3"
-        fi
+# Spawn s_server instance and redirect output log to file
+openssl s_server -key key.pem -cert cert.pem -accept $port -www \
+$cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
 
-        # Spawn s_server instance and redirect output log to file
-        openssl s_server -key key.pem -cert cert.pem -accept $port -www \
-        $cipher_param -debug >> "logs/$port-$cs.txt" 2>&1 &
+port=$((port+1))
+done <<< "$ciphers"
 
-        port=$((port+1))
-        done <<< "$ciphers"
-
-        # Check all log files for errors and print overview of server status
-        ...
-    \end{minted}
+# Check all log files for errors and print overview of server status ...
+\end{minted}
 
 \newpage
 
@@ -778,26 +779,25 @@ connection errors inside each iframe. To simplify the process of creating the
 iframes a simple JavaScript script will be used:
 
 \begin{minted}{javascript}
-        let framesDone = 0;
-        const onFrameDone = () => {
-            framesDone++;
-            if(framesDone === SERVER_AMOUNT){
-                fetch(`https://${DOMAIN}:8444/`); // Provide browser information to bash
-                script & exit
-            }
-        }
-        const frames = document.getElementById('frames');
-        for(let i = 0; i < SERVER_AMOUNT; i++){
-            const port = 8000+i;
-            const url = `https://${DOMAIN}:${port}`;
-
-            const frame = document.createElement('iframe');
-            frame.src = url;
-            frame.onload = onFrameDone;
-            frame.onerror = onFrameDone;
-            frames.appendChild(frame);
-        }
-    \end{minted}
+let framesDone = 0;
+const onFrameDone = () => {
+    framesDone++;
+    if(framesDone === SERVER_AMOUNT){
+        // Provide browser information to bash script & exit
+        fetch(`https://${DOMAIN}:8444/`);
+    }
+}
+const frames = document.getElementById('frames');
+for(let i = 0; i < SERVER_AMOUNT; i++){
+    const port = 8000+i;
+    const url = `https://${DOMAIN}:${port}`;
+    const frame = document.createElement('iframe');
+    frame.src = url;
+    frame.onload = onFrameDone;
+    frame.onerror = onFrameDone;
+    frames.appendChild(frame);
+}
+\end{minted}
 
 After all iframes have either loaded successfully or failed the script performs
 a final fetch request to another
@@ -807,13 +807,13 @@ After that, before the bash script exits, it will write a result JSON file that
 contains information about each tested cipher including logs
 of each s\_server instance that was used for cipher validation.
 
-\begin{figure}[!h]
+\begin{figure}
 	\centering
-	\includegraphics[height=6cm]{./images/cipher_check_setup.png}
+	\includegraphics[height=5cm]{./images/cipher_check_setup.png}
 	\caption{Using iframes to connect to all spawned s\_server instances}
 \end{figure}
 
-\clearpage
+\newpage
 
 To verify that this approach is working as expected across different versions of
 browser
