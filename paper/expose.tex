@@ -184,10 +184,6 @@ implementation of a client or server by analyzing the handshake process. This
 can be used to identify which software is
 used by client or server. Industry standards for fingerprinting algorithms have
 existed for a long time. These include: JA3, JA3N and the whole JA4+ family.
-\begin{figure}[!h] \centering
-	\includegraphics[height=6cm]{./images/client_hello_packet.png}
-	\caption{The TLS ClientHello packet that is used for fingerprinting the client}
-\end{figure}
 
 \paragraph{Nginx} is a popular open-source web server and reverse proxy server.
 It is
@@ -443,6 +439,20 @@ reverse proxy phishing toolkits:
 \end{itemize}
 
 \section{TLS Fingerprinting Algorithms}
+To understand what TLS Fingerprinting is one needs to see how TLS
+encryption works in general. Transport Layer Security or TLS is a widely
+adopted network encryption protocol . It is the successor of the older SSLv3
+that was developed by Netscape back in 1994. The most common use case
+for TLS encryption is to establish a secure connection between a client and
+a server. Most commonly these clients are web browsers that are trying to
+access a website starting with https:// in its browsers address bar.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[height=10cm]{./images/tls_session.png}
+    \caption{A TLS session between a web browser and a HTTPS server is created from a TCP connection}
+\end{figure}
+
 In general performing TLS fingerprinting on a client connection works by
 analyzing the TLS ClientHello
 message that is sent by the client to the server during the TLS handshake

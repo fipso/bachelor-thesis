@@ -13,40 +13,40 @@
 \contentsline {paragraph}{\nonumberline Transparent proxy phishing}{7}{paragraph*.17}%
 \contentsline {paragraph}{\nonumberline TLS}{8}{paragraph*.19}%
 \contentsline {paragraph}{\nonumberline TLS Fingerprinting}{8}{paragraph*.21}%
-\contentsline {paragraph}{\nonumberline Nginx}{8}{paragraph*.24}%
-\contentsline {paragraph}{\nonumberline Containerization}{9}{paragraph*.26}%
-\contentsline {paragraph}{\nonumberline Docker}{9}{paragraph*.28}%
-\contentsline {paragraph}{\nonumberline Podman}{9}{paragraph*.30}%
-\contentsline {paragraph}{\nonumberline Socket}{9}{paragraph*.32}%
-\contentsline {paragraph}{\nonumberline TCP}{9}{paragraph*.34}%
-\contentsline {paragraph}{\nonumberline Wireshark}{9}{paragraph*.36}%
+\contentsline {paragraph}{\nonumberline Nginx}{8}{paragraph*.23}%
+\contentsline {paragraph}{\nonumberline Containerization}{8}{paragraph*.25}%
+\contentsline {paragraph}{\nonumberline Docker}{8}{paragraph*.27}%
+\contentsline {paragraph}{\nonumberline Podman}{9}{paragraph*.29}%
+\contentsline {paragraph}{\nonumberline Socket}{9}{paragraph*.31}%
+\contentsline {paragraph}{\nonumberline TCP}{9}{paragraph*.33}%
+\contentsline {paragraph}{\nonumberline Wireshark}{9}{paragraph*.35}%
 \contentsline {section}{\numberline {1.6}Current state of research}{10}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Research Design}{10}{section.1.7}%
-\contentsline {paragraph}{\nonumberline Simulation Setup}{10}{paragraph*.38}%
-\contentsline {paragraph}{\nonumberline Selection of Toolkits}{11}{paragraph*.40}%
-\contentsline {paragraph}{\nonumberline Evaluating current Countermeasures}{11}{paragraph*.42}%
-\contentsline {paragraph}{\nonumberline Data Collection and Analysis}{11}{paragraph*.44}%
-\contentsline {paragraph}{\nonumberline Validation of Findings}{11}{paragraph*.46}%
+\contentsline {paragraph}{\nonumberline Simulation Setup}{10}{paragraph*.37}%
+\contentsline {paragraph}{\nonumberline Selection of Toolkits}{11}{paragraph*.39}%
+\contentsline {paragraph}{\nonumberline Evaluating current Countermeasures}{11}{paragraph*.41}%
+\contentsline {paragraph}{\nonumberline Data Collection and Analysis}{11}{paragraph*.43}%
+\contentsline {paragraph}{\nonumberline Validation of Findings}{11}{paragraph*.45}%
 \contentsline {chapter}{\numberline {2}Literature Review}{12}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Overview of Multi-Factor Authentication}{12}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Phishing Attacks: Evolution and Impact}{12}{section.2.2}%
-\contentsline {paragraph}{\nonumberline Punycode Domains}{13}{paragraph*.48}%
-\contentsline {paragraph}{\nonumberline Open-Source MITM Phishing Toolkits}{14}{paragraph*.50}%
+\contentsline {paragraph}{\nonumberline Punycode Domains}{13}{paragraph*.47}%
+\contentsline {paragraph}{\nonumberline Open-Source MITM Phishing Toolkits}{14}{paragraph*.49}%
 \contentsline {section}{\numberline {2.3}TLS Fingerprinting Algorithms}{14}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Existing Countermeasures}{17}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Round Trip Time Analysis}{17}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Mismatch of User-Agent and TLS Fingerprint}{17}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Experimentation}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Simulation of Transparent Phishing Attacks}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Testing of Countermeasures}{21}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Blacklisting well known TLS Fingerprints}{21}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{22}{subsection.3.2.2}%
-\contentsline {chapter}{\numberline {4}Results}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Findings from Simulations}{28}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Proposed Solutions}{28}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implications of Findings}{29}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations and Future Research}{29}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Validation of client cipher list}{29}{paragraph*.60}%
-\contentsline {chapter}{\numberline {6}Bibliography}{30}{chapter.6}%
+\contentsline {section}{\numberline {2.4}Existing Countermeasures}{18}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Round Trip Time Analysis}{18}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Mismatch of User-Agent and TLS Fingerprint}{18}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Experimentation}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Simulation of Transparent Phishing Attacks}{20}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Testing of Countermeasures}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Blacklisting well known TLS Fingerprints}{22}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{23}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Results}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Findings from Simulations}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Proposed Solutions}{29}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Discussion}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implications of Findings}{30}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Limitations and Future Research}{30}{section.5.2}%
+\contentsline {paragraph}{\nonumberline Validation of client cipher list}{30}{paragraph*.60}%
+\contentsline {chapter}{\numberline {6}Bibliography}{31}{chapter.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
