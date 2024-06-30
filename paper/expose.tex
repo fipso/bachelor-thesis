@@ -445,7 +445,19 @@ adopted network encryption protocol . It is the successor of the older SSLv3
 that was developed by Netscape back in 1994. The most common use case
 for TLS encryption is to establish a secure connection between a client and
 a server. Most commonly these clients are web browsers that are trying to
-access a website starting with https:// in its browsers address bar.
+access a website using the HTTPS protocol which uses TLS encryption under
+the hood. Before data can be transferred over a network securely the TLS
+client opens an unencrypted TCP connection to the TLS server.
+From there a handshake that is described in the TLS specification is performed which begins with the client sending
+a so called ClientHello packet. This message contains all the needed information
+for the receiving end to select a matching cipher version later on. To be specific the
+ClientHello contains multiple ordered lists: supported TLS versions, ciphers and extensions.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[height=7cm]{./images/tls_client_hello_wireshark.png}
+    \caption{A TLS ClientHello packet captured using Wireshark}
+\end{figure}
 
 \begin{figure}[!htb]
     \centering
@@ -454,16 +466,8 @@ access a website starting with https:// in its browsers address bar.
 \end{figure}
 
 In general performing TLS fingerprinting on a client connection works by
-analyzing the TLS ClientHello
-message that is sent by the client to the server during the TLS handshake
-process. This message contains a lot of information about the client's TLS
-implementation, including the version of the TLS protocol that the client
-supports, the list of supported cipher suites and extensions.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[height=7cm]{./images/tls_client_hello_wireshark.png}
-	\caption{A TLS ClientHello packet captured using Wireshark}
-\end{figure}
+analyzing the TLS ClientHello message that is sent by the client to the server
+during the TLS handshake process.
 
 To generate a unique fingerprint out of this information several algorithms
 already
