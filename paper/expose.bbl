@@ -1,10 +1,34 @@
 \begin{thebibliography}{1}
 
+\bibitem{EvilnginxGithub}
+Evilnginx git repository.
+\newblock \url{https://github.com/kgretzky/evilginx2}.
+\newblock Accessed: 2024-06-01.
+
+\bibitem{ModlishkaGithub}
+Modlishka git repository.
+\newblock \url{https://github.com/drk1wi/Modlishka}.
+\newblock Accessed: 2024-06-01.
+
+\bibitem{MuraenaGithub}
+Muraena git repository.
+\newblock \url{https://github.com/muraenateam/muraena}.
+\newblock Accessed: 2024-06-01.
+
+\bibitem{kondracki2021catchingGit}
+Phoca.
+\newblock \url{https://github.com/catching-transparent-phish/phoca}.
+
 \bibitem{kondracki2021catching}
 Brian Kondracki, Babak~Amin Azad, Oleksii Starov, and Nick Nikiforakis.
 \newblock Catching transparent phish: Analyzing and detecting mitm phishing
   toolkits.
 \newblock 2021.
+
+\bibitem{6trillion}
+Steve Morgan.
+\newblock 2017 cybercrime report.
+\newblock 2017.
 
 \bibitem{mfa}
 Joseph Williamson and Kevin Curran.

@@ -388,7 +388,7 @@ login page based attack are:
 \paragraph{Punycode Domains}
 In April 2017 a John Hopkins University Student named Xudong Zheng published a
 blog post with a proof of concept on how he used a homograph attack to
-impersonate apple.com. He used the Cyrillic letter "a" (U+0430) instead of the
+impersonate apple.com \cite{punycodePhishing}. He used the Cyrillic letter "a" (U+0430) instead of the
 Latin letter "a" (U+0061) in the domain name.\\This way he was able to register
 the domain "xn--80ak6aa92e.com" which looks exactly like "apple.com" in the
 browser address bar. This attack was possible because the browser displayed the
@@ -412,7 +412,7 @@ However, these toolkits can also be used by malicious actors to perform
 real-world attacks.\\The following are some of the most popular open source
 reverse proxy phishing toolkits:
 \begin{itemize}
-	\item Modlishka \cite{modlishka} is a low level HTTP reverse proxy framework
+	\item Modlishka \cite{ModlishkaGithub} is a low level HTTP reverse proxy framework
 	      that allows the
 	      attacker to intercept and modify all traffic that is going through it. It
 	      is
@@ -423,13 +423,13 @@ reverse proxy phishing toolkits:
 	      injecting
 	      custom HTML and JavaScript into the original page to steal even more
 	      information from the victim.
-	\item Evilginx2 \cite{evilginx2} is a more advanced transparent phishing
+	\item Evilginx2 \cite{EvilnginxGithub} is a more advanced transparent phishing
 	      toolkit that is also written in Go. It provides same capabilities as
 	      Modlishka, but also includes ready to use templates and a custom DNS
 	      server.
 	      Its more user friendly and easier to use than Modlishka, but also less
 	      flexible and extensible.
-	\item Murena \cite{murena} is a transparent phishing toolkit that is written
+	\item Murena \cite{MuraenaGithub} is a transparent phishing toolkit that is written
 	      in Python. It is not as advanced as Modlishka and Evilginx2, but is still
 	      capable of intercepting and modifying all traffic that is going through
 	      it.
@@ -455,12 +455,6 @@ ClientHello contains multiple ordered lists: supported TLS versions, ciphers and
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[height=7cm]{./images/tls_client_hello_wireshark.png}
-    \caption{A TLS ClientHello packet captured using Wireshark}
-\end{figure}
-
-\begin{figure}[!htb]
-    \centering
     \includegraphics[height=10cm]{./images/tls_session.png}
     \caption{A TLS session between a web browser and a HTTPS server is created from a TCP connection}
 \end{figure}
@@ -468,6 +462,12 @@ ClientHello contains multiple ordered lists: supported TLS versions, ciphers and
 In general performing TLS fingerprinting on a client connection works by
 analyzing the TLS ClientHello message that is sent by the client to the server
 during the TLS handshake process.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[height=7cm]{./images/tls_client_hello_wireshark.png}
+    \caption{A TLS ClientHello packet captured using Wireshark}
+\end{figure}
 
 To generate a unique fingerprint out of this information several algorithms
 already
@@ -484,8 +484,8 @@ If no SSL extensions are used the field will be left empty. Example:
 \begin{minted}[breaklines]{python}
 "769,4-5-10-9-100-98-3-6-19-18-99,,,"
 \end{minted}
-Generating a MD5 hash
-from that string will leave us with the following 32 characters:
+To generate a unique identifier from this text the MD5 hash function is used.
+It will leave us with the following 32 characters:
 "ada70206e40642a3e4461f35503241d5". JA3 also needs to ignore values for non
 existing extensions, because some TLS clients are using Google’s GREASE
 (Generate Random Extensions And Sustain Extensibility). This is a feature
@@ -519,10 +519,6 @@ our lab setup to collect JA4 fingerprints.
 \begin{figure}[!htb] \centering
 	\includegraphics[height=7cm]{./images/JA4.png} \caption{JA4 TLS client
 		fingerprint format} \end{figure}
-
-TODO: the google feature is "to reduce potential ecosystem brittleness" and
-not for privacy. Quote more from:
-https://chromestatus.com/feature/5124606246518784
 
 \newpage
 \section{Existing Countermeasures}

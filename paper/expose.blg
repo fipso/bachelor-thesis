@@ -3,56 +3,56 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: expose.aux
 The style file: plain.bst
 Database file #1: refs.bib
-Warning--I didn't find a database entry for "6trillion"
-Warning--I didn't find a database entry for "modlishka"
-Warning--I didn't find a database entry for "evilginx2"
-Warning--I didn't find a database entry for "murena"
 Warning--I didn't find a database entry for "ja3Salesforce"
 Warning--I didn't find a database entry for "greaseDraft"
 Warning--I didn't find a database entry for "foxIOJa4"
-Warning--I didn't find a database entry for "kondracki2021catchingGit"
 Warning--I didn't find a database entry for "cloudflareMALCOLM"
 Warning--I didn't find a database entry for "tlsPercentage"
+Warning--to sort, need author or key in kondracki2021catchingGit
+Warning--to sort, need author or key in ModlishkaGithub
+Warning--to sort, need author or key in EvilnginxGithub
+Warning--to sort, need author or key in MuraenaGithub
 Warning--empty journal in kondracki2021catching
-You've used 2 entries,
+Warning--empty journal in 6trillion
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            523 strings with 4562 characters,
-and the built_in function-call counts, 567 in all, are:
-= -- 50
-> -- 36
+            539 strings with 5043 characters,
+and the built_in function-call counts, 1433 in all, are:
+= -- 135
+> -- 47
 < -- 0
-+ -- 14
-- -- 12
-* -- 38
-:= -- 111
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 12
++ -- 21
+- -- 14
+* -- 66
+:= -- 223
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 20
-empty$ -- 35
-format.name$ -- 12
-if$ -- 107
+cite$ -- 13
+duplicate$ -- 58
+empty$ -- 144
+format.name$ -- 14
+if$ -- 313
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 12
+int.to.str$ -- 7
+missing$ -- 3
+newline$ -- 37
+num.names$ -- 6
+pop$ -- 56
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 21
 quote$ -- 0
-skip$ -- 16
+skip$ -- 46
 stack$ -- 0
-substring$ -- 10
-swap$ -- 1
+substring$ -- 35
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
-warning$ -- 1
-while$ -- 4
-width$ -- 3
-write$ -- 22
+type$ -- 28
+warning$ -- 6
+while$ -- 6
+width$ -- 8
+write$ -- 65
 (There were 11 warnings)
