@@ -493,7 +493,9 @@ proposed by Google to break wrongly implemented TLS servers. It may sound
 controversial at first, but comes with good intentions. In a internet draft
 paper by D. Benjamin \cite{greaseDraft} he explains that its better to break
 some production systems in place instead of risking flawed TLS
-implementations to spread and risk outages of global scale.\\JA3 seems to be
+implementations to spread and risk outages of global scale.
+
+JA3 seems to be
 a good candidate for fingerprinting transparent phishing toolkits at first,
 but it after some testing it comes clear that JA3 can not be used to
 fingerprint instances of Google Chrome, due to it's reliance on the order of
@@ -503,7 +505,8 @@ fingerprinting for said reason. This can be bypassed by sorting the numeric
 values by size. Open source implementations of the JA3 algorithm with
 normalized extension orders exist under the name "JA3N". Sadly in our
 experimentation we were not able to reliably identify versions of Google
-Chrome using JA3 for yet unkown reasons.\\ \\Luckily a better alternative
+Chrome using JA3 for yet unkown reasons.
+Luckily a better alternative
 to the JA3 algorithm exists. The JA4+ family is a set of new network
 fingerprinting algorithms developed by FoxIO \cite{foxIOJa4}. The JA4+
 family also comes with a fingerprinting algorithm for TLS called JA4. JA4 is
@@ -872,27 +875,55 @@ all sent client ciphers on the other.
 \chapter{Results}
 \section{Findings from Simulations}
 
-\section{Proposed Solutions} Introduce any new solutions or improvements to
-existing solutions developed through your research.
+\paragraph{Effectiveness of Toolkits}
+The tested open-source transparent phishing toolkits were able to extract login credentials
+and session cookies from the demo login site flawlessly. There was no visual difference in the relayed page
+as expected. Using Evilginx2 was the most user-friendly experience, besides the fact that it requires the user
+to create some special NS records to forward DNS queries to the Evilginx instance. Also it comes with many
+configuration examples.
+
+\paragraph{Detecting incoming relayed phishing traffic}
+Detecting that an incoming HTTPS connection has been relayed reliably requires
+analysis of many factors. Most importantly inspection of the TLS ClientHello packet
+to fingerprint and verify the authenticity of the used client software.
+Other factors like round trip time and TCP handshake timings can also be used to
+detect MITM toolkit, but they require a large statistical model or usage of artificial intelligence.
+
+\section{Proposed Solutions}
+\paragraph{Detecting TLS cipher list spoofing}
+To make the existing solutions that flag and or block incoming traffic that is likely
+relayed through a reverse proxy of a transparent phishing toolkit, more reliable and harder
+to circumvent, we proposed a proof of concept solution that enumerates all the received
+client ciphers and checks if they are actually implemented.
 
 \chapter{Discussion}
-\section{Implications of Findings} Discuss the broader
-implications of your findings for cybersecurity practices and MFA
-implementation.
+\section{Implications of Findings}
+
+\paragraph{Lack of TLS fingerprint database}
+From literature and our own experimentation it comes clear that simple TLS fingerprinting
+based detection methods, especially those which flag known malicious clients or whitelist
+fingerprints of commonly used browsers, heavily rely on huge TLS fingerprint databases.
+Creating and maintaining such a large dataset
+
+TODO: ethical concerns, lack of mobile device fingerprints
+
+\paragraph{Need for open-source browser testing framework}
+TODO: needs to support many browser versions
+
+\paragraph{Existing counter measures are good and can be improved}
+
+\paragraph{Challenges in spoofing detection}
 
 \section{Limitations and Future Research}
+
 \paragraph{Validation of client cipher list}
 The proof of concept solution shell script check.sh was able to validate the
-supported
-client ciphers of the 59 versions of chromium that we tested it with.
-Unfortunately all of those
-tested browsers had the exact same client cipher list which mean they use the
-same or a very similar TLS implementation. The client cipher list only
+supported client ciphers of the 59 versions of chromium that we tested it with.
+Unfortunately all of those tested browsers had the exact same client cipher list
+which mean they use the same or a very similar TLS implementation. The client cipher list only
 overlapped with 14 ciphers that our openssl s\_server based testing setup could
 verify.
 
 \newpage \bibliographystyle{plain} \bibliography{refs}
 
 \end{document}
-
-

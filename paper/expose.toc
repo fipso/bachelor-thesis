@@ -43,10 +43,17 @@
 \contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{23}{subsection.3.2.2}%
 \contentsline {chapter}{\numberline {4}Results}{29}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Findings from Simulations}{29}{section.4.1}%
+\contentsline {paragraph}{\nonumberline Effectiveness of Toolkits}{29}{paragraph*.60}%
+\contentsline {paragraph}{\nonumberline Detecting incoming relayed phishing traffic}{29}{paragraph*.62}%
 \contentsline {section}{\numberline {4.2}Proposed Solutions}{29}{section.4.2}%
+\contentsline {paragraph}{\nonumberline Detecting TLS cipher list spoofing}{29}{paragraph*.64}%
 \contentsline {chapter}{\numberline {5}Discussion}{30}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Implications of Findings}{30}{section.5.1}%
+\contentsline {paragraph}{\nonumberline Lack of TLS fingerprint database}{30}{paragraph*.66}%
+\contentsline {paragraph}{\nonumberline Need for open-source browser testing framework}{30}{paragraph*.68}%
+\contentsline {paragraph}{\nonumberline Existing counter measures are good and can be improved}{30}{paragraph*.70}%
+\contentsline {paragraph}{\nonumberline Challenges in spoofing detection}{30}{paragraph*.72}%
 \contentsline {section}{\numberline {5.2}Limitations and Future Research}{30}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Validation of client cipher list}{30}{paragraph*.60}%
+\contentsline {paragraph}{\nonumberline Validation of client cipher list}{30}{paragraph*.74}%
 \contentsline {chapter}{\numberline {6}Bibliography}{31}{chapter.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

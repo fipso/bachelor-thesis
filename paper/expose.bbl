@@ -19,6 +19,12 @@ Muraena git repository.
 Phoca.
 \newblock \url{https://github.com/catching-transparent-phish/phoca}.
 
+\bibitem{greaseDraft}
+D.~Benjamin.
+\newblock Applying generate random extensions and sustain extensibility
+  (grease) to tls extensibility.
+\newblock RFC 8701, RFC Editor, 1 2020.
+
 \bibitem{kondracki2021catching}
 Brian Kondracki, Babak~Amin Azad, Oleksii Starov, and Nick Nikiforakis.
 \newblock Catching transparent phish: Analyzing and detecting mitm phishing
@@ -34,5 +40,9 @@ Steve Morgan.
 Joseph Williamson and Kevin Curran.
 \newblock Best practice in multi-factor authentication.
 \newblock {\em Semiconductor Science and Information Devices}, 3, 05 2021.
+
+\bibitem{punycodePhishing}
+Xudong Zheng.
+\newblock 2017.
 
 \end{thebibliography}
