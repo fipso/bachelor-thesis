@@ -903,14 +903,20 @@ client ciphers and checks if they are actually implemented.
 From literature and our own experimentation it comes clear that simple TLS fingerprinting
 based detection methods, especially those which flag known malicious clients or whitelist
 fingerprints of commonly used browsers, heavily rely on huge TLS fingerprint databases.
-Creating and maintaining such a large dataset
-
-TODO: ethical concerns, lack of mobile device fingerprints
+Creating and maintaining such a large dataset is a tedious task. It requires a vast user base
+that is using different devices and browsers. Mobile users are way harder to fingerprint, due to the
+variety that android based phones and browser apps come in. Also collecting TLS fingerprints and
+performing TLS fingerprinting in general could rise some ethical concerns as it could be used
+for user tracking or targeted advertisement.
 
 \paragraph{Need for open-source browser testing framework}
-TODO: needs to support many browser versions
-
-\paragraph{Existing counter measures are good and can be improved}
+While testing our proof of concept client cipher validation script we noticed that there is no
+open-source browser testing project available that supports out of date versions of web browsers.
+Browser testing and automation frameworks like Puppeteer or Playwright only support recent releases
+of for example Google Chrome or Firefox. Download URLs of the browser binaries usually are hard coded
+and pushed manually by the maintainer. Many commercial cloud based browser testing providers exist and
+advertise that they support thousands of different browser products and versions, but in reality only support
+the recent releases.
 
 \paragraph{Challenges in spoofing detection}
 
