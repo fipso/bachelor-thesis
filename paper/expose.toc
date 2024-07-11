@@ -41,18 +41,19 @@
 \contentsline {section}{\numberline {3.2}Testing of Countermeasures}{22}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Blacklisting well known TLS Fingerprints}{22}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{23}{subsection.3.2.2}%
-\contentsline {chapter}{\numberline {4}Results}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Findings from Simulations}{29}{section.4.1}%
-\contentsline {paragraph}{\nonumberline Effectiveness of Toolkits}{29}{paragraph*.60}%
-\contentsline {paragraph}{\nonumberline Detecting incoming relayed phishing traffic}{29}{paragraph*.62}%
-\contentsline {section}{\numberline {4.2}Proposed Solutions}{29}{section.4.2}%
-\contentsline {paragraph}{\nonumberline Detecting TLS cipher list spoofing}{29}{paragraph*.64}%
-\contentsline {chapter}{\numberline {5}Discussion}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implications of Findings}{30}{section.5.1}%
-\contentsline {paragraph}{\nonumberline Lack of TLS fingerprint database}{30}{paragraph*.66}%
-\contentsline {paragraph}{\nonumberline Need for open-source browser testing framework}{30}{paragraph*.68}%
-\contentsline {paragraph}{\nonumberline Challenges in spoofing detection}{30}{paragraph*.70}%
+\contentsline {chapter}{\numberline {4}Results}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Findings from Simulations}{27}{section.4.1}%
+\contentsline {paragraph}{\nonumberline Effectiveness of Toolkits}{27}{paragraph*.58}%
+\contentsline {paragraph}{\nonumberline Detecting incoming relayed phishing traffic}{27}{paragraph*.60}%
+\contentsline {section}{\numberline {4.2}Proposed Solutions}{27}{section.4.2}%
+\contentsline {paragraph}{\nonumberline Detecting TLS cipher list spoofing}{27}{paragraph*.62}%
+\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implications of Findings}{29}{section.5.1}%
+\contentsline {paragraph}{\nonumberline TLS client enumeration frameworks do not exist}{29}{paragraph*.65}%
+\contentsline {paragraph}{\nonumberline Lack of TLS fingerprint database}{29}{paragraph*.67}%
+\contentsline {paragraph}{\nonumberline Need for open-source browser testing framework}{29}{paragraph*.69}%
 \contentsline {section}{\numberline {5.2}Limitations and Future Research}{30}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Validation of client cipher list}{30}{paragraph*.72}%
+\contentsline {paragraph}{\nonumberline Validation of client cipher list}{30}{paragraph*.71}%
+\contentsline {paragraph}{\nonumberline TLS fingerprinting vs large statistical models and AI}{30}{paragraph*.73}%
 \contentsline {chapter}{\numberline {6}Bibliography}{31}{chapter.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

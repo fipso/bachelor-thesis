@@ -856,20 +856,6 @@ visualizes the results in a HTML table.
 The resulting table shows all tested browser versions on the vertical axis and
 all sent client ciphers on the other.
 
-\begin{figure}[!hb]
-	\centering
-	\includegraphics[height=45mm]{./images/parse_results.png}
-	\caption{The python script compares the sent client ciphers from the
-		ClientHello with the s\_server connections that were successful}
-\end{figure}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[height=18cm]{./images/cipher_checker_table.png}
-	\caption{Cutoff results table screenshot of 56 different versions of the
-		Chromium browser}
-\end{figure}
-
 \newpage
 
 \chapter{Results}
@@ -896,8 +882,21 @@ relayed through a reverse proxy of a transparent phishing toolkit, more reliable
 to circumvent, we proposed a proof of concept solution that enumerates all the received
 client ciphers and checks if they are actually implemented.
 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[height=18cm]{./images/cipher_checker_table.png}
+    \caption{Cutoff results table screenshot of 56 different versions of the
+        Chromium browser}
+\end{figure}
+
 \chapter{Discussion}
 \section{Implications of Findings}
+
+\paragraph{TLS client enumeration frameworks do not exist}
+Besides that many TLS fingerprinting standards and implementations exist for clients,
+all of them assume that the client's cipher list has not been altered. For TLS server on the other hand
+a lot of open-source enumeration frameworks exist. These mostly focus on validating certificates and cipher implementations.
+More of this is needed for web browsers and TLS clients in general.
 
 \paragraph{Lack of TLS fingerprint database}
 From literature and our own experimentation it comes clear that simple TLS fingerprinting
@@ -918,7 +917,6 @@ and pushed manually by the maintainer. Many commercial cloud based browser testi
 advertise that they support thousands of different browser products and versions, but in reality only support
 the recent releases.
 
-\paragraph{Challenges in spoofing detection}
 
 \section{Limitations and Future Research}
 
@@ -929,6 +927,15 @@ Unfortunately all of those tested browsers had the exact same client cipher list
 which mean they use the same or a very similar TLS implementation. The client cipher list only
 overlapped with 14 ciphers that our openssl s\_server based testing setup could
 verify.
+
+\paragraph{TLS fingerprinting vs large statistical models and AI}
+This paper has shown that detecting transparent phishing relayed traffic by either
+comparing the client TLS fingerprinting against known MITM phishing toolkits or normal browser fingerprints.
+From there browsers can be either whitelisted or known phishing toolkits be blocked.
+Other research, most importantly the paper "Catching Transparent Phish" by Brian Kondracki Et al. has shown
+that with the usage of more detection factors and artificial intelligence a more reliable result can be achieved.
+This comes at the price of higher complexity and the requirement of a even larger dataset.
+
 
 \newpage \bibliographystyle{plain} \bibliography{refs}
 

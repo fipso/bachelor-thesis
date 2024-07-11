@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.6.20)  10 JUL 2024 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.6.20)  11 JUL 2024 12:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -857,37 +857,31 @@ File: ./images/cipher_checker_tests.png Graphic file (type png)
 Package pdftex.def Info: ./images/cipher_checker_tests.png  used on input line 
 847.
 (pdftex.def)             Requested size: 405.35672pt x 284.52756pt.
-<./images/parse_results.png, id=282, 882.29625pt x 624.3325pt>
-File: ./images/parse_results.png Graphic file (type png)
-<use ./images/parse_results.png>
-Package pdftex.def Info: ./images/parse_results.png  used on input line 861.
-(pdftex.def)             Requested size: 180.93921pt x 128.0374pt.
-<./images/cipher_checker_table.png, id=283, 833.1125pt x 935.495pt>
+ [26 <./images/cipher_checker_tests.png>]
+chapter 4.
+<./images/cipher_checker_table.png, id=288, 833.1125pt x 935.495pt>
 File: ./images/cipher_checker_table.png Graphic file (type png)
 <use ./images/cipher_checker_table.png>
 Package pdftex.def Info: ./images/cipher_checker_table.png  used on input line 
-868.
+887.
 (pdftex.def)             Requested size: 456.11577pt x 512.1496pt.
 
-Overfull \hbox (7.98482pt too wide) in paragraph at lines 868--870
+Overfull \hbox (7.98482pt too wide) in paragraph at lines 887--889
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[26 <./images/cipher_checker_tests.png>] [27 <./images/parse_results.png>]
-[28 <./images/cipher_checker_table.png>]
-chapter 4.
+[27
+
+
+] [28 <./images/cipher_checker_table.png>]
+chapter 5.
 [29
 
 
-]
-chapter 5.
-[30
-
-
-] (./expose.bbl
+] [30] (./expose.bbl
 chapter 6.
 ) [31
 
@@ -902,10 +896,10 @@ runsystem(rm expose.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 18845 strings out of 477985
- 345569 string characters out of 5839370
+ 18839 strings out of 477985
+ 345372 string characters out of 5839370
  2006388 words of memory out of 6000000
- 38631 multiletter control sequences out of 15000+600000
+ 38625 multiletter control sequences out of 15000+600000
  519440 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,8n,106p,10601b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -921,10 +915,10 @@ c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
 frm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200
 .pfb>
-Output written on expose.pdf (31 pages, 1351064 bytes).
+Output written on expose.pdf (31 pages, 955357 bytes).
 PDF statistics:
- 503 PDF objects out of 1000 (max. 8388607)
- 418 compressed objects within 5 object streams
- 154 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 502 PDF objects out of 1000 (max. 8388607)
+ 419 compressed objects within 5 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 272 words of extra memory for PDF output out of 10000 (max. 10000000)
 
