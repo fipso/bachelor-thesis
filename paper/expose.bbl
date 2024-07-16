@@ -1,8 +1,18 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{EvilnginxGithub}
 Evilnginx git repository.
 \newblock \url{https://github.com/kgretzky/evilginx2}.
+\newblock Accessed: 2024-06-01.
+
+\bibitem{ja3Salesforce}
+Ja3 git repository.
+\newblock \url{https://github.com/salesforce/ja3}.
+\newblock Accessed: 2024-06-01.
+
+\bibitem{foxIOJa4}
+Ja4 git repository.
+\newblock \url{https://github.com/FoxIO-LLC/ja4}.
 \newblock Accessed: 2024-06-01.
 
 \bibitem{ModlishkaGithub}
@@ -16,8 +26,9 @@ Muraena git repository.
 \newblock Accessed: 2024-06-01.
 
 \bibitem{kondracki2021catchingGit}
-Phoca.
+Phoca git repository.
 \newblock \url{https://github.com/catching-transparent-phish/phoca}.
+\newblock Accessed: 2024-06-01.
 
 \bibitem{greaseDraft}
 D.~Benjamin.
@@ -34,7 +45,10 @@ Brian Kondracki, Babak~Amin Azad, Oleksii Starov, and Nick Nikiforakis.
 \bibitem{6trillion}
 Steve Morgan.
 \newblock 2017 cybercrime report.
-\newblock 2017.
+\newblock
+  \url{https://cybersecurityventures.com/2015-wp/wp-content/uploads/2017/10/2017-Cybercrime-Report.pdf},
+  2017.
+\newblock Accessed: 2024-06-01.
 
 \bibitem{mfa}
 Joseph Williamson and Kevin Curran.
@@ -43,6 +57,7 @@ Joseph Williamson and Kevin Curran.
 
 \bibitem{punycodePhishing}
 Xudong Zheng.
-\newblock 2017.
+\newblock \url{https://www.xudongz.com/blog/2017/idn-phishing/}, 2017.
+\newblock Accessed: 2024-06-01.
 
 \end{thebibliography}

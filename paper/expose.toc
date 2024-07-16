@@ -33,27 +33,27 @@
 \contentsline {paragraph}{\nonumberline Punycode Domains}{13}{paragraph*.47}%
 \contentsline {paragraph}{\nonumberline Open-Source MITM Phishing Toolkits}{14}{paragraph*.49}%
 \contentsline {section}{\numberline {2.3}TLS Fingerprinting Algorithms}{14}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Existing Countermeasures}{18}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Round Trip Time Analysis}{18}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Mismatch of User-Agent and TLS Fingerprint}{18}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Experimentation}{20}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Simulation of Transparent Phishing Attacks}{20}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Testing of Countermeasures}{22}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Blacklisting well known TLS Fingerprints}{22}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{23}{subsection.3.2.2}%
-\contentsline {chapter}{\numberline {4}Results}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Findings from Simulations}{27}{section.4.1}%
-\contentsline {paragraph}{\nonumberline Effectiveness of Toolkits}{27}{paragraph*.58}%
-\contentsline {paragraph}{\nonumberline Detecting incoming relayed phishing traffic}{27}{paragraph*.60}%
-\contentsline {section}{\numberline {4.2}Proposed Solutions}{27}{section.4.2}%
-\contentsline {paragraph}{\nonumberline Detecting TLS cipher list spoofing}{27}{paragraph*.62}%
-\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implications of Findings}{29}{section.5.1}%
-\contentsline {paragraph}{\nonumberline TLS client enumeration frameworks do not exist}{29}{paragraph*.65}%
-\contentsline {paragraph}{\nonumberline Lack of TLS fingerprint database}{29}{paragraph*.67}%
-\contentsline {paragraph}{\nonumberline Need for open-source browser testing framework}{29}{paragraph*.69}%
-\contentsline {section}{\numberline {5.2}Limitations and Future Research}{30}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Validation of client cipher list}{30}{paragraph*.71}%
-\contentsline {paragraph}{\nonumberline TLS fingerprinting vs large statistical models and AI}{30}{paragraph*.73}%
-\contentsline {chapter}{\numberline {6}Bibliography}{31}{chapter.6}%
+\contentsline {section}{\numberline {2.4}Existing Countermeasures}{17}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Round Trip Time Analysis}{17}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Mismatch of User-Agent and TLS Fingerprint}{17}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Experimentation}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Simulation of Transparent Phishing Attacks}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Testing of Countermeasures}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Blacklisting well known TLS Fingerprints}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Validation of client cipher list}{22}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Results}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Findings from Simulations}{29}{section.4.1}%
+\contentsline {paragraph}{\nonumberline Effectiveness of Toolkits}{29}{paragraph*.58}%
+\contentsline {paragraph}{\nonumberline Detecting incoming relayed phishing traffic}{29}{paragraph*.60}%
+\contentsline {section}{\numberline {4.2}Proposed Solutions}{29}{section.4.2}%
+\contentsline {paragraph}{\nonumberline Detecting TLS cipher list spoofing}{29}{paragraph*.62}%
+\contentsline {chapter}{\numberline {5}Discussion}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implications of Findings}{31}{section.5.1}%
+\contentsline {paragraph}{\nonumberline TLS client enumeration frameworks do not exist}{31}{paragraph*.65}%
+\contentsline {paragraph}{\nonumberline Lack of TLS fingerprint database}{31}{paragraph*.67}%
+\contentsline {paragraph}{\nonumberline Need for open-source browser testing framework}{31}{paragraph*.69}%
+\contentsline {section}{\numberline {5.2}Limitations and Future Research}{32}{section.5.2}%
+\contentsline {paragraph}{\nonumberline Validation of client cipher list}{32}{paragraph*.71}%
+\contentsline {paragraph}{\nonumberline TLS fingerprinting vs large statistical models and AI}{32}{paragraph*.73}%
+\contentsline {chapter}{\numberline {6}Bibliography}{33}{chapter.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
