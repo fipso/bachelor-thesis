@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.6.20)  16 JUL 2024 13:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.6.20)  16 JUL 2024 14:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -795,8 +795,12 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 [22]
 \openout3 = `expose.pyg'.
 
+runsystem(pygmentize -l 'bash' -f latex -P commandprefix=PYG -F tokenmerge -P s
+tripnl='False' -o _minted-expose/6DBECA12BAE70BFDAC417D494A5B8C7E24812AFC1D82BF
+C44723C412D8AA668C.pygtex expose.pyg)...executed.
 
-(./_minted-expose/E63B89F7FCDA1A7D72ACD7CAC591D66124812AFC1D82BFC44723C412D8AA6
+
+(./_minted-expose/6DBECA12BAE70BFDAC417D494A5B8C7E24812AFC1D82BFC44723C412D8AA6
 68C.pygtex [23] [24]) [25]
 \openout3 = `expose.pyg'.
 
@@ -807,14 +811,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 File: ./images/cipher_check_setup.png Graphic file (type png)
 <use ./images/cipher_check_setup.png>
 Package pdftex.def Info: ./images/cipher_check_setup.png  used on input line 87
-0.
+2.
 (pdftex.def)             Requested size: 365.34511pt x 142.26378pt.
  [26]
 <./images/cipher_checker_tests.png, id=287, 787.94376pt x 553.06625pt>
 File: ./images/cipher_checker_tests.png Graphic file (type png)
 <use ./images/cipher_checker_tests.png>
 Package pdftex.def Info: ./images/cipher_checker_tests.png  used on input line 
-891.
+893.
 (pdftex.def)             Requested size: 405.35672pt x 284.52756pt.
 
 
@@ -826,10 +830,10 @@ chapter 4.
 File: ./images/cipher_checker_table.png Graphic file (type png)
 <use ./images/cipher_checker_table.png>
 Package pdftex.def Info: ./images/cipher_checker_table.png  used on input line 
-931.
+933.
 (pdftex.def)             Requested size: 456.11577pt x 512.1496pt.
 
-Overfull \hbox (7.98482pt too wide) in paragraph at lines 931--933
+Overfull \hbox (7.98482pt too wide) in paragraph at lines 933--935
  [][] 
  []
 
@@ -858,7 +862,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--52
 rime-[]Report . pdf$[]\OT1/cmr/m/n/12 , 2017.
  []
 
-) [33
+)
+runsystem(rm _minted-expose/549C70A518859C1F197C94BB309C987024812AFC1D82BFC4472
+3C412D8AA668C.pygtex)...executed.
+
+ [33
 
 
 ] (./expose.aux)
@@ -871,10 +879,10 @@ runsystem(rm expose.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 18845 strings out of 477985
- 345442 string characters out of 5839370
+ 18848 strings out of 477985
+ 345690 string characters out of 5839370
  2006388 words of memory out of 6000000
- 38627 multiletter control sequences out of 15000+600000
+ 38629 multiletter control sequences out of 15000+600000
  519440 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,8n,106p,10601b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -890,7 +898,7 @@ c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
 frm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200
 .pfb>
-Output written on expose.pdf (33 pages, 960792 bytes).
+Output written on expose.pdf (33 pages, 960856 bytes).
 PDF statistics:
  521 PDF objects out of 1000 (max. 8388607)
  436 compressed objects within 5 object streams

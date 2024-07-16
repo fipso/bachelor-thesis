@@ -779,7 +779,9 @@ while IFS= read -r line; do
     fi
 
     # Spawn check server and redirect log to file
-    (logpath="logs/$port-$cs.txt"; openssl s_server $cert_param -accept $port -www $cipher_param -serverpref -debug &> $logpath; echo "error: s_server exited with code $?" >> $logpath) &
+    (logpath="logs/$port-$cs.txt"; openssl s_server $cert_param -accept $port \
+         -www $cipher_param -serverpref -debug &> $logpath; \
+         echo "error: s_server exited with code $?" >> $logpath) &
 
     port=$((port+1))
 done <<< "$ciphers"
