@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.6.20)  16 JUL 2024 14:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 39) (preloaded format=pdflatex 2024.6.20)  30 JUL 2024 16:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -717,7 +717,7 @@ Package pdftex.def Info: ./images/mitm_attack.png  used on input line 162.
 [8] [9] [10] [11]
 chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--375
+Underfull \hbox (badness 10000) in paragraph at lines 342--373
 
  []
 
@@ -728,50 +728,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 344--375
 <./images/tls_session.png, id=186, 927.465pt x 643.40375pt>
 File: ./images/tls_session.png Graphic file (type png)
 <use ./images/tls_session.png>
-Package pdftex.def Info: ./images/tls_session.png  used on input line 456.
+Package pdftex.def Info: ./images/tls_session.png  used on input line 454.
 (pdftex.def)             Requested size: 410.15205pt x 284.52756pt.
- [14]
-<./images/tls_client_hello_wireshark.png, id=196, 1697.34125pt x 793.96625pt>
+<./images/tls_client_hello_wireshark.png, id=187, 1697.34125pt x 793.96625pt>
 File: ./images/tls_client_hello_wireshark.png Graphic file (type png)
 <use ./images/tls_client_hello_wireshark.png>
 Package pdftex.def Info: ./images/tls_client_hello_wireshark.png  used on input
- line 466.
+ line 464.
 (pdftex.def)             Requested size: 425.78464pt x 199.16928pt.
+ [14]
 \openout3 = `expose.pyg'.
 
  (./_minted-expose/default.pygstyle)
 (./_minted-expose/9408DD7DCB7A0E04A9F35AF60B8FA7E12F5A8E51CA43F1E6C130173FF21D7
-B52.pygtex)
+B52.pygtex [15 <./images/tls_session.png> <./images/tls_client_hello_wireshark.
+png>])
 \openout3 = `expose.pyg'.
 
 
 (./_minted-expose/542AA96CBAEA8927FE02C3C176EF198E2F5A8E51CA43F1E6C130173FF21D7
-B52.pygtex) [15 <./images/tls_session.png>]
+B52.pygtex)
 <./images/JA4.png, id=208, 963.6pt x 542.025pt>
 File: ./images/JA4.png Graphic file (type png)
 <use ./images/JA4.png>
-Package pdftex.def Info: ./images/JA4.png  used on input line 521.
+Package pdftex.def Info: ./images/JA4.png  used on input line 519.
 (pdftex.def)             Requested size: 354.07097pt x 199.16928pt.
- [16 <./images/tls_client_hello_wireshark.png>]
-
-LaTeX Warning: Citation `cloudflareMALCOLM' on page 17 undefined on input line 
-561.
-
-[17 <./images/JA4.png (PNG copy)>] [18]
+ [16] [17 <./images/JA4.png (PNG copy)>] [18]
 chapter 3.
-<./images/2fa_app.png, id=227, 816.04875pt x 424.58624pt>
+<./images/2fa_app.png, id=228, 816.04875pt x 424.58624pt>
 File: ./images/2fa_app.png Graphic file (type png)
 <use ./images/2fa_app.png>
-Package pdftex.def Info: ./images/2fa_app.png  used on input line 593.
+Package pdftex.def Info: ./images/2fa_app.png  used on input line 588.
 (pdftex.def)             Requested size: 382.79585pt x 199.16928pt.
 [19
 
 
  <./images/2fa_app.png>]
-<./images/profile_page.png, id=235, 509.905pt x 351.3125pt>
+<./images/profile_page.png, id=236, 509.905pt x 351.3125pt>
 File: ./images/profile_page.png Graphic file (type png)
 <use ./images/profile_page.png>
-Package pdftex.def Info: ./images/profile_page.png  used on input line 621.
+Package pdftex.def Info: ./images/profile_page.png  used on input line 616.
 (pdftex.def)             Requested size: 289.08498pt x 199.16928pt.
  [20 <./images/profile_page.png>]
 \openout3 = `expose.pyg'.
@@ -783,21 +779,17 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
  [21])
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 701.
+nput line 690.
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
-13.
+02.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 713.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 702.
 
 [22]
 \openout3 = `expose.pyg'.
-
-runsystem(pygmentize -l 'bash' -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl='False' -o _minted-expose/6DBECA12BAE70BFDAC417D494A5B8C7E24812AFC1D82BF
-C44723C412D8AA668C.pygtex expose.pyg)...executed.
 
 
 (./_minted-expose/6DBECA12BAE70BFDAC417D494A5B8C7E24812AFC1D82BFC44723C412D8AA6
@@ -807,18 +799,18 @@ C44723C412D8AA668C.pygtex expose.pyg)...executed.
 
 (./_minted-expose/59A58FB76E9CB5FAB4EB32F2E02E58BEE425CA39F3F2F4D8DBF1F38F81B47
 192.pygtex)
-<./images/cipher_check_setup.png, id=282, 1343.0175pt x 522.95375pt>
+<./images/cipher_check_setup.png, id=283, 1343.0175pt x 522.95375pt>
 File: ./images/cipher_check_setup.png Graphic file (type png)
 <use ./images/cipher_check_setup.png>
-Package pdftex.def Info: ./images/cipher_check_setup.png  used on input line 87
-2.
+Package pdftex.def Info: ./images/cipher_check_setup.png  used on input line 85
+8.
 (pdftex.def)             Requested size: 365.34511pt x 142.26378pt.
  [26]
-<./images/cipher_checker_tests.png, id=287, 787.94376pt x 553.06625pt>
+<./images/cipher_checker_tests.png, id=288, 787.94376pt x 553.06625pt>
 File: ./images/cipher_checker_tests.png Graphic file (type png)
 <use ./images/cipher_checker_tests.png>
 Package pdftex.def Info: ./images/cipher_checker_tests.png  used on input line 
-893.
+876.
 (pdftex.def)             Requested size: 405.35672pt x 284.52756pt.
 
 
@@ -826,14 +818,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [27 <./images/cipher_check_setup.png>] [28 <./images/cipher_checker_tests.png>]
 chapter 4.
-<./images/cipher_checker_table.png, id=300, 833.1125pt x 935.495pt>
+<./images/cipher_checker_table.png, id=301, 833.1125pt x 935.495pt>
 File: ./images/cipher_checker_table.png Graphic file (type png)
 <use ./images/cipher_checker_table.png>
 Package pdftex.def Info: ./images/cipher_checker_table.png  used on input line 
-933.
+916.
 (pdftex.def)             Requested size: 456.11577pt x 512.1496pt.
 
-Overfull \hbox (7.98482pt too wide) in paragraph at lines 933--935
+Overfull \hbox (7.98482pt too wide) in paragraph at lines 916--918
  [][] 
  []
 
@@ -851,57 +843,49 @@ chapter 5.
 ] [32] (./expose.bbl
 chapter 6.
 
-Underfull \hbox (badness 1990) in paragraph at lines 29--32
+Underfull \hbox (badness 1990) in paragraph at lines 34--37
 []\OT1/cmr/m/n/12 Phoca git repos-i-tory.  []$\OT1/cmtt/m/n/12 https : / / gith
 ub . com / catching-[]transparent-[]phish /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--52
+Underfull \hbox (badness 10000) in paragraph at lines 51--57
 \OT1/cmtt/m/n/12 2015-[]wp / wp-[]content / uploads / 2017 / 10 / 2017-[]Cyberc
 rime-[]Report . pdf$[]\OT1/cmr/m/n/12 , 2017.
  []
 
-)
-runsystem(rm _minted-expose/549C70A518859C1F197C94BB309C987024812AFC1D82BFC4472
-3C412D8AA668C.pygtex)...executed.
-
- [33
+) [33
 
 
 ] (./expose.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `expose.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 runsystem(rm expose.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 18848 strings out of 477985
- 345690 string characters out of 5839370
+ 18845 strings out of 477985
+ 345462 string characters out of 5839370
  2006388 words of memory out of 6000000
- 38629 multiletter control sequences out of 15000+600000
- 519440 words of font info for 56 fonts, out of 8000000 for 9000
+ 38627 multiletter control sequences out of 15000+600000
+ 519133 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,8n,106p,10601b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
-frm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200
-.pfb>
-Output written on expose.pdf (33 pages, 960856 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm0600.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sf
+rm1200.pfb>
+Output written on expose.pdf (33 pages, 952259 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
+ 519 PDF objects out of 1000 (max. 8388607)
  436 compressed objects within 5 object streams
- 159 named destinations out of 1000 (max. 500000)
+ 160 named destinations out of 1000 (max. 500000)
  272 words of extra memory for PDF output out of 10000 (max. 10000000)
 

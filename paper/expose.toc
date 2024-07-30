@@ -17,7 +17,7 @@
 \contentsline {paragraph}{\nonumberline Containerization}{8}{paragraph*.25}%
 \contentsline {paragraph}{\nonumberline Docker}{8}{paragraph*.27}%
 \contentsline {paragraph}{\nonumberline Podman}{9}{paragraph*.29}%
-\contentsline {paragraph}{\nonumberline Socket}{9}{paragraph*.31}%
+\contentsline {paragraph}{\nonumberline A Socket}{9}{paragraph*.31}%
 \contentsline {paragraph}{\nonumberline TCP}{9}{paragraph*.33}%
 \contentsline {paragraph}{\nonumberline Wireshark}{9}{paragraph*.35}%
 \contentsline {section}{\numberline {1.6}Current state of research}{10}{section.1.6}%

@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{cloudflareMALCOLM}
+Cloudflare malcolm website.
+\newblock \url{https://malcolm.cloudflare.com/}.
+\newblock Accessed: 2024-05-01.
+
 \bibitem{EvilnginxGithub}
 Evilnginx git repository.
 \newblock \url{https://github.com/kgretzky/evilginx2}.

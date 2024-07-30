@@ -29,7 +29,7 @@ afterskip=-\parskip
 
 \title{ \begin{center} \includegraphics[width=8cm]{./images/logo.png}
 	\end{center} \vspace{2cm} Hardening MFA web applications to counter evolving
-	transparent phishing attack vectors \vspace{2cm} \large }
+	transparent phishing attacks \vspace{2cm} \large }
 
 \maketitle
 
@@ -58,7 +58,7 @@ developers protect their applications against this new type of phishing attack.
 \newpage \section{Problem statement} As an online service provider
 it is crucial to protect the privacy and security of its users. Due to the
 fact that transparent or so called reverse proxy phishing attacks are
-becoming more common and sophisticated implementing additional active
+becoming more common and sophisticated, implementing additional active
 security measures to detect them is essential. The goal of this paper is to
 provide a comprehensive overview of the current strategies to detect
 transparent phishing attacks by watching incoming client traffic. As this
@@ -215,7 +215,7 @@ applications.
 and running OCI container images. It is very similar to Docker, but does not
 require higher privileges to run containers as it fully runs in user space.
 
-\paragraph{Socket} is an endpoint for communication between two machines or
+\paragraph{A Socket} is an endpoint for communication between two machines or
 processes. Sockets are used to establish a connection between a client and a
 server, allowing them to exchange data. Sockets can be used to communicate over
 a network or between processes on the same machine. On Linux hosts a socket can
@@ -334,11 +334,9 @@ more organizations recognize the need for stronger security measures to
 protect their users and their data.\\MFA is a critical component of a
 strong security posture, and is an essential tool for protecting against a
 wide range of cyber threats, including phishing, credential theft, and
-identity theft. MFA is also an important tool for protecting against insider
+identity theft. It is also an important tool for protecting against insider
 threats, as it can help to prevent unauthorized access to sensitive data and
-systems. MFA is also an important tool for protecting against the growing
-threat of cyberfraud, as it can help to prevent unauthorized access to
-financial accounts and other sensitive information.
+systems.
 
 \section{Phishing Attacks: Evolution and Impact}
 Phishing attacks are a type
@@ -404,10 +402,10 @@ By reading literature on this topic, it becomes clear that
 performing a transparent proxy phishing attack is
 becoming easier and easier. This is because of the increasing number of open
 source reverse proxy phishing toolkits that are available on the internet. These
-toolkits are designed to allow read teams and cyber security researchers to set
+toolkits are designed to allow red teams and cyber security researchers to set
 up and run transparent proxy phishing attacks in a controlled environment.
 However, these toolkits can also be used by malicious actors to perform
-real-world attacks.\\The following are some of the most popular open source
+real-world attacks.\\The following are some of the most popular open-source
 reverse proxy phishing toolkits:
 \begin{itemize}
 	\item Modlishka \cite{ModlishkaGithub} is a low level HTTP reverse proxy framework
@@ -489,7 +487,7 @@ existing extensions, because some TLS clients are using Google’s GREASE
 (Generate Random Extensions And Sustain Extensibility). This is a feature
 proposed by Google to break wrongly implemented TLS servers. It may sound
 controversial at first, but comes with good intentions. In a internet draft
-paper by D. Benjamin \cite{greaseDraft} he explains that its better to break
+paper by D. Benjamin \cite{greaseDraft}, he explains that its better to break
 some production systems in place instead of risking flawed TLS
 implementations to spread and risk outages of global scale.
 
@@ -497,10 +495,10 @@ JA3 seems to be
 a good candidate for fingerprinting transparent phishing toolkits at first,
 but it after some testing it comes clear that JA3 can not be used to
 fingerprint instances of Google Chrome, due to it's reliance on the order of
-the cipher extension list in the ClientHello package. Google chrome uses a
+the cipher extension list in the ClientHello package. Google Chrome uses a
 feature called "TLS ClientHello extension permutation" that prevents TLS
 fingerprinting for said reason. This can be bypassed by sorting the numeric
-values by size. Open source implementations of the JA3 algorithm with
+values by size. Open-source implementations of the JA3 algorithm with
 normalized extension orders exist under the name "JA3N". Sadly in my
 experimentation I was not able to reliably identify versions of Google
 Chrome and Chromium using JA3 for yet unknown reasons.
@@ -538,26 +536,23 @@ there will be always two TCP connections for each client HTTP request.
 This will lead to increased RTT values that can be measured.
 In real world scenarios the delay added by physical and global routing factors,
 will be a hundred times larger than the delay added by a reverse proxy implementation.
-To account for this the team measured the normal RTT of thousands of test
+To account for this, the team measured the normal RTT of thousands of test
 connections across the globe. In their final statistical model this was enough to detect and
 identify the reverse proxy servers of transparent phishing toolkits with high reliability
 based on their TCP round trip timings alone.
 
-\subsection{Mismatch of User-Agent and TLS Fingerprint} A broader and
-more flexible approach then the previous blacklist solution which tries to
-block or flag client requests using the TLS implementation of known
-transparent phishing toolkits, is to focus on detecting requests from TLS
-reverse proxies in general. The attack vector that is facilitate by abusing
+\subsection{Mismatch of User-Agent and TLS Fingerprint}
+The attack vector that is facilitate by abusing
 reverse proxies to spy on a users TLS encrypted session is more commonly known
 as a TLS MITM (Man in the Middle) Attack.\\The American content delivery
 network operator Cloudflare which is also known for DDoS mitigation and other
-cyber security related services is running an open-source monitoring service
+cyber security related services, is running an open-source monitoring service
 called MALCOLM which stands for "Measuring Active Listeners, Connection
 Observers, and Legitimate Monitors". It provides statistics about observed
 HTTPS Interceptions. A HTTPS Interception defined in Cloudflare's own terms is
-a request that comes from either a "A device has a root certificate installed
+a request that comes from either "A device that has a root certificate installed
 that allow an intermediary to decrypt and inspect traffic" or "An origin
-server provides its TLS private key to a third party (like a reverse proxy)
+server that provides its TLS private key to a third party (like a reverse proxy)
 that does TLS termination" \cite{cloudflareMALCOLM}. The second definition
 means exactly the kind of TLS MITM attacks which I am are trying to detect.\\The
 monitoring platform is powered by "MITMEngine" (Monster-In-The-Middle Engine)
@@ -565,10 +560,10 @@ that Cloudflare describes as their HTTPS interception detector. MITMEngine is
 an open-source software written in go. It works by matching TLS fingerprints
 of requests to known browser User-Agent strings. If a mismatch is found the
 request is marked as potentially crafted by HTTPS Interception. This strategy
-again relies on maintaining a huge database of User-Agent and TLS Fingerprint
+relies on maintaining a huge database of User-Agent and TLS Fingerprint
 pairs. Cloudflare states on the MALCOLM dashboard website that they can only
-identity 60\% of the clients that are served by their internal network.
-Especially the detection of  based devices is not reliably possible due
+identify 60\% of the clients that are served by their internal network.
+Especially the detection of Android  based mobile devices is not reliably possible due
 to the large amount of different Android based operating systems and browsers.
 Readers of the MALCOLM website are encouraged to contribute User-Agent TLS
 fingerprint pairs to the MITMEngine git repository to help overcome this issue.
@@ -576,18 +571,18 @@ fingerprint pairs to the MITMEngine git repository to help overcome this issue.
 \newpage
 \chapter{Experimentation}
 \section{Simulation of Transparent Phishing Attacks}
-To test and analyze the capabilities of the most popular open source
-transparent phishing toolkits a controlled lab environment will be set up. The
+To test and analyze the capabilities of the most popular open-source
+transparent phishing toolkits, a controlled lab environment will be set up. The
 goal is to find flaws in their attack implementation and to develop and test new
-or improved countermeasures against these attacks.\\ First a web application
+or improved countermeasures against these.\\ First a web application
 will be set up that is secured with a multi-factor authentication system. Then
-the open source transparent phishing toolkits will be used to set up attack
-simulations against this web application. The web application will be
+the open-source transparent phishing toolkits will be used to set up attack
+simulations against this web application. The web app will be
 running on a local machine, but still be secured with a valid self-signed TLS
-certificate. My own certificate authority will have to be installed in the
+certificate. My own certificate authority (CA) will have to be installed in the
 browser used for testing, a recent version of Chromium in this case. In a
 real world scenario an attacker would also have to buy a valid domain name. For
-my simulated attacks an entry in the hosts fill be sufficient to redirect the
+my simulated attacks an entry in the hosts file be sufficient to redirect the
 traffic to the local machine.
 \begin{figure}[!htb] \centering
 	\includegraphics[height=7cm]{./images/2fa_app.png}
@@ -598,14 +593,14 @@ system with two-factor authentication. For demo purposes the two-factor
 authentication logic will accept any 6 digit number as valid token.\\The
 frontend of this application is connected to a NodeJS based backend that is
 using express.js for routing and parsing of incoming requests. After one
-provides login credentials in the frontend a authentication endpoint in the
+provides login credentials in the frontend an authentication endpoint in the
 backend will be called with the provided credentials. If those credentials are
 valid the backend will redirect the user to his profile page. This response will
 also contain a session cookie that will be used to authenticate the user in the
 future.\\For an attacker, stealing the content of that session cookie is enough
 to gain full access to that account. This is also true for most real world web
-applications where cookie based authenticaion is used, but this alone is not a
-securiy issue. Nearly all websites are TLS secured today meaning that no one except the user and server can see the content of that HTTP request including the session cookie.
+applications where cookie based authentication is used, but this alone is not a
+security issue. Nearly all websites are TLS secured today meaning that no one except the user and server can see the content of that HTTP request including the session cookie.
 
 In my simulated attack scenario it will be the goal to steal the content of
 this session cookie to overtake the victims session. In the real world an
@@ -631,19 +626,17 @@ ignore the whole request. This approach comes with some obvious downsides:
 \begin{itemize}
 	\item The attacker can change the TLS fingerprint of his
 	      transparent phishing toolkit by modifying the TLS stack of the toolkit or
-	      by
-	      using a different toolkit with an unknown fingerprint
+	      by using a different toolkit with an unknown fingerprint
 	\item The attacker can spoof the TLS fingerprint of the victim's client
 	\item The attacker downgrades to HTTP and does not use TLS at all
 \end{itemize}
 
 Following is an example implementation of a basic blocklist implemented using a
-custom Nginx
-fork that supports JA4 fingerprinting. If the client's TLS fingerprint is on the
+custom Nginx fork that supports JA4 fingerprinting. If the client's TLS fingerprint is on the
 blocklist, the request will be blocked and the client will receive a 403
 Forbidden response. Instead of blocking the request, passing down information
 about whether a malicious fingerprint was detected or not to the underlying
-backend app, a HTTP header could be added.
+backend app, is also an option that can be easily realized by adding an additional HTTP header to the request.
 
 \begin{minted}{nginx}
 server {
@@ -680,22 +673,18 @@ be used in production as many different browsers and TLS implementations exist
 and change frequently.
 
 \subsection{Validation of client cipher list} A TLS ClientHello packet sent
-by a client always contains a list of supported ciphers. The list of ciphers
-and its orders can be used to fingerprint the client. Many open-source MITM
+by a client, always contains a list of supported ciphers. The list of ciphers
+and its orders can be used to fingerprint the client. Some of the open-source MITM
 reverse proxy solutions are already capable of spoofing the supported cipher
-list in the ClientHello package. To detect client requests crafted by said
-reverse
+list in the ClientHello package. To detect client requests crafted by said reverse
 proxies more reliably, verifying the implementation of each cipher could be
 helpful. A proof of concept cipher spoofing detection tool would need to support many
 different ciphers. To overcome this issue using a TLS server stack that
 supports as many ciphers as possible is required. In the cryptographic world
-many battle tested
-libaries exist that support a wide range of ciphers. The list includes OpenSSL,
-GnuTLS, mbedTLS and BoringSSL.
+many battle tested libraries exist that support a wide range of ciphers.
+The list includes OpenSSL, GnuTLS, mbedTLS and BoringSSL.
 As OpenSSL has a long history in development and adoption, it is a good
-candidate for this task.
-OpenSSL 3.1.1 supports 159 ciphers in the build that is shipped with Fedora39
-Linux.
+candidate for this task. OpenSSL 3.1 supports 159 ciphers in the build that is shipped with Fedora39 Linux.
 
 \begin{lstlisting}[breaklines=true,basicstyle=\tiny,caption={Listing supported
             ciphers and counting them in a shell},captionpos=b]
@@ -715,18 +704,18 @@ $ openssl ciphers -v 'ALL:eNULL' | wc -l # Count the number of ciphers
     \end{lstlisting}
 
 OpenSSL may be more well known as a library for cryptographic functions, but it
-also comes with a command line interface. The openssl binary comes with a
+also comes with a command line interface. The OpenSSL binary comes with a
 built-in TLS and HTTP server implementation called s\_server. It can be used to
 quickly setup TLS servers for testing and debugging purposes. The list of
 supported ciphers for a server can be configured using the -ciphers option for
-TLSv1.2 and below and the -ciphersuites option for TLSv1.3 and above. For the
+TLSv1.2 and below. The -ciphersuites option for TLSv1.3 and above. For the
 sake of this paper a proof of concept solution was implemented using a simple
 bash script to spawn various instances of OpenSSL's s\_server with different
 cipher configurations. To validate if a client actually supports his claimed
 ciphers, each instance of s\_server will be configured to only support one
 cipher. The client will then be forced to use this cipher to establish a
-connection. If the client is not able to establish a connection an error will be
-written to a log file that is supervised by my bash script.
+connection. If the client is not able to establish a connection, an error will be
+written to a log file which is supervised by my bash script.
 
 \begin{minted}{bash}
 ...
@@ -827,12 +816,10 @@ done
 
 Now the testing browser needs to connect to each of the spawned TLS sockets.
 There are multiple ways to achieve this.
-A "iframe" is a HTML element that allows web developers to embed other website
-into the current page. Also it is possible
-to use JavaScript's fetch API to create a connection, but the iframe approach is
-more verbose as it directly shows
-connection errors inside each iframe. To simplify the process of creating the
-iframes a simple JavaScript script will be used:
+An "iframe" is a HTML element that allows web developers to embed other website
+into the current page. Also it is possible to use JavaScript's fetch API to create a connection, but the iframe approach is
+more verbose as it directly shows connection errors inside each iframe. To simplify the process of creating those
+iframes, a simple JavaScript script will be used:
 
 \begin{minted}{javascript}
 ...
@@ -860,9 +847,8 @@ for(let i = 0; i < SERVER_AMOUNT; i++){
 \end{minted}
 
 After all iframes have either loaded successfully or failed the script performs
-a final fetch request to another
-s\_server that is running with the \-brief option. This server will collect the
-clients User\-Agent and supported TLS ciphers.
+a final HTTP request to another s\_server that is running with the \-brief option.
+This server will collect the client's User\-Agent and supported TLS ciphers.
 After that, before the bash script exits, it will write a result JSON file that
 contains information about each tested cipher including logs
 of each s\_server instance that was used for cipher validation.
@@ -870,29 +856,26 @@ of each s\_server instance that was used for cipher validation.
 \begin{figure}
 	\centering
 	\includegraphics[height=5cm]{./images/cipher_check_setup.png}
-	\caption{Using iframes to connect to all spawned s\_server instances}
+	\caption{Using iframes to connect to all spawned openssl s\_server instances}
 \end{figure}
 
 \newpage
 
 To verify that this approach is working as expected across different versions of
-browser and TLS implementations a testing setup needed to be created.
+browser and TLS implementations, a testing setup needed to be created.
 As installing different versions of the same browser on the same machine is not
-intended by the browser vendors and
-some automated setup that is reasonably fast and reproducible is of interest, a
+intended by the browser vendors and some automated setup that is reasonably fast and reproducible is of interest, a
 containerized setup was chosen.
 Docker is the most popular containerization platform and is supported on all
-major operating systems.
-fact that this project is only intended for testing purposes and not
-for production use, a more lightweight alternative
-to Docker called Podman was used. It does not require root privileges to run
+major operating systems. Due to the fact that this project is only intended for testing purposes and not
+for production use, a more lightweight alternative to Docker called Podman was used. It does not require root privileges to run
 containers and is fully compatible with Docker images and containers.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[height=10cm]{./images/cipher_checker_tests.png}
 	\caption{The bash script spawns multiple instances of the
-		cipher\_checker\_tests which includes check.sh and a browser for testing}
+		cipher\_checker\_tests container image which includes check.sh and a browser for testing}
 \end{figure}
 
 To parse the result JSON files of each browser test, a python script was made.
